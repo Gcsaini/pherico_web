@@ -1,7 +1,7 @@
 import * as React from "react";
 import Backdrop from "@mui/material/Backdrop";
-import { Grid, Stack, Typography } from "@mui/material";
-import { black, grey, greyText, white } from "../helpers/colors";
+import { Stack, Typography } from "@mui/material";
+import { black, greyText, white } from "../helpers/colors";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
@@ -123,10 +123,10 @@ export default function Openings() {
           variant="h6"
           sx={{
             color: greyText,
-            fontWeight: 500,
+
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
-            fontWeight: 500,
+
             fontSize: 15,
             marginTop: 3,
           }}
@@ -137,7 +137,7 @@ export default function Openings() {
           variant="h4"
           sx={{
             color: black,
-            fontWeight: 500,
+
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,
@@ -149,7 +149,6 @@ export default function Openings() {
           variant="h5"
           sx={{
             color: black,
-            fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,
@@ -176,7 +175,6 @@ export default function Openings() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -189,10 +187,9 @@ export default function Openings() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   fontSize: 16,
                 }}
               >
@@ -220,7 +217,6 @@ export default function Openings() {
           variant="h5"
           sx={{
             color: black,
-            fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,
@@ -247,7 +243,6 @@ export default function Openings() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -260,7 +255,6 @@ export default function Openings() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 500,
@@ -305,7 +299,6 @@ export default function Openings() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -318,10 +311,8 @@ export default function Openings() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
-                  fontWeight: 500,
                   fontSize: 16,
                 }}
               >

@@ -12,3 +12,4 @@ export const blackText = "#333";
 export const greyText = "#4A4848";
 export const blackBg = "#1E1E1E";
 export const purple = "#9C34C2";
+export const green = "#4BB543";

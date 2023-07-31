@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Stack, Typography } from "@mui/material";
 import bgImg from "../assets/images/bg/header_bg.png";
 import Grid from "@mui/material/Grid";
@@ -5,7 +6,8 @@ import { black, blackText, secondary } from "../helpers/colors";
 import missionImg from "../assets/images/about/mission.svg";
 import visionImg from "../assets/images/about/vision.svg";
 import goalImg from "../assets/images/about/goal.svg";
-export default function AboutUsContent() {
+export default function AboutUsContent(props) {
+  const aboutData = props.data;
   return (
     <div
       style={{
@@ -44,26 +46,42 @@ export default function AboutUsContent() {
               borderRadius: 10,
             }}
           ></div>
-          <Typography
-            variant="h6"
-            sx={{
-              color: blackText,
-              fontWeight: 500,
-              fontFamily: "Poppins, sans-serif",
-              textAlign: "center",
-              lineHeight: "1.5rem",
-              marginTop: 3,
-            }}
-          >
-            We as an online e-commerce marketplace with the taste of social
-            media. Pherico aims to provide hassle free business experience and
-            to connect all entrepreneurs with their consumers Live and
-            interactive manner through this platform. Our store monetization
-            feature also empower entrepreneurs side by side. We are also
-            conscious and careful to provide hassle free and enjoyable shopping
-            experience with the taste of Clickies (short product demo in an
-            entertaining way).
-          </Typography>
+          {aboutData && aboutData.about !== "" ? (
+            <Typography
+              variant="h6"
+              sx={{
+                color: blackText,
+                fontWeight: 500,
+                fontFamily: "Poppins, sans-serif",
+                textAlign: "center",
+                lineHeight: "1.5rem",
+                marginTop: 3,
+              }}
+            >
+              {aboutData.about}
+            </Typography>
+          ) : (
+            <Typography
+              variant="h6"
+              sx={{
+                color: blackText,
+                fontWeight: 500,
+                fontFamily: "Poppins, sans-serif",
+                textAlign: "center",
+                lineHeight: "1.5rem",
+                marginTop: 3,
+              }}
+            >
+              We as an online e-commerce marketplace with the taste of social
+              media. Pherico aims to provide hassle free business experience and
+              to connect all entrepreneurs with their consumers Live and
+              interactive manner through this platform. Our store monetization
+              feature also empower entrepreneurs side by side. We are also
+              conscious and careful to provide hassle free and enjoyable
+              shopping experience with the taste of Clickies (short product demo
+              in an entertaining way).
+            </Typography>
+          )}
         </Stack>
       </Stack>
       <Stack alignItems={"center"}>
@@ -86,27 +104,43 @@ export default function AboutUsContent() {
                     textAlign: "center",
                   }}
                 >
-                   Mission
+                  Mission
                 </Typography>
                 <Stack
                   direction={"row"}
                   justifyContent={"space-evenly"}
                   alignItems={"space-around"}
                 >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: blackText,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      textAlign: "center",
-                      lineHeight: "1.5rem",
-                    }}
-                  >
-                     Our aim to enable anyone to turn their passion into a
-                    business and bring people together through commerce with the
-                    taste social media and empower them.
-                  </Typography>
+                  {" "}
+                  {aboutData && aboutData.mission !== "" ? (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: blackText,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "center",
+                        lineHeight: "1.5rem",
+                      }}
+                    >
+                      {aboutData.mission}
+                    </Typography>
+                  ) : (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: blackText,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "center",
+                        lineHeight: "1.5rem",
+                      }}
+                    >
+                      Our aim to enable anyone to turn their passion into a
+                      business and bring people together through commerce with
+                      the taste social media and empower them.
+                    </Typography>
+                  )}
                 </Stack>
               </Stack>
             </Grid>
@@ -129,19 +163,34 @@ export default function AboutUsContent() {
                   justifyContent={"space-evenly"}
                   alignItems={"space-around"}
                 >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: blackText,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      textAlign: "center",
-                      lineHeight: "1.5rem",
-                    }}
-                  >
-                     We’re on a mission to empower the next generation to
-                    discover better ways to learn, earn, and network.
-                  </Typography>
+                  {aboutData && aboutData.vision !== "" ? (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: blackText,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "center",
+                        lineHeight: "1.5rem",
+                      }}
+                    >
+                      {aboutData.vision}
+                    </Typography>
+                  ) : (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: blackText,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "center",
+                        lineHeight: "1.5rem",
+                      }}
+                    >
+                      We’re on a mission to empower the next generation to
+                      discover better ways to learn, earn, and network.
+                    </Typography>
+                  )}
                 </Stack>
               </Stack>
             </Grid>
@@ -164,19 +213,34 @@ export default function AboutUsContent() {
                   justifyContent={"space-evenly"}
                   alignItems={"space-around"}
                 >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: blackText,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      textAlign: "center",
-                      lineHeight: "1.5rem",
-                    }}
-                  >
-                     We’re on a mission to empower the next generation to
-                    discover better ways to learn, earn, and network.
-                  </Typography>
+                  {aboutData && aboutData.vision !== "" ? (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: blackText,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "center",
+                        lineHeight: "1.5rem",
+                      }}
+                    >
+                      {aboutData.goal}
+                    </Typography>
+                  ) : (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: blackText,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "center",
+                        lineHeight: "1.5rem",
+                      }}
+                    >
+                      We’re on a mission to empower the next generation to
+                      discover better ways to learn, earn, and network.
+                    </Typography>
+                  )}
                 </Stack>
               </Stack>
             </Grid>

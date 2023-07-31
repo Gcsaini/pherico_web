@@ -3,28 +3,33 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import { blackText, secondary } from "../helpers/colors";
 import { useTypingText } from "../helpers/text_writer";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function HeaderTitle() {
   const { word } = useTypingText(["Shop", "Sell", "& Scroll"], 130);
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   return (
     <>
       <Stack
         direction="row"
         spacing={{ sm: 8, md: 12 }}
         justifyContent={"space-evenly"}
+        style={{ marginTop: isMobile ? 70 : isTablet ? 50 : 0 }}
       >
         <Typography
           variant="h4"
           style={{
             fontWeight: 600,
             fontFamily: "Poppins, sans-serif",
-            lineHeight: "78px",
+            lineHeight: isMobile ? "40px" : isTablet ? "50px" : "78px",
             color: blackText,
+            textAlign: "center",
           }}
           mt={4}
         >
           India’s 1st
           <span style={{ color: secondary }}> E-commerce social</span> media,
-          where you
+          where you can
         </Typography>
       </Stack>
       <Stack direction="row" justifyContent={"space-evenly"}>

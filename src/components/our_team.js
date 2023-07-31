@@ -1,6 +1,7 @@
 import { Stack, Typography, Grid } from "@mui/material";
 import { black, white } from "../helpers/colors";
 import founderImg from "../assets/images/about/founder.svg";
+import * as React from "react";
 export default function OurTeam() {
   return (
     <Stack
@@ -36,7 +37,7 @@ export default function OurTeam() {
               >
                 <img
                   src={founderImg}
-                  alt="founder image"
+                  alt="founder"
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -92,7 +93,7 @@ export default function OurTeam() {
               >
                 <img
                   src={founderImg}
-                  alt="founder image"
+                  alt="founder"
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -148,7 +149,7 @@ export default function OurTeam() {
               >
                 <img
                   src={founderImg}
-                  alt="founder image"
+                  alt="founder"
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -204,7 +205,7 @@ export default function OurTeam() {
               >
                 <img
                   src={founderImg}
-                  alt="founder image"
+                  alt="founder "
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -260,7 +261,7 @@ export default function OurTeam() {
               >
                 <img
                   src={founderImg}
-                  alt="founder image"
+                  alt="founder "
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -316,7 +317,7 @@ export default function OurTeam() {
               >
                 <img
                   src={founderImg}
-                  alt="founder image"
+                  alt="founder "
                   style={{
                     objectFit: "cover",
                     width: "100%",

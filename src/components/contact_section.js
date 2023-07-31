@@ -1,12 +1,78 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import { primary, secondary, white } from "../helpers/colors";
+import { red, secondary, white, green } from "../helpers/colors";
 import handWaveImg from "../assets/images/about/hand-wave.svg";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import * as React from "react";
+import emailjs from "@emailjs/browser";
+import {
+  EmailJsPublicId,
+  EmailJsServiceId,
+  MailTemplateID,
+  validateEmail,
+} from "../helpers/config";
 export default function ContactSection() {
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [mail, setMail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [isLoding, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState("");
+  const [error, setError] = React.useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (firstName.length < 3) {
+      setError("Enter valid first name");
+      return;
+    } else if (lastName.length < 3) {
+      setError("Enter valid last name");
+      return;
+    } else if (phoneNumber.length !== 10) {
+      setError("Enter valid phone number");
+      return;
+    } else if (isNaN(phoneNumber)) {
+      setError("Enter valid phone number");
+      return;
+    } else if (!validateEmail(mail)) {
+      setError("Invalid Email");
+      return;
+    } else if (message.length < 5) {
+      setError("Enter message");
+      return;
+    } else {
+      setLoading(true);
+      setError("");
+
+      emailjs
+        .send(
+          EmailJsServiceId,
+          MailTemplateID,
+          {
+            name: firstName + " " + lastName,
+            phone: phoneNumber,
+            email: mail,
+            message: message,
+          },
+          EmailJsPublicId
+        )
+        .then(
+          (result) => {
+            setSuccess("Message has been sent");
+          },
+          (error) => {
+            setError("Something went wrong!");
+          }
+        );
+      setLoading(false);
+    }
+  };
+
   const inputStyle = {
     color: white,
     borderRadius: 2.5,
@@ -20,13 +86,14 @@ export default function ContactSection() {
       borderColor: "#ccc",
     },
   };
+
   return (
     <div
       style={{
         background: "#121212",
-        marginTop: 100,
-        paddingBottom: 70,
-        paddingTop: 30,
+        marginTop: 70,
+        paddingBottom: 100,
+        paddingTop: 100,
       }}
     >
       <Stack
@@ -34,45 +101,39 @@ export default function ContactSection() {
         justifyContent={"center"}
         alignItems={"start"}
       >
-        <Typography
-          variant="h4"
-          sx={{
-            color: white,
-            fontWeight: 800,
-            fontFamily: "Poppins, sans-serif",
-            textAlign: "left",
-            marginTop: 5,
-          }}
-        >
-          We love to here you,
-        </Typography>
-        <Stack
-          direction={"row"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              color: white,
-              fontWeight: 800,
-              fontFamily: "Poppins, sans-serif",
-              textAlign: "left",
-            }}
-          >
-            Get in touch
-          </Typography>
-          <img src={handWaveImg} alt="hand wave image" height={45} />
-        </Stack>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 12 }}
-          columns={{ sm: 8, md: 12 }}
-          style={{ marginTop: 10 }}
-        >
+        <Grid container spacing={{ xs: 2, md: 12 }} columns={{ sm: 8, md: 12 }}>
           <Grid item xs={12} sm={4} md={6}>
             <Stack>
-              <Stack direction={"row"} spacing={2}>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: white,
+                  fontWeight: 800,
+                  fontFamily: "Poppins, sans-serif",
+                  textAlign: "left",
+                }}
+              >
+                We love to here you,
+              </Typography>
+              <Stack
+                direction={"row"}
+                alignItems={"center"}
+                justifyContent={"left"}
+              >
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: white,
+                    fontWeight: 800,
+                    fontFamily: "Poppins, sans-serif",
+                    textAlign: "left",
+                  }}
+                >
+                  Get in touch
+                </Typography>
+                <img src={handWaveImg} alt="hand wave" height={45} />
+              </Stack>
+              <Stack direction={"row"} spacing={2} mt={8}>
                 <LocationOnIcon sx={{ color: white, fontSize: 40 }} />
                 <Typography
                   variant="h6"
@@ -134,6 +195,7 @@ export default function ContactSection() {
                   placeholder="Enter first name"
                   size="small"
                   sx={inputStyle}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </FormControl>
               <FormControl fullWidth>
@@ -141,6 +203,7 @@ export default function ContactSection() {
                   placeholder="Enter last name"
                   size="small"
                   sx={inputStyle}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </FormControl>
             </Stack>
@@ -150,6 +213,7 @@ export default function ContactSection() {
                   placeholder="Enter your phone"
                   size="small"
                   sx={inputStyle}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </FormControl>
               <FormControl fullWidth>
@@ -157,6 +221,7 @@ export default function ContactSection() {
                   placeholder="Enter your mail"
                   size="small"
                   sx={inputStyle}
+                  onChange={(e) => setMail(e.target.value)}
                 />
               </FormControl>
             </Stack>
@@ -168,24 +233,59 @@ export default function ContactSection() {
                 sx={inputStyle}
                 multiline={true}
                 rows={4}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </FormControl>
-            <button
-              style={{
-                background: secondary,
-                padding: "12px 30px",
-                color: white,
-                marginTop: 20,
-                borderRadius: 24,
-                outline: "none",
-                fontFamily: "Poppins, sans-serif",
-                border: "none",
-                fontWeight: 600,
-                cursor: "pointer",
-              }}
-            >
-              Contact us
-            </button>
+            <Stack direction={"row"} alignItems={"center"}>
+              <button
+                style={{
+                  background: secondary,
+                  padding: "12px 30px",
+                  color: white,
+                  marginTop: 20,
+                  borderRadius: 24,
+                  outline: "none",
+                  fontFamily: "Poppins, sans-serif",
+                  border: "none",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+                onClick={sendEmail}
+              >
+                {isLoding ? "Sending..." : "Submit"}
+              </button>
+
+              <Typography
+                variant="h6"
+                sx={{
+                  color: red,
+                  fontWeight: 500,
+                  fontFamily: "Poppins, sans-serif",
+                  textAlign: "left",
+                  lineHeight: "1.5rem",
+                  fontSize: 17,
+                  marginTop: 2,
+                  marginLeft: 2,
+                }}
+              >
+                {error}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  color: green,
+                  fontWeight: 500,
+                  fontFamily: "Poppins, sans-serif",
+                  textAlign: "left",
+                  lineHeight: "1.5rem",
+                  fontSize: 17,
+                  marginTop: 2,
+                  marginLeft: 2,
+                }}
+              >
+                {success}
+              </Typography>
+            </Stack>
           </Grid>
         </Grid>
       </Stack>

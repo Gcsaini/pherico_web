@@ -1,9 +1,10 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import { black, blackText } from "../helpers/colors";
+import { black } from "../helpers/colors";
 import wellnessImg from "../assets/images/career/wellness.svg";
 import compImg from "../assets/images/career/compensation.svg";
 import rechargeImg from "../assets/images/career/recharge.svg";
 import flexibilityImg from "../assets/images/career/flexibility.svg";
+import * as React from "react";
 
 export default function CareerBenefit() {
   return (
@@ -21,8 +22,7 @@ export default function CareerBenefit() {
             color: black,
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
-            textAlign: "left",
-            fontWeight: 500,
+
             marginTop: 3,
           }}
         >
@@ -35,7 +35,6 @@ export default function CareerBenefit() {
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
-            fontWeight: 600,
           }}
         >
           Live your best life
@@ -48,7 +47,7 @@ export default function CareerBenefit() {
         >
           <Grid item xs={12} sm={4} md={3}>
             <Stack justifyContent={"center"} alignItems={"start"}>
-              <img src={wellnessImg} alt="wellness image" height={40} />
+              <img src={wellnessImg} alt="wellness" height={40} />
               <Typography
                 variant="h5"
                 sx={{
@@ -56,7 +55,6 @@ export default function CareerBenefit() {
                   fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
-                  fontWeight: 600,
                 }}
               >
                 Wellness
@@ -68,7 +66,6 @@ export default function CareerBenefit() {
                   fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
-                  fontWeight: 500,
                   marginTop: 1,
                   fontSize: 17,
                   lineHeight: "1.2rem",
@@ -81,12 +78,12 @@ export default function CareerBenefit() {
           </Grid>
           <Grid item xs={12} sm={4} md={3}>
             <Stack justifyContent={"center"} alignItems={"start"}>
-              <img src={compImg} alt="wellness image" height={40} />
+              <img src={compImg} alt="wellness" height={40} />
               <Typography
                 variant="h5"
                 sx={{
                   color: "#242424",
-                  fontWeight: 500,
+
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -98,7 +95,7 @@ export default function CareerBenefit() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
+
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 500,
@@ -114,12 +111,12 @@ export default function CareerBenefit() {
           </Grid>
           <Grid item xs={12} sm={4} md={3}>
             <Stack justifyContent={"center"} alignItems={"start"}>
-              <img src={rechargeImg} alt="wellness image" height={40} />
+              <img src={rechargeImg} alt="wellness" height={40} />
               <Typography
                 variant="h5"
                 sx={{
                   color: "#242424",
-                  fontWeight: 500,
+
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -131,7 +128,7 @@ export default function CareerBenefit() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
+
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 500,
@@ -147,12 +144,12 @@ export default function CareerBenefit() {
           </Grid>
           <Grid item xs={12} sm={4} md={3}>
             <Stack justifyContent={"center"} alignItems={"start"}>
-              <img src={flexibilityImg} alt="wellness image" height={40} />
+              <img src={flexibilityImg} alt="wellness" height={40} />
               <Typography
                 variant="h5"
                 sx={{
                   color: "#242424",
-                  fontWeight: 500,
+
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -164,7 +161,7 @@ export default function CareerBenefit() {
                 variant="h6"
                 sx={{
                   color: black,
-                  fontWeight: 500,
+
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 500,

@@ -1,9 +1,10 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Navbar from "../components/navbar";
 import teamsImg from "../assets/images/career/teams.svg";
 import CareerBenefit from "../components/career_benefits";
 import Openings from "../components/openings";
 import Footer from "../components/footer";
+import * as React from "react";
 export default function Career() {
   return (
     <div>
@@ -34,7 +35,6 @@ export default function Career() {
                 variant="h3"
                 sx={{
                   color: "#FCFCFC",
-                  fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -45,7 +45,7 @@ export default function Career() {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-              <img src={teamsImg} alt="teams image" height={420} />
+              <img src={teamsImg} alt="teams" height={420} />
             </Grid>
           </Grid>
         </div>

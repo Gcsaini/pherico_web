@@ -5,7 +5,9 @@ import { white } from "../helpers/colors";
 import founderImg from "../assets/images/about/founder.svg";
 import quoteImg from "../assets/images/about/quote.svg";
 import quoteDownImg from "../assets/images/about/quote_down.svg";
-export default function FoundersMessage() {
+import * as React from "react";
+export default function FoundersMessage(props) {
+  const aboutData = props.data;
   return (
     <div
       style={{
@@ -49,7 +51,7 @@ export default function FoundersMessage() {
             >
               <Grid item xs={2} sm={4} md={4}>
                 <div>
-                  <img src={founderImg} alt="founder image" height={330} />
+                  <img src={founderImg} alt="founder" height={330} />
                 </div>
               </Grid>
               <Grid item xs={10} sm={8} md={6}>
@@ -63,24 +65,40 @@ export default function FoundersMessage() {
                     alignItems={"start"}
                     justifyContent={"start"}
                   >
-                    <img src={quoteDownImg} alt="quotes image" height={70} />
+                    <img src={quoteDownImg} alt="quotes" height={70} />
                   </Stack>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: white,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      textAlign: "left",
-                      lineHeight: "1.5rem",
-                      marginTop: 3,
-                    }}
-                  >
-                     We’re on a mission to empower the next generation to
-                    discover better ways to learn, earn, and network. We’re on a
-                    mission to empower the next generation to discover better
-                    ways to learn, earn, and network.
-                  </Typography>
+                  {aboutData && aboutData.founder1 !== "" ? (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: white,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "left",
+                        lineHeight: "1.5rem",
+                        marginTop: 3,
+                      }}
+                    >
+                      {aboutData.founder1}
+                    </Typography>
+                  ) : (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: white,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "left",
+                        lineHeight: "1.5rem",
+                        marginTop: 3,
+                      }}
+                    >
+                      We’re on a mission to empower the next generation to
+                      discover better ways to learn, earn, and network. We’re on
+                      a mission to empower the next generation to discover
+                      better ways to learn, earn, and network.
+                    </Typography>
+                  )}
                   <Typography
                     variant="h6"
                     sx={{
@@ -116,7 +134,7 @@ export default function FoundersMessage() {
                       width: "40%",
                     }}
                   >
-                    <img src={quoteImg} alt="quotes image" height={70} />
+                    <img src={quoteImg} alt="quotes" height={70} />
                   </div>
                 </Stack>
               </Grid>
@@ -131,7 +149,7 @@ export default function FoundersMessage() {
             >
               <Grid item xs={2} sm={4} md={4}>
                 <div>
-                  <img src={founderImg} alt="founder image" height={330} />
+                  <img src={founderImg} alt="founder" height={330} />
                 </div>
               </Grid>
               <Grid item xs={10} sm={8} md={6}>
@@ -145,24 +163,40 @@ export default function FoundersMessage() {
                     alignItems={"start"}
                     justifyContent={"start"}
                   >
-                    <img src={quoteDownImg} alt="quotes image" height={70} />
+                    <img src={quoteDownImg} alt="quotes" height={70} />
                   </Stack>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: white,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      textAlign: "left",
-                      lineHeight: "1.5rem",
-                      marginTop: 3,
-                    }}
-                  >
-                     We’re on a mission to empower the next generation to
-                    discover better ways to learn, earn, and network. We’re on a
-                    mission to empower the next generation to discover better
-                    ways to learn, earn, and network.
-                  </Typography>
+                  {aboutData && aboutData.founder2 !== "" ? (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: white,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "left",
+                        lineHeight: "1.5rem",
+                        marginTop: 3,
+                      }}
+                    >
+                      {aboutData.founder2}
+                    </Typography>
+                  ) : (
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: white,
+                        fontWeight: 500,
+                        fontFamily: "Poppins, sans-serif",
+                        textAlign: "left",
+                        lineHeight: "1.5rem",
+                        marginTop: 3,
+                      }}
+                    >
+                       We’re on a mission to empower the next generation to
+                      discover better ways to learn, earn, and network. We’re on
+                      a mission to empower the next generation to discover
+                      better ways to learn, earn, and network.
+                    </Typography>
+                  )}
                   <Typography
                     variant="h6"
                     sx={{
@@ -198,7 +232,7 @@ export default function FoundersMessage() {
                       width: "40%",
                     }}
                   >
-                    <img src={quoteImg} alt="quotes image" height={70} />
+                    <img src={quoteImg} alt="quotes" height={70} />
                   </div>
                 </Stack>
               </Grid>

@@ -1,6 +1,8 @@
 import { Stack, Typography } from "@mui/material";
+import * as React from "react";
 import Navbar from "../components/navbar";
-export default function AboutHeader() {
+export default function AboutHeader(props) {
+  const aboutData = props.data;
   return (
     <div
       style={{
@@ -16,37 +18,68 @@ export default function AboutHeader() {
         justifyContent={"center"}
         style={{ marginTop: 100 }}
       >
-        <Typography
-          variant="h3"
-          sx={{
-            color: "#FCFCFC",
-            fontWeight: 500,
-            fontFamily: "Poppins, sans-serif",
-            textAlign: "center",
-          }}
-        >
-           We are empowering entrepreneurs <br />
-          to chase their dreams
-        </Typography>
+        {aboutData && aboutData.about_header !== "" ? (
+          <Typography
+            variant="h3"
+            sx={{
+              color: "#FCFCFC",
+              fontWeight: 500,
+              fontFamily: "Poppins, sans-serif",
+              textAlign: "center",
+            }}
+          >
+            <div dangerouslySetInnerHTML={{ __html: aboutData.about_header }} />
+          </Typography>
+        ) : (
+          <Typography
+            variant="h3"
+            sx={{
+              color: "#FCFCFC",
+              fontWeight: 500,
+              fontFamily: "Poppins, sans-serif",
+              textAlign: "center",
+            }}
+          >
+            We are empowering entrepreneurs <br />
+            to chase their dreams
+          </Typography>
+        )}
       </Stack>
       <Stack
         direction={"row"}
         justifyContent={"center"}
         style={{ marginTop: 100 }}
       >
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#FCFCFC",
-            fontWeight: 500,
-            fontFamily: "Poppins, sans-serif",
-            textAlign: "center",
-          }}
-        >
-           Different categories of entrepreneurs will move like the headlines
-          which shows <br />
-          at the bottom of every news channel
-        </Typography>
+        {" "}
+        {aboutData && aboutData.about_header_desc !== "" ? (
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#FCFCFC",
+              fontWeight: 500,
+              fontFamily: "Poppins, sans-serif",
+              textAlign: "center",
+            }}
+          >
+            <div
+              dangerouslySetInnerHTML={{ __html: aboutData.about_header_desc }}
+            />
+          </Typography>
+        ) : (
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#FCFCFC",
+              fontWeight: 500,
+              fontFamily: "Poppins, sans-serif",
+              textAlign: "center",
+            }}
+          >
+            Different categories of entrepreneurs will move like the headlines
+            which shows <br />
+            at the bottom of every news channel
+          </Typography>
+        )}
       </Stack>
       <Stack
         direction={"row"}

@@ -83,23 +83,28 @@ code {
 
 #card_1 {
 	--index: 1;
+	margin-bottom: 15px;
 }
 
 #card_2 {
 	--index: 2;
+	margin-bottom: 15px;
 }
 
 #card_3 {
 	--index: 3;
+	margin-bottom: 15px;
 }
 
 #card_4 {
 	--index: 4;
+	margin-bottom: 15px;
 }
 
 .card {
 	position: sticky;
 	top: 0;
+	bottom: 10;
 	padding-top: calc(var(--index) * var(--card-top-offset));
 }
 
@@ -147,7 +152,6 @@ code {
 	}
 }
 
-/** DEBUG **/
 
 #debug {
   position: fixed;
@@ -165,8 +169,6 @@ code {
   --outline-width: 1px;
 }
 
-
-/** PAGE STYLING **/
 
 * { /* Poor Man's Reset */
 	box-sizing: border-box;
@@ -197,10 +199,9 @@ main {
 }
 
 .card__content {
-	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1); */
 	background: rgb(255, 255, 255);
 	color: rgb(10, 5, 7);
-	border-radius: 1em;
 	overflow: hidden;
 
 	display: grid;

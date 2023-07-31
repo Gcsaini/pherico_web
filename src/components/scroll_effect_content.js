@@ -1,15 +1,17 @@
 import bgImg from "../assets/images/bg/header_bg.png";
 import Stack from "@mui/material/Stack";
-import { black, grey, greyText, secondary } from "../helpers/colors";
+import * as React from "react";
+import { black, secondary } from "../helpers/colors";
 import { Typography } from "@mui/material";
-import img1 from "../assets/images/slider/slider_1.png";
-import React from "react";
 import liveImg from "../assets/images/live.svg";
 import choiseImg from "../assets/images/choice.svg";
 import zeroCommisionImg from "../assets/images/no-charge.svg";
 import clickiesImg from "../assets/images/clickies.svg";
 import extraImg from "../assets/images/extra.svg";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function ScrollEffectContent() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   return (
     <div
       style={{
@@ -20,19 +22,22 @@ export default function ScrollEffectContent() {
     >
       <main>
         <ul id="cards">
-          <li class="card" id="card_1">
-            <div class="card__content">
+          <li className="card" id="card_1">
+            <div
+              className="card__content"
+              style={{ marginTop: isMobile || isTablet ? "70px" : "0px" }}
+            >
               <div>
                 <Stack>
                   <Typography
-                    variant="h4"
+                    variant={isMobile ? "h6" : "h4"}
                     sx={{
                       color: black,
-                      fontWeight: 900,
+                      fontWeight: 600,
                       whiteSpace: "normal",
                       fontStyle: "normal",
                       fontFamily: "Poppins,sans-serif",
-                      lineHeight: "2.5rem",
+                      lineHeight: isMobile ? "1.5rem" : "2.5rem",
                     }}
                   >
                     Don’t just buy Experience it
@@ -41,7 +46,7 @@ export default function ScrollEffectContent() {
                         color: secondary,
                       }}
                     >
-                      live!
+                      &nbsp;live!
                     </span>
                   </Typography>
                   <Typography
@@ -51,8 +56,10 @@ export default function ScrollEffectContent() {
                       fontWeight: 500,
                       whiteSpace: "normal",
                       fontStyle: "normal",
-                      fontSize: 16,
+                      marginTop: 2,
+                      fontSize: isMobile ? 15 : 16,
                       fontFamily: "Roboto,sans-serif",
+                      lineHeight: isMobile ? "17px" : "20px",
                     }}
                   >
                     Experience the thrill of shopping from live sellers.
@@ -60,23 +67,26 @@ export default function ScrollEffectContent() {
                 </Stack>
               </div>
               <figure>
-                <img src={liveImg} alt="Image description" />
+                <img src={liveImg} alt="description" />
               </figure>
             </div>
           </li>
-          <li class="card" id="card_2">
-            <div class="card__content">
+          <li className="card" id="card_2">
+            <div
+              className="card__content"
+              style={{ marginTop: isMobile || isTablet ? "70px" : "0px" }}
+            >
               <div>
                 <Stack>
                   <Typography
-                    variant="h4"
+                    variant={isMobile ? "h6" : "h4"}
                     sx={{
                       color: black,
-                      fontWeight: 900,
+                      fontWeight: 600,
                       whiteSpace: "normal",
                       fontStyle: "normal",
                       fontFamily: "Poppins,sans-serif",
-                      lineHeight: "2.5rem",
+                      lineHeight: isMobile ? "1.5rem" : "2.5rem",
                     }}
                   >
                     Zero Commission Maximum Freedom
@@ -88,8 +98,10 @@ export default function ScrollEffectContent() {
                       fontWeight: 500,
                       whiteSpace: "normal",
                       fontStyle: "normal",
-                      fontSize: 16,
+                      marginTop: 2,
+                      fontSize: isMobile ? 15 : 16,
                       fontFamily: "Roboto,sans-serif",
+                      lineHeight: isMobile ? "17px" : "20px",
                     }}
                   >
                     Keep 100% of your sales to yourself.
@@ -97,23 +109,26 @@ export default function ScrollEffectContent() {
                 </Stack>
               </div>
               <figure>
-                <img src={zeroCommisionImg} alt="Image description" />
+                <img src={zeroCommisionImg} alt=" description" />
               </figure>
             </div>
           </li>
-          <li class="card" id="card_3">
-            <div class="card__content">
+          <li className="card" id="card_3">
+            <div
+              className="card__content"
+              style={{ marginTop: isMobile || isTablet ? "70px" : "0px" }}
+            >
               <div>
                 <Stack>
                   <Typography
-                    variant="h4"
+                    variant={isMobile ? "h6" : "h4"}
                     sx={{
                       color: black,
-                      fontWeight: 900,
+                      fontWeight: 600,
                       whiteSpace: "normal",
                       fontStyle: "normal",
                       fontFamily: "Poppins,sans-serif",
-                      lineHeight: "2.5rem",
+                      lineHeight: isMobile ? "1.5rem" : "2.5rem",
                     }}
                   >
                     Extra Revenue at Your Fingertips
@@ -125,8 +140,10 @@ export default function ScrollEffectContent() {
                       fontWeight: 500,
                       whiteSpace: "normal",
                       fontStyle: "normal",
-                      fontSize: 16,
+                      marginTop: 2,
+                      fontSize: isMobile ? 15 : 16,
                       fontFamily: "Roboto,sans-serif",
+                      lineHeight: isMobile ? "17px" : "20px",
                     }}
                   >
                     Don’t just stop at profits, opportunity to earn extra with
@@ -135,23 +152,26 @@ export default function ScrollEffectContent() {
                 </Stack>
               </div>
               <figure>
-                <img src={extraImg} alt="Image description" />
+                <img src={extraImg} alt=" description" />
               </figure>
             </div>
           </li>
-          <li class="card" id="card_4">
-            <div class="card__content">
+          <li className="card" id="card_4">
+            <div
+              className="card__content"
+              style={{ marginTop: isMobile || isTablet ? "70px" : "0px" }}
+            >
               <div>
                 <Stack>
                   <Typography
-                    variant="h4"
+                    variant={isMobile ? "h6" : "h4"}
                     sx={{
                       color: black,
-                      fontWeight: 900,
+                      fontWeight: 600,
                       whiteSpace: "normal",
                       fontStyle: "normal",
                       fontFamily: "Poppins,sans-serif",
-                      lineHeight: "2.5rem",
+                      lineHeight: isMobile ? "1.5rem" : "2.5rem",
                     }}
                   >
                     Prioritising your choices
@@ -163,8 +183,10 @@ export default function ScrollEffectContent() {
                       fontWeight: 500,
                       whiteSpace: "normal",
                       fontStyle: "normal",
-                      fontSize: 16,
+                      marginTop: 2,
+                      fontSize: isMobile ? 15 : 16,
                       fontFamily: "Roboto,sans-serif",
+                      lineHeight: isMobile ? "17px" : "20px",
                     }}
                   >
                     Request what you like from a huge range of products.
@@ -172,23 +194,26 @@ export default function ScrollEffectContent() {
                 </Stack>
               </div>
               <figure>
-                <img src={choiseImg} alt="Image description" />
+                <img src={choiseImg} alt=" description" />
               </figure>
             </div>
           </li>
-          <li class="card" id="card_5">
-            <div class="card__content">
+          <li className="card" id="card_5">
+            <div
+              className="card__content"
+              style={{ marginTop: isMobile || isTablet ? "70px" : "0px" }}
+            >
               <div>
                 <Stack>
                   <Typography
-                    variant="h4"
+                    variant={isMobile ? "h6" : "h4"}
                     sx={{
                       color: black,
-                      fontWeight: 900,
+                      fontWeight: 600,
                       whiteSpace: "normal",
                       fontStyle: "normal",
                       fontFamily: "Poppins,sans-serif",
-                      lineHeight: "2.5rem",
+                      lineHeight: isMobile ? "1.5rem" : "2.5rem",
                     }}
                   >
                     Introducing Clickies
@@ -200,8 +225,10 @@ export default function ScrollEffectContent() {
                       fontWeight: 500,
                       whiteSpace: "normal",
                       fontStyle: "normal",
-                      fontSize: 16,
+                      marginTop: 2,
+                      fontSize: isMobile ? 15 : 16,
                       fontFamily: "Roboto,sans-serif",
+                      lineHeight: isMobile ? "17px" : "20px",
                     }}
                   >
                     Don’t just stop at profits, opportunity to earn extra with
@@ -210,7 +237,7 @@ export default function ScrollEffectContent() {
                 </Stack>
               </div>
               <figure>
-                <img src={clickiesImg} alt="Image description" />
+                <img src={clickiesImg} alt=" description" />
               </figure>
             </div>
           </li>
