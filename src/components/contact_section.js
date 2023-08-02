@@ -14,7 +14,10 @@ import {
   MailTemplateID,
   validateEmail,
 } from "../helpers/config";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function ContactSection() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
@@ -92,17 +95,23 @@ export default function ContactSection() {
       style={{
         background: "#121212",
         marginTop: 70,
-        paddingBottom: 100,
-        paddingTop: 100,
+        paddingBottom: isMobile || isTablet ? 50 : 100,
+        paddingTop: isMobile || isTablet ? 50 : 100,
       }}
     >
       <Stack
-        style={{ padding: "20px 100px" }}
+        style={{
+          padding: isMobile
+            ? "10px 20px"
+            : isTablet
+            ? "0px 40px"
+            : "20px 100px",
+        }}
         justifyContent={"center"}
         alignItems={"start"}
       >
         <Grid container spacing={{ xs: 2, md: 12 }} columns={{ sm: 8, md: 12 }}>
-          <Grid item xs={12} sm={4} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <Stack>
               <Typography
                 variant="h4"
@@ -133,7 +142,7 @@ export default function ContactSection() {
                 </Typography>
                 <img src={handWaveImg} alt="hand wave" height={45} />
               </Stack>
-              <Stack direction={"row"} spacing={2} mt={8}>
+              <Stack direction={"row"} spacing={2} mt={isTablet ? 6 : 4}>
                 <LocationOnIcon sx={{ color: white, fontSize: 40 }} />
                 <Typography
                   variant="h6"
@@ -188,7 +197,13 @@ export default function ContactSection() {
               </Stack>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={8} md={6}>
+          <Grid
+            item
+            xs={12}
+            sm={8}
+            md={6}
+            style={{ marginTop: isMobile || isTablet ? 50 : 0 }}
+          >
             <Stack direction={"row"} spacing={2}>
               <FormControl fullWidth>
                 <OutlinedInput

@@ -6,7 +6,10 @@ import founderImg from "../assets/images/about/founder.svg";
 import quoteImg from "../assets/images/about/quote.svg";
 import quoteDownImg from "../assets/images/about/quote_down.svg";
 import * as React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function FoundersMessage(props) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const aboutData = props.data;
   return (
     <div
@@ -18,7 +21,7 @@ export default function FoundersMessage(props) {
       }}
     >
       <Stack
-        style={{ padding: "20px 100px" }}
+        style={{ padding: isMobile ? "20px" : "20px 100px" }}
         justifyContent={"center"}
         alignItems={"center"}
       >
@@ -29,7 +32,7 @@ export default function FoundersMessage(props) {
             fontWeight: 800,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
-            marginBottom: 5,
+            marginBottom: isMobile ? 3 : 5,
           }}
         >
           Some lines from our founders
@@ -39,18 +42,24 @@ export default function FoundersMessage(props) {
           infiniteLoop={true}
           showThumbs={false}
           showStatus={false}
-          autoPlay={true}
+          // autoPlay={true}
           interval={3000}
         >
           <div>
             <Grid
               container
-              spacing={{ xs: 2, md: 4 }}
-              columns={{ sm: 8, md: 12 }}
-              style={{ marginTop: 1 }}
+              spacing={{ xs: 6, md: 4 }}
+              columns={{ sm: 12, md: 12 }}
+              style={{ marginTop: isMobile ? 0 : 1 }}
             >
-              <Grid item xs={2} sm={4} md={4}>
-                <div>
+              <Grid item xs={12} sm={6} md={4}>
+                <div
+                  style={{
+                    position: isMobile ? "absolute" : "static",
+                    left: 0,
+                    right: 0,
+                  }}
+                >
                   <img src={founderImg} alt="founder" height={330} />
                 </div>
               </Grid>
@@ -59,28 +68,53 @@ export default function FoundersMessage(props) {
                   direction={"column"}
                   justifyContent={"start"}
                   alignItems={"start"}
+                  style={{
+                    position: isMobile ? "absolute" : "static",
+                    bottom: 0,
+                  }}
                 >
                   <Stack
                     direction={"row"}
                     alignItems={"start"}
                     justifyContent={"start"}
                   >
-                    <img src={quoteDownImg} alt="quotes" height={70} />
+                    <img
+                      src={quoteDownImg}
+                      alt="quotes"
+                      height={isMobile ? 40 : 70}
+                    />
                   </Stack>
                   {aboutData && aboutData.founder1 !== "" ? (
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        color: white,
-                        fontWeight: 500,
-                        fontFamily: "Poppins, sans-serif",
-                        textAlign: "left",
-                        lineHeight: "1.5rem",
-                        marginTop: 3,
-                      }}
-                    >
-                      {aboutData.founder1}
-                    </Typography>
+                    <>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: white,
+                          fontWeight: 500,
+                          fontFamily: "Poppins, sans-serif",
+                          textAlign: isMobile ? "center" : "left",
+                          lineHeight: isMobile ? "1.4rem" : "1.5rem",
+                          fontSize: isMobile ? "16px" : "20px",
+                          marginTop: isMobile ? 1 : 3,
+                        }}
+                      >
+                        {aboutData.founder1}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: white,
+                          fontWeight: 500,
+                          fontFamily: "Poppins, sans-serif",
+                          textAlign: "center",
+                          lineHeight: "1.3rem",
+                          marginTop: 2,
+                          fontSize: 17,
+                        }}
+                      >
+                        Gopi chand
+                      </Typography>
+                    </>
                   ) : (
                     <Typography
                       variant="h6"
@@ -89,8 +123,9 @@ export default function FoundersMessage(props) {
                         fontWeight: 500,
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "left",
-                        lineHeight: "1.5rem",
-                        marginTop: 3,
+                        lineHeight: isMobile ? "1.4rem" : "1.5rem",
+                        fontSize: isMobile ? "16px" : "20px",
+                        marginTop: isMobile ? 1 : 3,
                       }}
                     >
                       We’re on a mission to empower the next generation to
@@ -105,7 +140,7 @@ export default function FoundersMessage(props) {
                       color: white,
                       fontWeight: 500,
                       fontFamily: "Poppins, sans-serif",
-                      textAlign: "left",
+                      textAlign: "center",
                       lineHeight: "1.3rem",
                       marginTop: 7,
                       fontSize: 17,
@@ -130,11 +165,16 @@ export default function FoundersMessage(props) {
                     style={{
                       position: "absolute",
                       right: 0,
-                      top: "65%",
+                      bottom: -10,
+                      top: "55%",
                       width: "40%",
                     }}
                   >
-                    <img src={quoteImg} alt="quotes" height={70} />
+                    <img
+                      src={quoteImg}
+                      alt="quotes"
+                      height={isMobile ? 40 : 70}
+                    />
                   </div>
                 </Stack>
               </Grid>
@@ -163,7 +203,11 @@ export default function FoundersMessage(props) {
                     alignItems={"start"}
                     justifyContent={"start"}
                   >
-                    <img src={quoteDownImg} alt="quotes" height={70} />
+                    <img
+                      src={quoteDownImg}
+                      alt="quotes"
+                      height={isMobile ? 40 : 70}
+                    />
                   </Stack>
                   {aboutData && aboutData.founder2 !== "" ? (
                     <Typography
@@ -232,7 +276,11 @@ export default function FoundersMessage(props) {
                       width: "40%",
                     }}
                   >
-                    <img src={quoteImg} alt="quotes" height={70} />
+                    <img
+                      src={quoteImg}
+                      alt="quotes"
+                      height={isMobile ? 40 : 70}
+                    />
                   </div>
                 </Stack>
               </Grid>

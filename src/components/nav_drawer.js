@@ -7,14 +7,12 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import HomeIcon from "@mui/icons-material/Home";
 import Diversity1Icon from "@mui/icons-material/Diversity1";
@@ -68,7 +66,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: "flex-end",
+  justifyContent: "flex-start",
 }));
 
 export default function NavDrawer() {

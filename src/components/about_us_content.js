@@ -6,7 +6,10 @@ import { black, blackText, secondary } from "../helpers/colors";
 import missionImg from "../assets/images/about/mission.svg";
 import visionImg from "../assets/images/about/vision.svg";
 import goalImg from "../assets/images/about/goal.svg";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function AboutUsContent(props) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const aboutData = props.data;
   return (
     <div
@@ -18,10 +21,10 @@ export default function AboutUsContent(props) {
       <Stack
         direction={"row"}
         justifyContent={"center"}
-        style={{ marginTop: 70 }}
+        style={{ marginTop: isMobile ? 40 : 70 }}
       >
         <Typography
-          variant="h3"
+          variant={isMobile ? "h4" : "h3"}
           sx={{
             color: secondary,
             fontWeight: 800,
@@ -36,7 +39,10 @@ export default function AboutUsContent(props) {
         <Stack
           direction={"column"}
           alignItems={"center"}
-          style={{ width: "70%", marginTop: 2 }}
+          style={{
+            width: isMobile ? "90%" : isTablet ? "85%" : "70%",
+            marginTop: 2,
+          }}
         >
           <div
             style={{
@@ -54,8 +60,9 @@ export default function AboutUsContent(props) {
                 fontWeight: 500,
                 fontFamily: "Poppins, sans-serif",
                 textAlign: "center",
-                lineHeight: "1.5rem",
+                lineHeight: isMobile ? "1.4rem" : "1.5rem",
                 marginTop: 3,
+                fontSize: isMobile ? "16px" : "20px",
               }}
             >
               {aboutData.about}
@@ -68,8 +75,9 @@ export default function AboutUsContent(props) {
                 fontWeight: 500,
                 fontFamily: "Poppins, sans-serif",
                 textAlign: "center",
-                lineHeight: "1.5rem",
+                lineHeight: isMobile ? "1.4rem" : "1.5rem",
                 marginTop: 3,
+                fontSize: isMobile ? "16px" : "20px",
               }}
             >
               We as an online e-commerce marketplace with the taste of social
@@ -85,14 +93,14 @@ export default function AboutUsContent(props) {
         </Stack>
       </Stack>
       <Stack alignItems={"center"}>
-        <Stack style={{ width: "80%" }}>
+        <Stack style={{ width: "80%", marginTop: isMobile ? 50 : 0 }}>
           <Grid
             container
-            spacing={{ xs: 2, md: 12 }}
+            spacing={{ xs: 8, md: 12 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
             style={{ marginTop: 1 }}
           >
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item xs={12} sm={4} md={4}>
               <Stack justifyContent={"center"} alignItems={"center"}>
                 <img src={missionImg} alt="mission" height={100} />
                 <Typography
@@ -111,7 +119,6 @@ export default function AboutUsContent(props) {
                   justifyContent={"space-evenly"}
                   alignItems={"space-around"}
                 >
-                  {" "}
                   {aboutData && aboutData.mission !== "" ? (
                     <Typography
                       variant="h6"
@@ -121,6 +128,7 @@ export default function AboutUsContent(props) {
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
                         lineHeight: "1.5rem",
+                        fontSize: isMobile ? "17px" : "18px",
                       }}
                     >
                       {aboutData.mission}
@@ -134,6 +142,7 @@ export default function AboutUsContent(props) {
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
                         lineHeight: "1.5rem",
+                        fontSize: isMobile ? "17px" : "18px",
                       }}
                     >
                       Our aim to enable anyone to turn their passion into a
@@ -144,7 +153,7 @@ export default function AboutUsContent(props) {
                 </Stack>
               </Stack>
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item xs={12} sm={4} md={4}>
               <Stack justifyContent={"center"} alignItems={"center"}>
                 <img src={visionImg} alt="mission" height={100} />
                 <Typography
@@ -172,6 +181,7 @@ export default function AboutUsContent(props) {
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
                         lineHeight: "1.5rem",
+                        fontSize: isMobile ? "17px" : "18px",
                       }}
                     >
                       {aboutData.vision}
@@ -185,6 +195,7 @@ export default function AboutUsContent(props) {
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
                         lineHeight: "1.5rem",
+                        fontSize: isMobile ? "17px" : "18px",
                       }}
                     >
                       We’re on a mission to empower the next generation to
@@ -194,7 +205,7 @@ export default function AboutUsContent(props) {
                 </Stack>
               </Stack>
             </Grid>
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item xs={12} sm={4} md={4}>
               <Stack justifyContent={"center"} alignItems={"center"}>
                 <img src={goalImg} alt="mission" height={100} />
                 <Typography
@@ -222,6 +233,7 @@ export default function AboutUsContent(props) {
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
                         lineHeight: "1.5rem",
+                        fontSize: isMobile ? "17px" : "18px",
                       }}
                     >
                       {aboutData.goal}
@@ -235,6 +247,7 @@ export default function AboutUsContent(props) {
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
                         lineHeight: "1.5rem",
+                        fontSize: isMobile ? "17px" : "18px",
                       }}
                     >
                       We’re on a mission to empower the next generation to

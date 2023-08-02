@@ -7,6 +7,7 @@ import ContactSection from "../components/contact_section";
 import FaqSection from "../components/faq";
 import * as React from "react";
 import db from "../firebase";
+
 export default function AboutUs() {
   const [aboutData, setAboutData] = React.useState([]);
   const fetchData = async () => {

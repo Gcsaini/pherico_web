@@ -1,18 +1,27 @@
 import { Stack, Typography, Grid } from "@mui/material";
 import { black, white } from "../helpers/colors";
-import founderImg from "../assets/images/about/founder.svg";
+import founderImg from "../assets/images/about/gopi.jpg";
 import * as React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import { CardActionArea } from "@mui/material";
 export default function OurTeam() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   return (
     <Stack
-      style={{ padding: "0px 100px" }}
+      style={{
+        padding: isMobile || isTablet ? "0px 20px" : "0px 60px",
+      }}
       justifyContent={"center"}
       alignItems={"center"}
     >
       <div
         style={{
-          paddingBottom: 70,
-          width: "80%",
+          paddingBottom: isMobile ? 10 : 70,
+          width: isMobile ? "100%" : "80%",
         }}
       >
         <Typography
@@ -22,48 +31,46 @@ export default function OurTeam() {
             fontWeight: 800,
             fontFamily: "Poppins, sans-serif",
             textAlign: "center",
-            margin: 8,
+            whiteSpace: "nowrap",
+            margin: isMobile ? 5 : 8,
           }}
         >
           Our Team
         </Typography>
-        <Grid container spacing={{ xs: 4, md: 12 }} columns={{ sm: 8, md: 12 }}>
+        <Grid
+          container
+          spacing={{ xs: 6, md: 8 }}
+          columns={{ sm: 12, md: 12 }}
+          justifyContent={"center"}
+        >
           <Grid item xs={12} sm={6} md={4}>
-            <div>
-              <div
-                style={{
-                  height: 250,
-                }}
-              >
-                <img
-                  src={founderImg}
-                  alt="founder"
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: 250,
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? "300" : "240"}
+                  width={"100%"}
+                  image={founderImg}
+                  alt="team1"
                 />
-              </div>
-              <div
-                style={{
-                  height: 50,
-                  background: black,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <Stack alignItems={"center"}>
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
                       color: white,
                       fontWeight: 500,
-                      fontSize: 17,
-                      marginTop: 0.2,
                       fontFamily: "Poppins, sans-serif",
+                      fontSize: 17,
+                      marginTop: -1.5,
                     }}
                   >
                     Gopi chand
@@ -74,52 +81,43 @@ export default function OurTeam() {
                       color: white,
                       fontWeight: 500,
                       lineHeight: "0.5rem",
-                      fontSize: 14,
                       fontFamily: "Poppins, sans-serif",
+                      fontSize: 14,
                     }}
                   >
                     Co-founder & CTO
                   </Typography>
-                </Stack>
-              </div>
-            </div>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <div>
-              <div
-                style={{
-                  height: 250,
-                }}
-              >
-                <img
-                  src={founderImg}
-                  alt="founder"
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: 250,
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? "300" : "240"}
+                  image={founderImg}
+                  alt="green iguana"
                 />
-              </div>
-              <div
-                style={{
-                  height: 50,
-                  background: black,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <Stack alignItems={"center"}>
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
                       color: white,
                       fontWeight: 500,
-                      fontSize: 17,
-                      marginTop: 0.2,
                       fontFamily: "Poppins, sans-serif",
+                      fontSize: 17,
+                      marginTop: -1.5,
                     }}
                   >
                     Gopi chand
@@ -136,46 +134,37 @@ export default function OurTeam() {
                   >
                     Co-founder & CTO
                   </Typography>
-                </Stack>
-              </div>
-            </div>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <div>
-              <div
-                style={{
-                  height: 250,
-                }}
-              >
-                <img
-                  src={founderImg}
-                  alt="founder"
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: 250,
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? "300" : "240"}
+                  image={founderImg}
+                  alt="green iguana"
                 />
-              </div>
-              <div
-                style={{
-                  height: 50,
-                  background: black,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <Stack alignItems={"center"}>
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
                       color: white,
                       fontWeight: 500,
-                      fontSize: 17,
                       fontFamily: "Poppins, sans-serif",
-                      marginTop: 0.2,
+                      fontSize: 17,
+                      marginTop: -1.5,
                     }}
                   >
                     Gopi chand
@@ -192,38 +181,29 @@ export default function OurTeam() {
                   >
                     Co-founder & CTO
                   </Typography>
-                </Stack>
-              </div>
-            </div>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <div>
-              <div
-                style={{
-                  height: 250,
-                }}
-              >
-                <img
-                  src={founderImg}
-                  alt="founder "
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: 250,
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? "300" : "240"}
+                  image={founderImg}
+                  alt="green iguana"
                 />
-              </div>
-              <div
-                style={{
-                  height: 50,
-                  background: black,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <Stack alignItems={"center"}>
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
@@ -231,7 +211,7 @@ export default function OurTeam() {
                       fontWeight: 500,
                       fontFamily: "Poppins, sans-serif",
                       fontSize: 17,
-                      marginTop: 0.2,
+                      marginTop: -1.5,
                     }}
                   >
                     Gopi chand
@@ -248,38 +228,29 @@ export default function OurTeam() {
                   >
                     Co-founder & CTO
                   </Typography>
-                </Stack>
-              </div>
-            </div>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <div>
-              <div
-                style={{
-                  height: 250,
-                }}
-              >
-                <img
-                  src={founderImg}
-                  alt="founder "
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: 250,
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? "300" : "240"}
+                  image={founderImg}
+                  alt="green iguana"
                 />
-              </div>
-              <div
-                style={{
-                  height: 50,
-                  background: black,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <Stack alignItems={"center"}>
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
@@ -287,10 +258,10 @@ export default function OurTeam() {
                       fontWeight: 500,
                       fontFamily: "Poppins, sans-serif",
                       fontSize: 17,
-                      marginTop: 0.2,
+                      marginTop: -1.5,
                     }}
                   >
-                    Gopi chand
+                    Ujjal
                   </Typography>
                   <Typography
                     variant="h6"
@@ -304,46 +275,38 @@ export default function OurTeam() {
                   >
                     Co-founder & CTO
                   </Typography>
-                </Stack>
-              </div>
-            </div>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
+
           <Grid item xs={12} sm={6} md={4}>
-            <div>
-              <div
-                style={{
-                  height: 250,
-                }}
-              >
-                <img
-                  src={founderImg}
-                  alt="founder "
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: 250,
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? "300" : "240"}
+                  image={founderImg}
+                  alt="green iguana"
                 />
-              </div>
-              <div
-                style={{
-                  height: 50,
-                  background: black,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
-                }}
-              >
-                <Stack alignItems={"center"}>
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
                   <Typography
                     variant="h6"
                     sx={{
                       color: white,
                       fontWeight: 500,
-                      fontSize: 17,
                       fontFamily: "Poppins, sans-serif",
-                      marginTop: 0.2,
+                      fontSize: 17,
+                      marginTop: -1.5,
                     }}
                   >
                     Gopi chand
@@ -354,15 +317,15 @@ export default function OurTeam() {
                       color: white,
                       fontWeight: 500,
                       lineHeight: "0.5rem",
-                      fontSize: 14,
                       fontFamily: "Poppins, sans-serif",
+                      fontSize: 14,
                     }}
                   >
                     Co-founder & CTO
                   </Typography>
-                </Stack>
-              </div>
-            </div>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           </Grid>
         </Grid>
       </div>
