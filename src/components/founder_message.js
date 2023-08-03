@@ -6,7 +6,10 @@ import founderImg from "../assets/images/about/founder.jpg";
 import quoteImg from "../assets/images/about/quote.png";
 import quoteDownImg from "../assets/images/about/quote_down.svg";
 import * as React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function FoundersMessage(props) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const aboutData = props.data;
   return (
     <div
@@ -29,7 +32,7 @@ export default function FoundersMessage(props) {
             fontWeight: 800,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
-            marginBottom: 5,
+            marginBottom: isMobile ? 3 : 5,
           }}
         >
           Some lines from our founders
@@ -39,7 +42,7 @@ export default function FoundersMessage(props) {
           infiniteLoop={true}
           showThumbs={false}
           showStatus={false}
-          autoPlay={true}
+          // autoPlay={true}
           interval={3000}
         >
           <div>
@@ -180,7 +183,11 @@ export default function FoundersMessage(props) {
                     alignItems={"start"}
                     justifyContent={"start"}
                   >
-                    <img src={quoteDownImg} alt="quotes" height={70} />
+                    <img
+                      src={quoteDownImg}
+                      alt="quotes"
+                      height={isMobile ? 40 : 70}
+                    />
                   </Stack>
                   {aboutData && aboutData.founder2 !== "" ? (
                     <Typography
@@ -249,7 +256,11 @@ export default function FoundersMessage(props) {
                       width: "40%",
                     }}
                   >
-                    <img src={quoteImg} alt="quotes" height={70} />
+                    <img
+                      src={quoteImg}
+                      alt="quotes"
+                      height={isMobile ? 40 : 70}
+                    />
                   </div>
                 </Stack>
               </Grid>

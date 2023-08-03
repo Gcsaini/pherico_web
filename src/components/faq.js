@@ -5,8 +5,11 @@ import db from "../firebase";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 export default function FaqSection() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const [sellerFaq, setSellerFaq] = React.useState([]);
   const [buyerFaq, setBuyerFaq] = React.useState([]);
 
@@ -48,19 +51,19 @@ export default function FaqSection() {
 
   return (
     <Stack
-      style={{ padding: "0px 100px" }}
+      style={{ padding: isMobile || isTablet ? "0px 20px" : "0px 100px" }}
       justifyContent={"center"}
       alignItems={"center"}
     >
       <div
         style={{
-          width: "80%",
+          width: isMobile || isTablet ? "100%" : "80%",
         }}
       >
         <Stack
-          style={{ padding: "20px 100px" }}
+          style={{ padding: isMobile || isTablet ? "0px 20px" : "20px 100px" }}
           justifyContent={"center"}
-          alignItems={"start"}
+          alignItems={isMobile ? "center" : "start"}
         >
           <Typography
             variant="h4"
@@ -79,7 +82,7 @@ export default function FaqSection() {
       <Grid
         container
         spacing={{ xs: 4, md: 12 }}
-        columns={{ sm: 8, md: 12 }}
+        columns={{ sm: 12, md: 12 }}
         style={{ marginBottom: 50 }}
       >
         <Grid item xs={12} sm={12} md={6}>
