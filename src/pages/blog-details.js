@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import db from "../firebase";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+
 export default function BlogDetails() {
   const { blogId } = useParams();
   const [blog, setBlog] = React.useState({});

@@ -5,8 +5,9 @@ import compImg from "../assets/images/career/compensation.svg";
 import rechargeImg from "../assets/images/career/recharge.svg";
 import flexibilityImg from "../assets/images/career/flexibility.svg";
 import * as React from "react";
-
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function CareerBenefit() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <div
       style={{
@@ -15,14 +16,13 @@ export default function CareerBenefit() {
         alignItems: "center",
       }}
     >
-      <Stack style={{ width: "80%" }}>
+      <Stack style={{ width: isMobile ? "90%" : "80%" }}>
         <Typography
           variant="h6"
           sx={{
             color: black,
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
-
             marginTop: 3,
           }}
         >
@@ -41,7 +41,7 @@ export default function CareerBenefit() {
         </Typography>
         <Grid
           container
-          spacing={{ xs: 4, md: 4 }}
+          spacing={{ xs: 8, md: 4 }}
           columns={{ sm: 8, md: 12 }}
           style={{ marginTop: 20 }}
         >

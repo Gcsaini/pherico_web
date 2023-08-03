@@ -5,7 +5,11 @@ import CareerBenefit from "../components/career_benefits";
 import Openings from "../components/openings";
 import Footer from "../components/footer";
 import * as React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import NavDrawer from "../components/nav_drawer";
 export default function Career() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   return (
     <div>
       <div
@@ -16,7 +20,7 @@ export default function Career() {
           paddingTop: 25,
         }}
       >
-        <Navbar />
+        {isMobile ? <NavDrawer /> : <Navbar />}
         <div
           style={{
             display: "flex",
@@ -27,25 +31,29 @@ export default function Career() {
           <Grid
             container
             spacing={{ xs: 4, md: 12 }}
-            columns={{ sm: 8, md: 12 }}
+            columns={{ sm: 12, md: 12 }}
             style={{ marginTop: 20, width: "90%" }}
           >
             <Grid item xs={12} sm={6} md={6}>
               <Typography
-                variant="h3"
+                variant={isMobile ? "h4" : isTablet ? "h4" : "h3"}
                 sx={{
                   color: "#FCFCFC",
                   fontFamily: "Poppins, sans-serif",
-                  textAlign: "left",
+                  textAlign: isMobile ? "center" : "left",
                   fontWeight: 600,
-                  marginTop: 10,
+                  marginTop: isMobile ? 5 : 10,
                 }}
               >
                 Discover Your Career Potential do what you love to do.
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-              <img src={teamsImg} alt="teams" height={420} />
+              <img
+                src={teamsImg}
+                alt="teams"
+                height={isMobile ? 420 : isTablet ? 340 : 420}
+              />
             </Grid>
           </Grid>
         </div>

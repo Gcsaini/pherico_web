@@ -1,10 +1,11 @@
 import * as React from "react";
 import Backdrop from "@mui/material/Backdrop";
 import { Stack, Typography } from "@mui/material";
-import { black, greyText, white } from "../helpers/colors";
+import { black, greyText, primary, white } from "../helpers/colors";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import useMediaQuery from "@mui/material/useMediaQuery";
 const jobDesc = [
   [
     {
@@ -90,6 +91,8 @@ const jobDesc = [
 ];
 
 export default function Openings() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const [open, setOpen] = React.useState(false);
   const [index, setIndex] = React.useState(0);
   const handleOpen = (ind) => {
@@ -101,8 +104,12 @@ export default function Openings() {
     position: "absolute",
     top: "50%",
     left: "50%",
+    overflow: "auto",
+    height: "100%",
+    scrollbarWidth: "thin" /* "auto" or "thin" */,
+    scrollbarColor: `${primary} grey`,
     transform: "translate(-50%, -50%)",
-    width: 800,
+    width: isMobile ? 400 : isTablet ? 590 : 800,
     bgcolor: "background.paper",
     borderRadius: 2,
     boxShadow: 24,
@@ -118,7 +125,7 @@ export default function Openings() {
         marginBottom: 80,
       }}
     >
-      <Stack style={{ width: "80%" }}>
+      <Stack style={{ width: isMobile ? "90%" : "80%" }}>
         <Typography
           variant="h6"
           sx={{
@@ -134,10 +141,9 @@ export default function Openings() {
           Our openings
         </Typography>
         <Typography
-          variant="h4"
+          variant={isMobile ? "h5" : "h4"}
           sx={{
             color: black,
-
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,
@@ -146,7 +152,7 @@ export default function Openings() {
           Let's do something amazing
         </Typography>
         <Typography
-          variant="h5"
+          variant={isMobile ? "h6" : "h5"}
           sx={{
             color: black,
             fontFamily: "Poppins, sans-serif",
@@ -178,7 +184,7 @@ export default function Openings() {
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
-                  fontSize: 16,
+                  fontSize: isMobile ? 15 : 16,
                 }}
               >
                 UI/UX Designer
@@ -189,7 +195,7 @@ export default function Openings() {
                   color: black,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
-                  fontWeight: 600,
+                  fontWeight: 500,
                   fontSize: 16,
                 }}
               >
@@ -214,7 +220,7 @@ export default function Openings() {
           </Stack>
         </div>
         <Typography
-          variant="h5"
+          variant={isMobile ? "h6" : "h5"}
           sx={{
             color: black,
             fontFamily: "Poppins, sans-serif",
@@ -246,7 +252,7 @@ export default function Openings() {
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
-                  fontSize: 16,
+                  fontSize: isMobile ? 15 : 16,
                 }}
               >
                 Flutter Developer
@@ -302,7 +308,7 @@ export default function Openings() {
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
-                  fontSize: 16,
+                  fontSize: isMobile ? 15 : 16,
                 }}
               >
                 React Developer

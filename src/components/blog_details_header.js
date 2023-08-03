@@ -3,7 +3,11 @@ import Navbar from "./navbar";
 import Avatar from "@mui/material/Avatar";
 import { white } from "../helpers/colors";
 import * as React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import NavDrawer from "./nav_drawer";
 export default function BlogDetailsHeader(props) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const data = props.data;
   return (
     <div
@@ -14,13 +18,13 @@ export default function BlogDetailsHeader(props) {
         paddingTop: 25,
       }}
     >
-      <Navbar />
+      {isMobile ? <NavDrawer /> : <Navbar />}
       <Stack
         direction={"row"}
         justifyContent={"center"}
-        style={{ marginTop: 120 }}
+        style={{ marginTop: isMobile ? 90 : 120 }}
       >
-        <div style={{ width: "70%" }}>
+        <div style={{ width: isMobile ? "95%" : isTablet ? "90%" : "70%" }}>
           <Typography
             variant="h4"
             sx={{
@@ -46,7 +50,7 @@ export default function BlogDetailsHeader(props) {
                   fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "center",
-                  marginLeft: 2,
+                  marginLeft: isMobile ? 1 : 2,
                 }}
               >
                 {data.author}
@@ -59,6 +63,7 @@ export default function BlogDetailsHeader(props) {
                 fontWeight: 500,
                 fontFamily: "Poppins, sans-serif",
                 textAlign: "center",
+                marginTop: 0.8,
               }}
             >
               {new Date(parseInt(data.updatedAt)).toDateString()}
