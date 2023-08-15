@@ -42,7 +42,7 @@ export default function Footer() {
               Terms
             </a>
             <a
-              href=""
+              href="/privacy"
               style={{
                 fontFamily: "Poppins,sans-serif",
                 lineHeight: "30px",
@@ -86,7 +86,7 @@ export default function Footer() {
             </a>
 
             <a
-              href=""
+              href="/blogs"
               style={{
                 fontFamily: "Poppins,sans-serif",
                 lineHeight: "30px",

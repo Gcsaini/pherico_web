@@ -1,6 +1,11 @@
 import { Stack, Typography, Grid } from "@mui/material";
 import { black, white } from "../helpers/colors";
-import founderImg from "../assets/images/about/gopi.jpg";
+import amit from "../assets/images/teams/amit.jpg";
+import arijit from "../assets/images/teams/arijit.jpg";
+import nilashish from "../assets/images/teams/nilashish.jpg";
+import ujjal from "../assets/images/teams/ujjal.jpg";
+import gopi from "../assets/images/teams/gopi.jpg";
+import koyena from "../assets/images/teams/koyena.jpg";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Card from "@mui/material/Card";
@@ -52,10 +57,59 @@ export default function OurTeam() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height={isMobile ? "300" : "240"}
+                  height={isMobile ? (isMobile ? 340 : 280) : 280}
                   width={"100%"}
-                  image={founderImg}
-                  alt="team1"
+                  image={ujjal}
+                  alt="ujjal"
+                  sx={{ objectFit: "fill" }}
+                />
+                <CardContent
+                  sx={{
+                    background: black,
+                    textAlign: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: white,
+                      fontWeight: 500,
+                      fontFamily: "Poppins, sans-serif",
+                      fontSize: 17,
+                      marginTop: -1.5,
+                    }}
+                  >
+                    Ujjal Sarkar
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: white,
+                      fontWeight: 500,
+                      lineHeight: "0.5rem",
+                      fontFamily: "Poppins, sans-serif",
+                      fontSize: 14,
+                    }}
+                  >
+                    Co-founder & CEO
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card
+              sx={{
+                borderRadius: 3.5,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={isMobile ? 340 : 280}
+                  image={gopi}
+                  alt="Gopi chand"
+                  sx={{ objectFit: "fill" }}
                 />
                 <CardContent
                   sx={{
@@ -100,9 +154,10 @@ export default function OurTeam() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height={isMobile ? "300" : "240"}
-                  image={founderImg}
-                  alt="green iguana"
+                  height={isMobile ? 340 : 280}
+                  image={koyena}
+                  alt="Koyena roy"
+                  sx={{ objectFit: "fill" }}
                 />
                 <CardContent
                   sx={{
@@ -120,7 +175,7 @@ export default function OurTeam() {
                       marginTop: -1.5,
                     }}
                   >
-                    Gopi chand
+                    koyena Roy
                   </Typography>
                   <Typography
                     variant="h6"
@@ -132,7 +187,7 @@ export default function OurTeam() {
                       fontSize: 14,
                     }}
                   >
-                    Co-founder & CTO
+                    HR
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -147,9 +202,10 @@ export default function OurTeam() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height={isMobile ? "300" : "240"}
-                  image={founderImg}
-                  alt="green iguana"
+                  height={isMobile ? 340 : 280}
+                  image={amit}
+                  alt=" Amit Kr.Bera"
+                  sx={{ objectFit: "fill" }}
                 />
                 <CardContent
                   sx={{
@@ -167,7 +223,7 @@ export default function OurTeam() {
                       marginTop: -1.5,
                     }}
                   >
-                    Gopi chand
+                    Amit Kr.Bera
                   </Typography>
                   <Typography
                     variant="h6"
@@ -179,7 +235,7 @@ export default function OurTeam() {
                       fontSize: 14,
                     }}
                   >
-                    Co-founder & CTO
+                    Marketting Head
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -194,9 +250,10 @@ export default function OurTeam() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height={isMobile ? "300" : "240"}
-                  image={founderImg}
-                  alt="green iguana"
+                  height={isMobile ? 340 : 280}
+                  image={nilashish}
+                  alt="Nilashis Deb"
+                  sx={{ objectFit: "fill" }}
                 />
                 <CardContent
                   sx={{
@@ -214,7 +271,7 @@ export default function OurTeam() {
                       marginTop: -1.5,
                     }}
                   >
-                    Gopi chand
+                    Nilashis Deb
                   </Typography>
                   <Typography
                     variant="h6"
@@ -226,54 +283,7 @@ export default function OurTeam() {
                       fontSize: 14,
                     }}
                   >
-                    Co-founder & CTO
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card
-              sx={{
-                borderRadius: 3.5,
-              }}
-            >
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height={isMobile ? "300" : "240"}
-                  image={founderImg}
-                  alt="green iguana"
-                />
-                <CardContent
-                  sx={{
-                    background: black,
-                    textAlign: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: white,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      fontSize: 17,
-                      marginTop: -1.5,
-                    }}
-                  >
-                    Ujjal
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: white,
-                      fontWeight: 500,
-                      lineHeight: "0.5rem",
-                      fontFamily: "Poppins, sans-serif",
-                      fontSize: 14,
-                    }}
-                  >
-                    Co-founder & CTO
+                    Operation Head
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -289,9 +299,10 @@ export default function OurTeam() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height={isMobile ? "300" : "240"}
-                  image={founderImg}
-                  alt="green iguana"
+                  height={isMobile ? 340 : 280}
+                  image={arijit}
+                  alt="Arijit Biswas"
+                  sx={{ objectFit: "fill" }}
                 />
                 <CardContent
                   sx={{
@@ -309,7 +320,7 @@ export default function OurTeam() {
                       marginTop: -1.5,
                     }}
                   >
-                    Gopi chand
+                    Arijit Biswas
                   </Typography>
                   <Typography
                     variant="h6"
@@ -321,7 +332,7 @@ export default function OurTeam() {
                       fontSize: 14,
                     }}
                   >
-                    Co-founder & CTO
+                    Product Designer
                   </Typography>
                 </CardContent>
               </CardActionArea>

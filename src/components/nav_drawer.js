@@ -127,7 +127,7 @@ export default function NavDrawer() {
                 whiteSpace: "normal",
                 fontStyle: "normal",
                 fontFamily: "Poppins",
-                lineHeight: "1.5rem",
+                lineHeight: "0.8rem",
                 fontSize: "0.9rem",
               },
             }}

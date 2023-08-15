@@ -60,13 +60,21 @@ export default function Navbar() {
                 style={{
                   color: pathname === "/about-us" ? primary : white,
                   whiteSpace: "nowrap",
+                  fontFamily: "Poppins,sans-serif",
+                  fontSize: 14,
                 }}
               >
                 About us
               </span>
             </a>
             <a style={styles.link} href="/career">
-              <span style={{ color: pathname === "/career" ? primary : white }}>
+              <span
+                style={{
+                  color: pathname === "/career" ? primary : white,
+                  fontFamily: "Poppins,sans-serif",
+                  fontSize: 14,
+                }}
+              >
                 Career
               </span>
             </a>
@@ -77,6 +85,8 @@ export default function Navbar() {
                     pathname === "/blogs" || pathname === "/blog-details"
                       ? primary
                       : white,
+                  fontFamily: "Poppins,sans-serif",
+                  fontSize: 14,
                 }}
               >
                 Blogs
@@ -92,6 +102,7 @@ export default function Navbar() {
             padding: "5px 15px",
             cursor: "pointer",
             borderRadius: 30,
+            fontFamily: "Poppins,sans-serif",
             whiteSpace: "nowrap",
             boxShadow:
               "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
@@ -99,11 +110,10 @@ export default function Navbar() {
             "& .MuiChip-label": {
               display: "block",
               fontWeight: "bold",
-
               fontStyle: "normal",
-              fontFamily: "Poppins",
+              fontFamily: "Poppins,sans-serif",
               lineHeight: "1.5rem",
-              fontSize: "0.9rem",
+              fontSize: "0.8rem",
             },
           }}
         />

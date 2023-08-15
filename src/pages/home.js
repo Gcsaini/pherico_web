@@ -11,7 +11,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import NavDrawer from "../components/nav_drawer";
 export default function Home() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   return (
     <>
       {isMobile ? <NavDrawer /> : <Navbar />}

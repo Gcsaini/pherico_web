@@ -21,10 +21,10 @@ export default function AboveFooter() {
         style={{ width: isMobile ? "80%" : isTablet ? "90%" : "80%" }}
         alignItems={"center"}
       >
-        {(isMobile || !isTablet) && (
+        {isMobile || !isTablet ? (
           <Grid
             container
-            spacing={{ xs: 0, sm: 4, md: 4 }}
+            spacing={{ xs: 2, sm: 4, md: 4 }}
             columns={{ sm: 12, md: 12 }}
             justifyContent={isMobile ? "center" : "space-evenly"}
             alignItems={"center"}
@@ -73,8 +73,6 @@ export default function AboveFooter() {
                   height: 130,
                   backgroundSize: "100% 130px",
                   textAlign: "center",
-                  marginTop: isMobile ? 35 : 0,
-                  marginBottom: isMobile ? 25 : 0,
                   backgroundRepeat: "no-repeat",
                 }}
               >
@@ -82,7 +80,7 @@ export default function AboveFooter() {
                   direction={"row"}
                   justifyContent={"center"}
                   alignItems={"center"}
-                  style={{ height: 130, width: "90%" }}
+                  style={{ height: 130, width: isMobile ? "80%" : "70%" }}
                 >
                   <Typography
                     variant="h6"
@@ -91,14 +89,16 @@ export default function AboveFooter() {
                       fontWeight: 500,
                       whiteSpace: "normal",
                       fontStyle: "normal",
-                      marginLeft: isMobile ? 3 : 0,
+                      marginLeft: isMobile ? 3 : 5,
                       textAlign: "left",
+                      marginTop: isMobile ? 0 : 2,
                       fontFamily: "Poppins,sans-serif",
                       lineHeight: "1.1rem",
                       fontSize: 14,
                     }}
                   >
-                    Write to us at <br />
+                    Write to us to enquire about our policy and terms
+                    <br />
                     <span
                       style={{
                         color: black,
@@ -118,7 +118,8 @@ export default function AboveFooter() {
                   height: 130,
                   backgroundSize: "100% 130px",
                   textAlign: "center",
-                  marginTop: isMobile ? 20 : 0,
+                  marginTop: isMobile ? 13 : 0,
+                  marginBottom: isMobile ? 13 : 0,
                 }}
               >
                 <Stack
@@ -150,8 +151,7 @@ export default function AboveFooter() {
               </div>
             </Grid>
           </Grid>
-        )}
-        {isTablet && (
+        ) : (
           <Grid
             container
             spacing={{ xs: 0, sm: 4, md: 4 }}
@@ -196,7 +196,49 @@ export default function AboveFooter() {
                 </Stack>
               </div>
             </Grid>
-
+            <Grid item xs={12} sm={6} md={4}>
+              <div
+                style={{
+                  backgroundImage: `url(${supportBg})`,
+                  height: 130,
+                  backgroundSize: "100% 130px",
+                  textAlign: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <Stack
+                  direction={"row"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  style={{ height: 130, width: "80%" }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: "#9C34C2",
+                      fontWeight: 500,
+                      whiteSpace: "normal",
+                      fontStyle: "normal",
+                      textAlign: "left",
+                      fontFamily: "Poppins,sans-serif",
+                      lineHeight: "1.1rem",
+                      fontSize: 14,
+                    }}
+                  >
+                    Write to us at
+                    <br />
+                    <span
+                      style={{
+                        color: black,
+                        fontFamily: "Poppins, sans-serif",
+                      }}
+                    >
+                      support@pherico.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span>
+                  </Typography>
+                </Stack>
+              </div>
+            </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <div
                 style={{
@@ -204,7 +246,7 @@ export default function AboveFooter() {
                   height: 130,
                   backgroundSize: "100% 130px",
                   textAlign: "center",
-                  marginTop: isMobile ? 20 : 0,
+                  marginBottom: 20,
                 }}
               >
                 <Stack
@@ -230,51 +272,6 @@ export default function AboveFooter() {
                     New age banking demands &amp;
                     <span style={{ color: primary }}>
                       &nbsp;transparent terms and conditions
-                    </span>
-                  </Typography>
-                </Stack>
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <div
-                style={{
-                  backgroundImage: `url(${supportBg})`,
-                  height: 130,
-                  backgroundSize: "100% 130px",
-                  textAlign: "center",
-                  marginTop: isMobile ? 35 : 0,
-                  marginBottom: isMobile ? 25 : 0,
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                <Stack
-                  direction={"row"}
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  style={{ height: 130, width: "90%" }}
-                >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: "#9C34C2",
-                      fontWeight: 500,
-                      whiteSpace: "normal",
-                      fontStyle: "normal",
-                      marginLeft: 2.5,
-                      textAlign: "left",
-                      fontFamily: "Poppins,sans-serif",
-                      lineHeight: "1.1rem",
-                      fontSize: 14,
-                    }}
-                  >
-                    Write to us at <br />
-                    <span
-                      style={{
-                        color: black,
-                        fontFamily: "Poppins, sans-serif",
-                      }}
-                    >
-                      support@pherico.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </span>
                   </Typography>
                 </Stack>
