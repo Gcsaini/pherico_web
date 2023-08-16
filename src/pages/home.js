@@ -9,18 +9,34 @@ import ScrollEffectContent from "../components/scroll_effect_content";
 import HomeBlogs from "../components/home_blogs";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import NavDrawer from "../components/nav_drawer";
+import Loader from "../components/loader";
+import WorkTogether from "../components/work_together";
 export default function Home() {
+  const [loading, setLoading] = React.useState(false);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  React.useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <>
-      {isMobile ? <NavDrawer /> : <Navbar />}
-      <HeaderTitle />
-      <HeaderDesc />
-      <ScrollEffectContent />
-      <AppRating />
-      <HomeBlogs />
-      <AboveFooter />
-      <Footer />
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          {isMobile ? <NavDrawer /> : <Navbar />}
+          <HeaderTitle />
+          <HeaderDesc />
+          <ScrollEffectContent />
+          <AppRating />
+          <HomeBlogs />
+          <WorkTogether />
+          <AboveFooter />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
