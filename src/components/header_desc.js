@@ -2,9 +2,11 @@ import * as React from "react";
 import { Grid, Typography } from "@mui/material";
 import bgImg from "../assets/images/bg/header_bg.png";
 import Stack from "@mui/material/Stack";
+import SquareIcon from "@mui/icons-material/Square";
+import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
+import topImg from "../assets/images/home/home-top.png";
 import {
   blackBg,
-  greyText,
   primary,
   white,
   secondary,
@@ -12,18 +14,16 @@ import {
   green,
   blackText,
   black,
+  darkBg,
+  secondaryWhite,
+  dark2,
 } from "../helpers/colors";
 import Chip from "@mui/material/Chip";
 import mobileImg from "../assets/images/mobile.png";
 import PlayIcon from "./play_icon";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import sliderImg2 from "../assets/images/slider/slider_2.svg";
-import sliderImg3 from "../assets/images/slider/slider_3.svg";
-import sliderImg1Svg from "../assets/images/slider/slide_1.svg";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -41,6 +41,12 @@ import {
   MailTemplateIDSeller,
   validateEmail,
 } from "../helpers/config";
+import styled, { keyframes } from "styled-components";
+import { slideInUp } from "react-animations";
+const SlideInUpAnimation = keyframes`${slideInUp}`;
+const SlideInUpDiv = styled.div`
+  animation: 2s ${SlideInUpAnimation};
+`;
 export default function HeaderDesc() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -129,174 +135,275 @@ export default function HeaderDesc() {
     }
   };
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <>
       <Stack
-        direction="row"
-        justifyContent={"space-evenly"}
-        mt={isMobile ? 6 : 2}
+        style={{
+          backgroundImage: `url(${bgImg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          marginTop: isMobile ? 90 : 20,
+        }}
       >
-        <Typography
-          variant="h6"
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            lineHeight: "30px",
-            fontStyle: "normal",
-            color: greyText,
-            textAlign: "center",
-          }}
-        >
-          A marketplace where shopping, selling & socialising <br /> seamlessly
-          come together
-        </Typography>
-      </Stack>
-      <Stack direction="row" justifyContent={"space-evenly"} mt={4}>
-        <Chip
-          icon={<PlayIcon />}
-          label="Download on Google Play"
-          sx={{
-            height: "auto",
-            background: blackBg,
-            padding: "6px 20px",
-            cursor: "pointer",
-            fontFamily: "Poppins, sans-serif",
-            borderRadius: 30,
-            "& .MuiChip-label": {
-              color: white,
-              display: "block",
-              fontWeight: 500,
-              whiteSpace: "normal",
-              fontStyle: "normal",
-              fontFamily: "Poppins",
-              lineHeight: "1.5rem",
-              fontSize: "0.9rem",
-            },
-          }}
-        />
-      </Stack>
-      <Stack
-        direction="row"
-        justifyContent={"space-evenly"}
-        mt={isMobile ? 12 : 8}
-      >
-        <img src={mobileImg} alt="mobile" height={isMobile ? 450 : "auto"} />
+        <SlideInUpDiv>
+          <Stack
+            direction="row"
+            justifyContent={"space-evenly"}
+            mt={isMobile ? -8 : 6}
+          >
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                lineHeight: "30px",
+                fontStyle: "normal",
+                color: "#cdcdcd",
+                textAlign: "center",
+              }}
+            >
+              A marketplace where shopping, selling & socialising <br />{" "}
+              seamlessly come together
+            </Typography>
+          </Stack>
+          <Stack
+            direction="row"
+            justifyContent={"space-evenly"}
+            mt={isMobile ? 4 : 6}
+          >
+            <Chip
+              icon={<PlayIcon />}
+              label="Download on Google Play"
+              sx={{
+                height: "auto",
+                background: blackBg,
+                padding: "6px 20px",
+                cursor: "pointer",
+                fontFamily: "Poppins, sans-serif",
+                borderRadius: 30,
+                "& .MuiChip-label": {
+                  color: white,
+                  display: "block",
+                  fontWeight: 500,
+                  whiteSpace: "normal",
+                  fontStyle: "normal",
+                  fontFamily: "Poppins",
+                  lineHeight: "1.5rem",
+                  fontSize: "0.9rem",
+                },
+              }}
+            />
+          </Stack>
+
+          <Stack
+            direction="row"
+            justifyContent={"space-evenly"}
+            mt={isMobile ? 10 : 8}
+          >
+            <img
+              src={mobileImg}
+              alt="mobile"
+              height={isMobile ? 450 : "auto"}
+            />
+          </Stack>
+        </SlideInUpDiv>
       </Stack>
       <div
         style={{
-          background: "#121212",
-          marginTop: -170,
-          paddingTop: "260px",
-          paddingBottom: 150,
+          marginTop: isMobile ? -220 : -300,
         }}
       >
-        <Grid
-          container
-          spacing={{ xs: 0, sm: 0, md: 12 }}
-          columns={{ sm: 12, md: 12 }}
-          justifyContent={"space-evenly"}
+        <Stack
+          style={{
+            paddingTop: isMobile ? 280 : 400,
+            paddingBottom: 80,
+            alignItems: "center",
+            background: darkBg,
+          }}
         >
-          <Grid item xs={12} sm={6} md={6}>
-            <div
-              style={{
-                marginLeft: isMobile ? 1 : isTablet ? 40 : 100,
-                marginTop: isMobile ? 10 : 50,
-              }}
+          <Stack
+            direction={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Grid
+              container
+              spacing={{ xs: 4, sm: 4, md: 12 }}
+              columns={{ sm: 12, md: 12 }}
+              justifyContent={"space-evenly"}
+              alignItems={"center"}
             >
-              <Stack direction={"column"}>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    color: white,
-                    fontWeight: 900,
-                    whiteSpace: "normal",
-                    fontStyle: "normal",
-                    fontFamily: "Poppins,sans-serif",
-                    lineHeight: "3.7rem",
+              <Grid item xs={12} sm={6} md={6}>
+                <div
+                  style={{
+                    marginLeft: isMobile || isTablet ? 18 : 200,
+                    marginTop: isMobile ? 10 : 0,
+                    marginRight: isMobile || isTablet ? 18 : 0,
                   }}
                 >
-                  200+
-                  <br />
-                  Sellers
-                </Typography>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: white,
-                    fontWeight: 600,
-                    whiteSpace: "normal",
-                    fontStyle: "normal",
-                    fontFamily: "Poppins,sans-serif",
-                    lineHeight: "3rem",
+                  <Stack
+                    direction={"column"}
+                    alignItems={isMobile ? "center" : "start"}
+                  >
+                    {isMobile || isTablet ? (
+                      <Typography
+                        variant="h4"
+                        sx={{
+                          textAlign: isTablet ? "start" : "center",
+                          color: white,
+                          fontWeight: 500,
+                          fontStyle: "normal",
+                          lineHeight: "2.7rem",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        India’s First
+                        <br />
+                        Shopping social meadia
+                      </Typography>
+                    ) : (
+                      <Typography
+                        variant="h4"
+                        sx={{
+                          color: white,
+                          fontWeight: 500,
+                          fontStyle: "normal",
+                          lineHeight: "2.7rem",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        India’s
+                        <br />
+                        First
+                        <br />
+                        Shopping
+                        <br />
+                        social meadia
+                      </Typography>
+                    )}
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        marginTop: 2,
+                        fontSize: 13,
+                        color: secondaryWhite,
+                        fontWeight: 600,
+                        fontStyle: "normal",
+                        lineHeight: isMobile || isTablet ? "1.3" : "1.5rem",
+                        textTransform: "uppercase",
+                        letterSpacing: 1,
+                      }}
+                    >
+                      a marketplace for both
+                      {isMobile ? "" : <br />} sellers &amp; buyers
+                    </Typography>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        marginTop: 2,
+                        fontSize: 13,
+                        textAlign: isMobile ? "center" : "start",
+                        color: secondaryWhite,
+                        fontWeight: 600,
+                        fontStyle: "normal",
+                        lineHeight: isMobile
+                          ? "1.45"
+                          : isTablet
+                          ? "1.4"
+                          : "1.5rem",
+                      }}
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Suspendisse varius enim in eros elementum tristique. Duis
+                      cursus, mi quis viverra ornare, eros dolor interdum nulla,
+                      ut commodo diam libero vitae erat. Aenean faucibus nibh et
+                      justo cursus id rutrum lorem imperdiet.
+                    </Typography>
+                    <Stack direction={"row"} alignItems={"center"}>
+                      <SquareIcon sx={{ color: white, fontSize: 16 }} />
+                      <Stack>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            marginTop: 2,
+                            marginLeft: 1.5,
+                            fontSize: 14,
+                            color: white,
+                            fontWeight: 600,
+                            fontStyle: "normal",
+                            lineHeight: "1.7rem",
+                          }}
+                        >
+                          Ujjal Sarkar
+                        </Typography>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            marginLeft: 1.5,
+                            fontSize: 13,
+                            color: secondaryWhite,
+                            fontWeight: 600,
+                            fontStyle: "normal",
+                            lineHeight: "1rem",
+                          }}
+                        >
+                          CEO
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      direction={"row"}
+                      alignItems={"center"}
+                      mt={isMobile || isTablet ? 3 : 5}
+                      ml={-1}
+                    >
+                      <div
+                        style={{
+                          background: dark2,
+                          height: 50,
+                          width: 50,
+                          borderRadius: 25,
+                          padding: 11,
+                        }}
+                      >
+                        <NavigateNextOutlinedIcon
+                          sx={{ color: white, fontSize: 26 }}
+                        />
+                      </div>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          marginLeft: 1.5,
+                          fontSize: 13,
+                          color: secondaryWhite,
+                          fontWeight: 600,
+                          fontStyle: "normal",
+                        }}
+                      >
+                        Read more about us
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <div
+                  style={{
+                    marginTop: isMobile ? 30 : isTablet ? 30 : 0,
+                    marginLeft: isMobile ? 30 : 0,
+                    marginRight: isMobile ? 20 : isTablet ? 13 : 0,
                   }}
                 >
-                  has already joined us
-                </Typography>
-                <Chip
-                  label="Join us"
-                  sx={{
-                    marginTop: isMobile ? 5 : 10,
-                    height: "auto",
-                    width: 120,
-                    color: "#FCFCFC",
-                    padding: "7px 15px",
-                    fontFamily: "Poppins, sans-serif",
-                    cursor: "pointer",
-                    borderRadius: 30,
-                    boxShadow:
-                      "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
-                    background:
-                      "linear-gradient(180deg, #F9881F 0%, #FF3A44 100%)",
-                    "& .MuiChip-label": {
-                      display: "block",
-                      fontWeight: "bold",
-                      whiteSpace: "normal",
-                      fontStyle: "normal",
-                      fontFamily: "Poppins",
-                      lineHeight: "1.5rem",
-                      fontSize: "0.9rem",
-                    },
-                  }}
-                  onClick={() => handleOpen()}
-                />
-              </Stack>
-            </div>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <div style={{ marginTop: isMobile ? 100 : isTablet ? 30 : 0 }}>
-              <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-                modules={[Autoplay, Pagination, Navigation]}
-                style={{
-                  height: isMobile ? 250 : isTablet ? 320 : 410,
-                  borderRadius: 20,
-                  width: isMobile ? 350 : isTablet ? 290 : 450,
-                }}
-              >
-                <SwiperSlide>
-                  <img src={sliderImg1Svg} alt="slider one" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={sliderImg2} alt="slider 2" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={sliderImg3} alt="slider 2" />
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </Grid>
-        </Grid>
+                  <img
+                    src={topImg}
+                    alt="shopping"
+                    style={{
+                      width: isMobile ? "90%" : isTablet ? "100%" : "85%",
+                    }}
+                  />
+                </div>
+              </Grid>
+            </Grid>
+          </Stack>
+        </Stack>
       </div>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -499,6 +606,6 @@ export default function HeaderDesc() {
           </Box>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import { red } from "@mui/material/colors";
-import { blackBg, primary, white } from "../helpers/colors";
+import { blackBg, dark, dark2, primary, white } from "../helpers/colors";
 import Chip from "@mui/material/Chip";
 import logo from "../assets/images/logo/logo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -11,8 +11,8 @@ export default function Navbar() {
   const pathname = window.location.pathname;
   var styles = {
     middleMenu: {
-      background: blackBg,
-      padding: isTablet ? "6px 20px" : "6px 30px",
+      background: dark2,
+      padding: isTablet ? "6px 20px" : "8px 30px",
       borderRadius: "30px",
       boxShadow:
         "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
@@ -21,7 +21,6 @@ export default function Navbar() {
       color: white,
       textDecoration: " none",
       underline: "none",
-      fontFamily: "Poppins",
       fontSize: "16px",
       fontStyle: "normal",
       fontWeight: 600,

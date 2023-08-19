@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import logo from "../assets/images/logo/logo.svg";
 import playStore from "../assets/images/play-store.svg";
-import { white } from "../helpers/colors";
+import { dark, white } from "../helpers/colors";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <div
       style={{
-        background: "#13151F",
+        background: dark,
         paddingBottom: "50px",
       }}
     >

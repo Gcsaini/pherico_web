@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { white } from "./colors";
 
 const FORWARD = "forward";
 const BACKWARD = "backward";
@@ -72,7 +73,9 @@ export const useTypingText = (words, keySpeed = 1000, maxPauseAmount = 10) => {
   return {
     word: (
       <span className={`word ${currentWord.length ? "full" : "empty"}`}>
-        <span>{currentWord.length ? currentWord.join("") : "0"}</span>
+        <span style={{ color: white }}>
+          {currentWord.length ? currentWord.join("") : "0"}
+        </span>
       </span>
     ),
     start: () => setIsStopped(false),

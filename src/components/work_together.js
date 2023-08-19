@@ -3,19 +3,29 @@ import mobileImg from "../assets/images/mobile_4.png";
 import ratingStarSvg from "../assets/images/rating_star.svg";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import { black, blackText, dark, hrLine, white } from "../helpers/colors";
+import {
+  black,
+  dark,
+  dark2,
+  darkBg,
+  hrLine,
+  secondaryWhite,
+  white,
+} from "../helpers/colors";
 import PlayIconBlack from "./play_icon_black";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 export default function WorkTogether() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
-  return (
+  return isMobile ? (
+    ""
+  ) : (
     <div
       style={{
-        background: dark,
+        background: darkBg,
         marginTop: 100,
-        padding: isMobile ? "100px 20px" : "100px 90px",
+        padding: isTablet ? "20px" : "40px 90px",
       }}
     >
       <Grid
@@ -25,11 +35,11 @@ export default function WorkTogether() {
         alignItems={"center"}
       >
         <Grid item xs={12} sm={6} md={6}>
-          <Stack spacing={isMobile ? 2 : 4}>
+          <Stack spacing={isMobile ? 2 : 3}>
             <Typography
-              variant={"h4"}
+              variant={isTablet ? "h5" : "h4"}
               sx={{
-                color: white,
+                color: secondaryWhite,
                 fontWeight: 600,
                 whiteSpace: "normal",
                 fontStyle: "normal",
@@ -41,7 +51,7 @@ export default function WorkTogether() {
               Let's Work
             </Typography>
             <Typography
-              variant={isMobile ? "h3" : "h2"}
+              variant={isTablet ? "h4" : "h2"}
               sx={{
                 color: white,
                 fontWeight: 800,
@@ -62,14 +72,14 @@ export default function WorkTogether() {
               height: 1,
               background: hrLine,
               position: "relative",
-              top: 64,
+              top: isTablet ? 54 : 64,
             }}
           ></div>
           <Stack alignItems={"end"}>
             <div
               style={{
-                height: 130,
-                width: 130,
+                height: isTablet ? 100 : 130,
+                width: isTablet ? 100 : 130,
                 borderRadius: 65,
                 background: white,
                 color: black,

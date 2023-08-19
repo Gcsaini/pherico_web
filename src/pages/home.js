@@ -11,6 +11,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import NavDrawer from "../components/nav_drawer";
 import Loader from "../components/loader";
 import WorkTogether from "../components/work_together";
+import { dark } from "../helpers/colors";
+import BecomeSeller from "../components/become_seller";
+import OurFeature from "../components/our_feature";
+import Testimonials from "../components/testimonials";
 export default function Home() {
   const [loading, setLoading] = React.useState(false);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -29,11 +33,12 @@ export default function Home() {
           {isMobile ? <NavDrawer /> : <Navbar />}
           <HeaderTitle />
           <HeaderDesc />
-          <ScrollEffectContent />
+          <OurFeature />
+          <BecomeSeller />
           <AppRating />
+          <Testimonials />
           <HomeBlogs />
           <WorkTogether />
-          <AboveFooter />
           <Footer />
         </>
       )}

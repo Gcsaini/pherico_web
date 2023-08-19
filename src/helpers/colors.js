@@ -1,9 +1,10 @@
 export const primary = "#F9881F";
-export const secondary = "#DF5013";
+export const secondary = "#fc6330";
 export const primaryGradient =
   "linear-gradient(180deg, #F9881F 0%, #FF3A44 100%)";
 export const red = "#FF0000";
-export const white = "#FCFCFC";
+export const white = "#FFFFFF";
+export const secondaryWhite = "#cdcdcd";
 export const black = "#000";
 export const grey = "#ccc";
 export const grey_black = "#3d3d3d";
@@ -14,4 +15,6 @@ export const blackBg = "#1E1E1E";
 export const purple = "#9C34C2";
 export const green = "#4BB543";
 export const dark = "#131313";
+export const dark2 = "rgb(51, 51, 51)";
+export const darkBg = "#191919";
 export const hrLine = "#222222";

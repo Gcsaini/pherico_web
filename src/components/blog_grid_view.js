@@ -1,106 +1,100 @@
-import { Stack, Typography } from "@mui/material";
-import { black, greyText, secondary } from "../helpers/colors";
-import Avatar from "@mui/material/Avatar";
+import { Grid, Stack, Typography } from "@mui/material";
+import { hrLine, secondaryWhite, white } from "../helpers/colors";
+import HighlightOutlinedIcon from "@mui/icons-material/HighlightOutlined";
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import useMediaQuery from "@mui/material/useMediaQuery";
 export default function BlogGridView(props) {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const data = props.data;
-  const navigate = useNavigate();
-  const redirectToBlog = (blogId) => {
-    navigate(`/blog-details/${blogId}`);
-  };
   return (
-    <Stack
+    <div
       style={{
-        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-        borderRadius: 10,
+        border: `1px solid ${hrLine}`,
+        marginTop: 30,
+        height: isMobile ? "auto" : 240,
       }}
     >
-      <img
-        src={data.image1}
-        alt={data.title}
-        height={210}
-        style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-      />
-      <Stack style={{ padding: 15 }}>
-        {/* <Link
-          to={`/blog-details/${data.id.trim()}`}
-          style={{ textDecoration: "none" }}
-        > */}
-        <Typography
-          variant="h6"
-          sx={{
-            color: black,
-            fontWeight: 500,
-            whiteSpace: "normal",
-            fontStyle: "normal",
-            fontFamily: "Poppins,sans-serif",
-            lineHeight: 1,
-            maxLines: 2,
-            cursor: "pointer",
-          }}
-          onClick={() => redirectToBlog(data.id.trim())}
-        >
-          {data.title.length > 55
-            ? data.title.substr(0, 55) + "..."
-            : data.title.substr(0, 55)}
-        </Typography>
-        {/* </Link> */}
-        <Typography
-          variant="h6"
-          sx={{
-            color: greyText,
-            fontWeight: 500,
-            whiteSpace: "normal",
-            fontStyle: "normal",
-            fontFamily: "Poppins,sans-serif",
-            fontSize: 16,
-            lineHeight: "1.4rem",
-            maxLines: 3,
-            marginTop: 1,
-          }}
-        >
-          {data.desc1.substr(0, 107)}...
-        </Typography>
-        <Stack direction={"row"} justifyContent={"space-between"} mt={2}>
-          <Stack direction={"row"}>
-            <Avatar alt="author name" src={data.authorProfile} />
+      <Grid
+        container
+        spacing={{ xs: 0, sm: 0, md: 6 }}
+        columns={{ sm: 12, md: 12 }}
+      >
+        <Grid item xs={12} sm={6} md={6}>
+          <img
+            src={data.image1}
+            alt="blog title"
+            width={"100%"}
+            height={isMobile ? "80%" : 238}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={6}>
+          <Stack
+            justifyContent={"center"}
+            style={{
+              padding: isMobile ? "20px" : isTablet ? "20px" : "27px 0px",
+            }}
+          >
             <Typography
               variant="h6"
               sx={{
-                color: secondary,
-                fontWeight: 500,
-                whiteSpace: "normal",
+                marginLeft: 0.3,
+                fontSize: 12,
+                marginTop: isMobile ? -6 : 0,
+                color: secondaryWhite,
+                fontWeight: 600,
                 fontStyle: "normal",
-                fontFamily: "Poppins,sans-serif",
-                fontSize: 16,
-                lineHeight: "1.4rem",
-                maxLines: 3,
-                marginLeft: 1,
-                marginTop: 1,
+                lineHeight: "1rem",
               }}
             >
-              {data.author}
+              {new Date(parseInt(data.updatedAt)).toDateString()}
             </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                marginTop: 1.5,
+                fontSize: 19,
+                color: white,
+                fontWeight: 500,
+                fontStyle: "normal",
+                lineHeight: "1rem",
+              }}
+            >
+              {data.title.length > 55
+                ? data.title.substr(0, 55) + "..."
+                : data.title.substr(0, 55)}
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: 12,
+                marginTop: 2,
+                color: secondaryWhite,
+                fontWeight: 500,
+                lineHeight: "1.3rem",
+                maxLines: 3,
+              }}
+            >
+              {data.desc1.substr(0, isTablet ? 140 : 207)}...
+            </Typography>
+            <Stack direction={"row"} mt={3}>
+              <HighlightOutlinedIcon sx={{ color: white, height: 18 }} />
+              <a
+                href=""
+                style={{
+                  color: secondaryWhite,
+                  textTransform: "uppercase",
+                  fontSize: 14,
+                  paddingLeft: 2,
+                  textDecorationColor: secondaryWhite,
+                }}
+              >
+                Read Article
+              </a>
+            </Stack>
           </Stack>
-          <Typography
-            variant="h6"
-            sx={{
-              color: greyText,
-              fontWeight: 500,
-              whiteSpace: "normal",
-              fontStyle: "normal",
-              fontFamily: "Poppins,sans-serif",
-              fontSize: 16,
-              lineHeight: "1.4rem",
-              maxLines: 3,
-              marginTop: 1,
-            }}
-          >
-            {new Date(parseInt(data.updatedAt)).toDateString()}
-          </Typography>
-        </Stack>
-      </Stack>
-    </Stack>
+        </Grid>
+      </Grid>
+    </div>
   );
 }

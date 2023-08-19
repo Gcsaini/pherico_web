@@ -1,8 +1,11 @@
+import { Chip, Grid, Typography } from "@mui/material";
+import DynamicFeedOutlinedIcon from "@mui/icons-material/DynamicFeedOutlined";
+import Stack from "@mui/material/Stack";
+import { dark2, secondaryWhite, white } from "../helpers/colors";
 import * as React from "react";
-import BlogGridView from "./blog_grid_view";
-import { Grid, Stack, Typography } from "@mui/material";
-import db from "../firebase";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import db from "../firebase";
+import BlogGridView from "./blog_grid_view";
 export default function HomeBlogs() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -20,64 +23,74 @@ export default function HomeBlogs() {
   }, []);
 
   return (
-    <>
-      <div
-        style={{
-          marginTop: 80,
-          display: "flex",
-          justifyContent: "space-evenly",
-        }}
+    <Stack
+      style={{
+        marginTop: isMobile ? 60 : 100,
+        alignItems: "center",
+      }}
+    >
+      <Stack
+        style={{ width: isMobile ? "85%" : isTablet ? "90%" : "70%" }}
+        alignItems={"center"}
       >
-        <Stack style={{ width: isTablet ? "90%" : "80%" }}>
-          <Stack
-            direction={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
+        <Stack direction={"row"} alignItems={"center"}>
+          <DynamicFeedOutlinedIcon sx={{ color: white }} />
+          <Typography
+            variant="h6"
+            sx={{
+              marginLeft: 1.5,
+              fontSize: 13,
+              color: secondaryWhite,
+              fontWeight: 600,
+              fontStyle: "normal",
+              lineHeight: "1rem",
+              textTransform: "uppercase",
+            }}
           >
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 800,
-                fontFamily: "Poppins, sans-serif",
-                textAlign: "center",
-              }}
-            >
-              Blogs
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "#817B7B",
-                fontWeight: 500,
-                whiteSpace: "normal",
-                fontStyle: "normal",
-                fontSize: 16,
-                textAlign: "center",
-                fontFamily: "Roboto,sans-serif",
-                marginBottom: 5,
-                marginTop: 1.5,
-                lineHeight: isMobile ? "18px" : "20px",
-              }}
-            >
-              Explore insightful articles and engaging content on various
-              topics, curated to inspire, inform, and entertain.
-            </Typography>
-          </Stack>
-          <Grid
-            container
-            spacing={{ xs: 4, sm: 6, md: 4 }}
-            columns={{ sm: 12, md: 12 }}
-            justifyContent={"space-evenly"}
-          >
-            {blogs &&
-              blogs.map((item) => (
-                <Grid item xs={12} sm={6} md={4} key={item.id}>
-                  <BlogGridView data={item} />
-                </Grid>
-              ))}
-          </Grid>
+            Latest posts
+          </Typography>
         </Stack>
-      </div>
-    </>
+        <Typography
+          variant={isMobile ? "h5" : "h4"}
+          sx={{
+            marginTop: isMobile ? 0.5 : 1.2,
+            marginBottom: isMobile ? 1.5 : 2.6,
+            color: white,
+            fontWeight: 500,
+            fontStyle: "normal",
+            lineHeight: "2.7rem",
+            textTransform: "uppercase",
+          }}
+        >
+          Let's check <b>Our Post</b>
+        </Typography>
+        <Chip
+          label={"BROWSE ALL"}
+          sx={{
+            color: secondaryWhite,
+            height: 45,
+            width: 180,
+            marginLeft: 3,
+            marginBottom: isMobile ? 2 : 4,
+            cursor: "pointer",
+            borderRadius: 23,
+            wordSpacing: 4,
+            boxShadow:
+              "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
+            background: dark2,
+            "& .MuiChip-label": {
+              display: "block",
+              fontWeight: "bold",
+              fontStyle: "normal",
+              fontFamily: "Poppins,sans-serif",
+              lineHeight: "1.5rem",
+              fontSize: "0.8rem",
+            },
+          }}
+        />
+        {blogs &&
+          blogs.map((item) => <BlogGridView data={item} key={item.id} />)}
+      </Stack>
+    </Stack>
   );
 }
