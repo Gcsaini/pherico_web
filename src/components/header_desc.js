@@ -234,7 +234,7 @@ export default function HeaderDesc() {
               <Grid item xs={12} sm={6} md={6}>
                 <div
                   style={{
-                    marginLeft: isMobile || isTablet ? 18 : 200,
+                    marginLeft: isMobile || isTablet ? 18 : 100,
                     marginTop: isMobile ? 10 : 0,
                     marginRight: isMobile || isTablet ? 18 : 0,
                   }}
@@ -247,7 +247,7 @@ export default function HeaderDesc() {
                       <Typography
                         variant="h4"
                         sx={{
-                          textAlign: isTablet ? "start" : "center",
+                          textAlign: "center",
                           color: white,
                           fontWeight: 500,
                           fontStyle: "normal",
@@ -270,9 +270,7 @@ export default function HeaderDesc() {
                           textTransform: "uppercase",
                         }}
                       >
-                        India’s
-                        <br />
-                        First
+                        India’s First
                         <br />
                         Shopping
                         <br />

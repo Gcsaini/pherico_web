@@ -3,7 +3,7 @@ import * as React from "react";
 import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
 import Diversity2OutlinedIcon from "@mui/icons-material/Diversity2Outlined";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -73,6 +73,8 @@ export default function Testimonials() {
             delay: 3000,
             disableOnInteraction: false,
           }}
+          direction={"horizontal"}
+          mousewheel={true}
           slidesPerView={1}
           spaceBetween={10}
           pagination={{
@@ -100,7 +102,7 @@ export default function Testimonials() {
               spaceBetween: 30,
             },
           }}
-          modules={[Pagination, Navigation, Autoplay]}
+          modules={[Pagination, Navigation, Autoplay, Mousewheel]}
         >
           <SwiperSlide style={{ borderRadius: 0 }}>
             <TestimonialView />

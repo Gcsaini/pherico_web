@@ -15,6 +15,8 @@ import { dark } from "../helpers/colors";
 import BecomeSeller from "../components/become_seller";
 import OurFeature from "../components/our_feature";
 import Testimonials from "../components/testimonials";
+import ImageSlider from "../components/image_slider";
+import Counts from "../components/counts";
 export default function Home() {
   const [loading, setLoading] = React.useState(false);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -35,7 +37,9 @@ export default function Home() {
           <HeaderDesc />
           <OurFeature />
           <BecomeSeller />
+          <ImageSlider />
           <AppRating />
+          <Counts />
           <Testimonials />
           <HomeBlogs />
           <WorkTogether />

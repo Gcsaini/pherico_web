@@ -5,19 +5,18 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import {
   black,
-  blackText,
-  dark2,
   darkBg,
   hrLine,
   secondaryWhite,
   white,
 } from "../helpers/colors";
-import PlayIconBlack from "./play_icon_black";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 export default function BecomeSeller() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
   const checkPointStyle = {
     marginLeft: 10,
     fontSize: 14,
@@ -29,7 +28,7 @@ export default function BecomeSeller() {
   return (
     <Stack
       style={{
-        marginTop: isMobile || isTablet ? 80 : 100,
+        marginTop: isMobile || isTablet ? 80 : 120,
         alignItems: "center",
       }}
     >
@@ -76,7 +75,7 @@ export default function BecomeSeller() {
         style={{
           width: isMobile ? "95%" : isTablet ? "90%" : "85%",
           background: darkBg,
-          padding: isMobile ? "20px 16px" : isTablet ? "30px 0px" : "80px 10px",
+          padding: isMobile ? "20px 16px" : isTablet ? "30px 0px" : "4% 0%",
         }}
       >
         <Grid
@@ -134,7 +133,10 @@ export default function BecomeSeller() {
                 <Stack
                   direction={"row"}
                   alignItems={"center"}
-                  style={{ marginLeft: 20, marginTop: isTablet ? 10 : 20 }}
+                  style={{
+                    marginLeft: 20,
+                    marginTop: isTablet ? 10 : 20,
+                  }}
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
                   <Typography variant="h6" style={checkPointStyle}>
@@ -198,7 +200,9 @@ export default function BecomeSeller() {
               <img
                 src={liveWatch}
                 alt="live watching"
-                style={{ width: isMobile ? "90%" : isTablet ? "94%" : "75%" }}
+                style={{
+                  width: isMobile ? "90%" : isTablet ? "94%" : "75%",
+                }}
               />
             </div>
           </Grid>
