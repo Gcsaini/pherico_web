@@ -1,9 +1,9 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import { black } from "../helpers/colors";
-import wellnessImg from "../assets/images/career/wellness.svg";
-import compImg from "../assets/images/career/compensation.svg";
-import rechargeImg from "../assets/images/career/recharge.svg";
-import flexibilityImg from "../assets/images/career/flexibility.svg";
+import { black, darkBg, secondaryWhite, white } from "../helpers/colors";
+import wellnessImg from "../assets/images/career/heart-add.svg";
+import compImg from "../assets/images/career/dollar-symbol.svg";
+import rechargeImg from "../assets/images/career/battery-charge.svg";
+import flexibilityImg from "../assets/images/career/time.svg";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 export default function CareerBenefit() {
@@ -11,6 +11,7 @@ export default function CareerBenefit() {
   return (
     <div
       style={{
+        background: darkBg,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -20,7 +21,7 @@ export default function CareerBenefit() {
         <Typography
           variant="h6"
           sx={{
-            color: black,
+            color: secondaryWhite,
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             marginTop: 3,
@@ -31,7 +32,7 @@ export default function CareerBenefit() {
         <Typography
           variant="h4"
           sx={{
-            color: black,
+            color: white,
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
@@ -51,7 +52,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h5"
                 sx={{
-                  color: "#242424",
+                  color: white,
                   fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
@@ -62,7 +63,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h6"
                 sx={{
-                  color: black,
+                  color: secondaryWhite,
                   fontWeight: 500,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
@@ -82,8 +83,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h5"
                 sx={{
-                  color: "#242424",
-
+                  color: white,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 600,
@@ -94,7 +94,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h6"
                 sx={{
-                  color: black,
+                  color: secondaryWhite,
 
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
@@ -111,11 +111,11 @@ export default function CareerBenefit() {
           </Grid>
           <Grid item xs={12} sm={4} md={3}>
             <Stack justifyContent={"center"} alignItems={"start"}>
-              <img src={rechargeImg} alt="wellness" height={40} />
+              <img src={rechargeImg} alt="wellness" height={40} width={80} />
               <Typography
                 variant="h5"
                 sx={{
-                  color: "#242424",
+                  color: white,
 
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
@@ -127,7 +127,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h6"
                 sx={{
-                  color: black,
+                  color: secondaryWhite,
 
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
@@ -148,7 +148,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h5"
                 sx={{
-                  color: "#242424",
+                  color: white,
 
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
@@ -160,7 +160,7 @@ export default function CareerBenefit() {
               <Typography
                 variant="h6"
                 sx={{
-                  color: black,
+                  color: secondaryWhite,
 
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",

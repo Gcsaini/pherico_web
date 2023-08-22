@@ -24,7 +24,7 @@ export default function AboutUs() {
     <>
       <AboutHeader data={aboutData} />
       <AboutUsContent data={aboutData} />
-      <FoundersMessage data={aboutData} />
+      {/* <FoundersMessage data={aboutData} /> */}
       <OurTeam />
       <ContactSection />
       <FaqSection />

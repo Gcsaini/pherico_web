@@ -1,4 +1,13 @@
-import { black, grey, grey_black } from "../helpers/colors";
+import {
+  black,
+  dark,
+  darkBg,
+  grey,
+  grey_black,
+  hrLine,
+  secondaryWhite,
+  white,
+} from "../helpers/colors";
 import { Grid, Stack, Typography } from "@mui/material";
 import * as React from "react";
 import db from "../firebase";
@@ -30,19 +39,21 @@ export default function FaqSection() {
     });
   };
   const acordianStyle = {
+    background: dark,
+    color: white,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
     border: "none",
     boxShadow: "none",
-    borderBottom: `1px solid ${grey}`,
+    borderBottom: `1px solid ${hrLine}`,
     marginBottom: 2,
     "&:last-child": {
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
       borderTop: "none",
-      borderBottom: `1px solid ${grey}`,
+      borderBottom: `1px solid ${hrLine}`,
     },
     "&:before": {
       height: 0,
@@ -51,7 +62,10 @@ export default function FaqSection() {
 
   return (
     <Stack
-      style={{ padding: isMobile || isTablet ? "0px 20px" : "0px 100px" }}
+      style={{
+        padding: isMobile || isTablet ? "0px 20px" : "0px 100px",
+        background: darkBg,
+      }}
       justifyContent={"center"}
       alignItems={"center"}
     >
@@ -68,7 +82,7 @@ export default function FaqSection() {
           <Typography
             variant="h4"
             sx={{
-              color: black,
+              color: white,
               fontWeight: 800,
               fontFamily: "Poppins, sans-serif",
               textAlign: "center",
@@ -90,7 +104,7 @@ export default function FaqSection() {
             <Typography
               variant="h6"
               sx={{
-                color: grey_black,
+                color: secondaryWhite,
                 fontWeight: 800,
                 fontFamily: "Poppins, sans-serif",
                 marginBottom: 2,
@@ -102,14 +116,16 @@ export default function FaqSection() {
               buyerFaq.map((item) => (
                 <Accordion sx={acordianStyle}>
                   <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon sx={{ color: white }} />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
                     <Typography>{item.question}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>{item.ans}</Typography>
+                    <Typography sx={{ color: secondaryWhite }}>
+                      {item.ans}
+                    </Typography>
                   </AccordionDetails>
                 </Accordion>
               ))}
@@ -120,7 +136,7 @@ export default function FaqSection() {
             <Typography
               variant="h6"
               sx={{
-                color: grey_black,
+                color: secondaryWhite,
                 fontWeight: 800,
                 fontFamily: "Poppins, sans-serif",
                 marginBottom: 2,
@@ -132,14 +148,16 @@ export default function FaqSection() {
               sellerFaq.map((item) => (
                 <Accordion sx={acordianStyle}>
                   <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon sx={{ color: white }} />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
                     <Typography>{item.question}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>{item.ans}</Typography>
+                    <Typography sx={{ color: secondaryWhite }}>
+                      {item.ans}
+                    </Typography>
                   </AccordionDetails>
                 </Accordion>
               ))}

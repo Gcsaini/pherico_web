@@ -1,5 +1,13 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import { red, secondary, white, green } from "../helpers/colors";
+import {
+  red,
+  secondary,
+  white,
+  green,
+  secondaryWhite,
+  hrLine,
+  dark,
+} from "../helpers/colors";
 import handWaveImg from "../assets/images/about/hand-wave.svg";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -78,9 +86,9 @@ export default function ContactSection() {
 
   const inputStyle = {
     color: white,
-    borderRadius: 2.5,
+    borderRadius: 0.5,
     "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: white,
+      borderColor: secondaryWhite,
     },
     "&:hover > .MuiOutlinedInput-notchedOutline": {
       borderColor: "#ccc",
@@ -147,7 +155,7 @@ export default function ContactSection() {
                 <Typography
                   variant="h6"
                   sx={{
-                    color: white,
+                    color: secondaryWhite,
                     fontWeight: 500,
                     fontFamily: "Poppins, sans-serif",
                     textAlign: "left",
@@ -164,7 +172,7 @@ export default function ContactSection() {
                 <Typography
                   variant="h6"
                   sx={{
-                    color: white,
+                    color: secondaryWhite,
                     fontWeight: 500,
                     fontFamily: "Poppins, sans-serif",
                     textAlign: "left",
@@ -182,7 +190,7 @@ export default function ContactSection() {
                 <Typography
                   variant="h6"
                   sx={{
-                    color: white,
+                    color: secondaryWhite,
                     fontWeight: 500,
                     fontFamily: "Poppins, sans-serif",
                     textAlign: "left",
@@ -254,14 +262,14 @@ export default function ContactSection() {
             <Stack direction={"row"} alignItems={"center"}>
               <button
                 style={{
-                  background: secondary,
+                  background: dark,
                   padding: "12px 30px",
                   color: white,
                   marginTop: 20,
-                  borderRadius: 24,
+                  borderRadius: 6,
                   outline: "none",
                   fontFamily: "Poppins, sans-serif",
-                  border: "none",
+                  border: `1px solid ${secondaryWhite}`,
                   fontWeight: 600,
                   cursor: "pointer",
                 }}

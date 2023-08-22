@@ -1,7 +1,15 @@
 import * as React from "react";
 import Backdrop from "@mui/material/Backdrop";
 import { Stack, Typography } from "@mui/material";
-import { black, greyText, primary, white } from "../helpers/colors";
+import {
+  black,
+  dark2,
+  darkBg,
+  greyText,
+  primary,
+  secondaryWhite,
+  white,
+} from "../helpers/colors";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
@@ -118,22 +126,21 @@ export default function Openings() {
   return (
     <div
       style={{
+        background: darkBg,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 50,
-        marginBottom: 80,
+        paddingBottom: 80,
       }}
     >
-      <Stack style={{ width: isMobile ? "90%" : "80%" }}>
+      <Stack style={{ width: isMobile ? "90%" : "80%", marginTop: 50 }}>
         <Typography
           variant="h6"
           sx={{
-            color: greyText,
+            color: secondaryWhite,
 
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
-
             fontSize: 15,
             marginTop: 3,
           }}
@@ -143,7 +150,7 @@ export default function Openings() {
         <Typography
           variant={isMobile ? "h5" : "h4"}
           sx={{
-            color: black,
+            color: white,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,
@@ -154,7 +161,7 @@ export default function Openings() {
         <Typography
           variant={isMobile ? "h6" : "h5"}
           sx={{
-            color: black,
+            color: white,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,
@@ -222,7 +229,7 @@ export default function Openings() {
         <Typography
           variant={isMobile ? "h6" : "h5"}
           sx={{
-            color: black,
+            color: white,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
             fontWeight: 600,

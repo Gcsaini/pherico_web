@@ -14,7 +14,6 @@ export default function Career() {
     <div>
       <div
         style={{
-          background: "#121212",
           marginTop: -20,
           paddingBottom: 70,
           paddingTop: 25,

@@ -1,11 +1,18 @@
 import { Stack, Typography, Grid } from "@mui/material";
-import { black, white } from "../helpers/colors";
-import amit from "../assets/images/teams/amit.jpg";
-import arijit from "../assets/images/teams/arijit.jpg";
-import nilashish from "../assets/images/teams/nilashish.jpg";
-import ujjal from "../assets/images/teams/ujjal.jpg";
-import gopi from "../assets/images/teams/gopi.jpg";
-import koyena from "../assets/images/teams/koyena.jpg";
+import {
+  black,
+  dark,
+  dark2,
+  darkBg,
+  hrLine,
+  secondaryWhite,
+  white,
+} from "../helpers/colors";
+import amit from "../assets/images/teams/amit_new.png";
+import arijit from "../assets/images/teams/arijit_new.png";
+import ujjal from "../assets/images/teams/ujjal_new.png";
+import gopi from "../assets/images/teams/gopi_new.png";
+import koyena from "../assets/images/teams/koyena_new.png";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Card from "@mui/material/Card";
@@ -18,6 +25,8 @@ export default function OurTeam() {
   return (
     <Stack
       style={{
+        background: darkBg,
+        marginTop: 100,
         padding: isMobile || isTablet ? "0px 20px" : "0px 60px",
       }}
       justifyContent={"center"}
@@ -25,23 +34,36 @@ export default function OurTeam() {
     >
       <div
         style={{
-          paddingBottom: isMobile ? 10 : 70,
+          paddingBottom: isMobile ? 10 : 50,
           width: isMobile ? "100%" : "80%",
         }}
       >
-        <Typography
-          variant="h4"
-          sx={{
-            color: black,
-            fontWeight: 800,
-            fontFamily: "Poppins, sans-serif",
-            textAlign: "center",
-            whiteSpace: "nowrap",
-            margin: isMobile ? 5 : 8,
-          }}
-        >
-          Our Team
-        </Typography>
+        <Stack alignItems={"center"}>
+          <div
+            style={{
+              background: secondaryWhite,
+              padding: 20,
+              marginTop: 70,
+              marginBottom: 70,
+              marginLeft: 10,
+              marginRight: 10,
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                color: dark,
+                fontWeight: 600,
+                fontSize: isMobile ? 22 : isTablet ? 26 : 30,
+                fontStyle: "normal",
+                lineHeight: "1rem",
+                textTransform: "uppercase",
+              }}
+            >
+              Our Team
+            </Typography>
+          </div>
+        </Stack>
         <Grid
           container
           spacing={{ xs: 6, md: 8 }}
@@ -51,7 +73,11 @@ export default function OurTeam() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               sx={{
-                borderRadius: 3.5,
+                borderRadius: 0,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
               }}
             >
               <CardActionArea>
@@ -65,7 +91,7 @@ export default function OurTeam() {
                 />
                 <CardContent
                   sx={{
-                    background: black,
+                    background: dark,
                     textAlign: "center",
                   }}
                 >
@@ -84,7 +110,7 @@ export default function OurTeam() {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: white,
+                      color: secondaryWhite,
                       fontWeight: 500,
                       lineHeight: "0.5rem",
                       fontFamily: "Poppins, sans-serif",
@@ -100,7 +126,9 @@ export default function OurTeam() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               sx={{
-                borderRadius: 3.5,
+                borderRadius: 0,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
               }}
             >
               <CardActionArea>
@@ -113,7 +141,7 @@ export default function OurTeam() {
                 />
                 <CardContent
                   sx={{
-                    background: black,
+                    background: dark,
                     textAlign: "center",
                   }}
                 >
@@ -148,7 +176,11 @@ export default function OurTeam() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               sx={{
-                borderRadius: 3.5,
+                borderRadius: 0,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
               }}
             >
               <CardActionArea>
@@ -161,7 +193,7 @@ export default function OurTeam() {
                 />
                 <CardContent
                   sx={{
-                    background: black,
+                    background: dark,
                     textAlign: "center",
                   }}
                 >
@@ -196,7 +228,9 @@ export default function OurTeam() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               sx={{
-                borderRadius: 3.5,
+                borderRadius: 0,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
               }}
             >
               <CardActionArea>
@@ -209,7 +243,7 @@ export default function OurTeam() {
                 />
                 <CardContent
                   sx={{
-                    background: black,
+                    background: dark,
                     textAlign: "center",
                   }}
                 >
@@ -241,59 +275,13 @@ export default function OurTeam() {
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card
-              sx={{
-                borderRadius: 3.5,
-              }}
-            >
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height={isMobile ? 340 : 280}
-                  image={nilashish}
-                  alt="Nilashis Deb"
-                  sx={{ objectFit: "fill" }}
-                />
-                <CardContent
-                  sx={{
-                    background: black,
-                    textAlign: "center",
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: white,
-                      fontWeight: 500,
-                      fontFamily: "Poppins, sans-serif",
-                      fontSize: 17,
-                      marginTop: -1.5,
-                    }}
-                  >
-                    Nilashis Deb
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: white,
-                      fontWeight: 500,
-                      lineHeight: "0.5rem",
-                      fontFamily: "Poppins, sans-serif",
-                      fontSize: 14,
-                    }}
-                  >
-                    Operation Head
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
 
           <Grid item xs={12} sm={6} md={4}>
             <Card
               sx={{
-                borderRadius: 3.5,
+                borderRadius: 0,
+                boxShadow: "none",
+                border: `1px solid ${hrLine}`,
               }}
             >
               <CardActionArea>
@@ -306,7 +294,7 @@ export default function OurTeam() {
                 />
                 <CardContent
                   sx={{
-                    background: black,
+                    background: dark,
                     textAlign: "center",
                   }}
                 >
