@@ -139,9 +139,7 @@ export default function AboutUsContent(props) {
                   lineHeight: isMobile || isTablet ? "1.3" : "2rem",
                 }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,
+                {aboutData.mission}
               </Typography>
             </Stack>
           </Grid>
@@ -180,7 +178,7 @@ export default function AboutUsContent(props) {
                   lineHeight: isTablet ? "1.3" : "2.7rem",
                 }}
               >
-                Our Mission
+                Our Vision
               </Typography>
               <Typography
                 variant={isTablet ? "h5" : "h4"}
@@ -205,9 +203,7 @@ export default function AboutUsContent(props) {
                   lineHeight: isMobile || isTablet ? "1.3" : "2rem",
                 }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,
+                {aboutData.vision}
               </Typography>
             </Stack>
           </Grid>
@@ -314,9 +310,7 @@ export default function AboutUsContent(props) {
                   lineHeight: isMobile || isTablet ? "1.3" : "2rem",
                 }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,
+                {aboutData.goal}
               </Typography>
             </Stack>
           </Grid>

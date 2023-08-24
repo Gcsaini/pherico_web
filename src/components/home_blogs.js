@@ -14,6 +14,7 @@ export default function HomeBlogs() {
   const fetchBlogs = async () => {
     const response = db.collection("blogs");
     const data = await response.get();
+    setBlogs([]);
     data.docs.forEach((item) => {
       setBlogs((blog) => blog.concat(item.data()));
     });
@@ -21,7 +22,7 @@ export default function HomeBlogs() {
   React.useEffect(() => {
     fetchBlogs();
   }, []);
-
+  console.log(blogs);
   return (
     <Stack
       style={{

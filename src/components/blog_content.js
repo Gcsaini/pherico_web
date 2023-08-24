@@ -1,22 +1,25 @@
 import { Stack, Typography } from "@mui/material";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { darkBg, secondaryWhite } from "../helpers/colors";
 export default function BlogContent(props) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const data = props.data;
   return (
     <div
       style={{
+        background: darkBg,
         display: "flex",
         justifyContent: "space-evenly",
-        marginTop: isMobile ? 40 : 70,
+        paddingTop: isMobile ? 40 : 70,
+        paddingBottom: isMobile ? 40 : 70,
       }}
     >
       <Stack style={{ width: isMobile ? "90%" : "80%" }}>
         <Typography
           variant="h6"
           sx={{
-            color: "#36344D",
+            color: secondaryWhite,
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
@@ -28,13 +31,13 @@ export default function BlogContent(props) {
         <img
           src={data.image1}
           alt={data.title}
-          height={"50%"}
+          height={"80%"}
           style={{ marginTop: 50 }}
         />
         <Typography
           variant="h6"
           sx={{
-            color: "#36344D",
+            color: secondaryWhite,
             fontWeight: 500,
             fontFamily: "Poppins, sans-serif",
             textAlign: "left",
@@ -48,7 +51,7 @@ export default function BlogContent(props) {
           <img
             src={data.image2}
             alt={data.title}
-            height={"50%"}
+            height={"80%"}
             style={{ marginTop: 50 }}
           />
         )}

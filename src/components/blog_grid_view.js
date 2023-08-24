@@ -80,7 +80,7 @@ export default function BlogGridView(props) {
             <Stack direction={"row"} mt={3}>
               <HighlightOutlinedIcon sx={{ color: white, height: 18 }} />
               <a
-                href=""
+                href={`/blog-details/${data.id.trim()}`}
                 style={{
                   color: secondaryWhite,
                   textTransform: "uppercase",

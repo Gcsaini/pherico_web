@@ -1,13 +1,4 @@
-import {
-  black,
-  dark,
-  darkBg,
-  grey,
-  grey_black,
-  hrLine,
-  secondaryWhite,
-  white,
-} from "../helpers/colors";
+import { dark, darkBg, hrLine, secondaryWhite, white } from "../helpers/colors";
 import { Grid, Stack, Typography } from "@mui/material";
 import * as React from "react";
 import db from "../firebase";
@@ -29,7 +20,8 @@ export default function FaqSection() {
   const fetchData = async () => {
     const response = db.collection("faq");
     const data = await response.get();
-
+    setBuyerFaq([]);
+    setSellerFaq([]);
     data.docs.forEach((item) => {
       if (item.data().seller) {
         setSellerFaq((seller) => seller.concat(item.data()));
