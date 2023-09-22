@@ -3,6 +3,9 @@ import GrainIcon from "@mui/icons-material/Grain";
 import LiveTvOutlinedIcon from "@mui/icons-material/LiveTvOutlined";
 import AppShortcutOutlinedIcon from "@mui/icons-material/AppShortcutOutlined";
 import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
+import StoreIcon from "@mui/icons-material/Store";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import Stack from "@mui/material/Stack";
 import { secondaryWhite, white } from "../helpers/colors";
 import * as React from "react";
@@ -78,49 +81,47 @@ export default function OurFeature() {
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
                     name="Live Streaming"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis"
+                    desc="Interact with your audience, answer questions, and address concerns instantly, 
+                    creating a personal connection, Showcase your products or services in action."
                     icon={<LiveTvOutlinedIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
                     name="Product listing"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis"
+                    desc="With us list each and all of your products without worrying about any limit. Show and sale all products without any restrictions."
                     icon={<WidgetsOutlinedIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
                     name="Clickies"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis"
+                    desc=" Bored just scrolling through reels? Now scroll clickies!  We are introducing ‘Clickies’,a shopping dedicated short video format where the sellers can promote the products in a trendy way."
                     icon={<AppShortcutOutlinedIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
-                    name="Clickies"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis"
-                    icon={<GrainIcon style={iconStyle} />}
+                    name="0% Commission"
+                    desc="Your earning is yours, we are bringing a 0% Commission policy, where the sellers connecting with our platform won’t have to pay any commission per sale."
+                    icon={<CurrencyRupeeIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
-                    name="Clickies"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis"
-                    icon={<GrainIcon style={iconStyle} />}
+                    name="Easy Store-front"
+                    desc="An access for all, opening a store in our platform is so easy 
+                    that any seller looking for a digital platform to promote their 
+                    product can connect with us."
+                    icon={<StoreIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
-                    name="Clickies"
-                    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis"
-                    icon={<GrainIcon style={iconStyle} />}
+                    name="24*7 customer support"
+                    desc="We believe that you all make us! So we are always here for you. 
+                    100% curated support to all the consumers & sellers 24*7 regarding any grievances/queries."
+                    icon={<SupportAgentIcon style={iconStyle} />}
                   />
                 </Grid>
               </Grid>

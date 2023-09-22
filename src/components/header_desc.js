@@ -5,6 +5,7 @@ import Stack from "@mui/material/Stack";
 import SquareIcon from "@mui/icons-material/Square";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import topImg from "../assets/images/home/home-top.png";
+import { Link } from "react-router-dom";
 import {
   blackBg,
   primary,
@@ -309,11 +310,13 @@ export default function HeaderDesc() {
                           : "1.5rem",
                       }}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique. Duis
-                      cursus, mi quis viverra ornare, eros dolor interdum nulla,
-                      ut commodo diam libero vitae erat. Aenean faucibus nibh et
-                      justo cursus id rutrum lorem imperdiet.
+                      Beyond everyone’s expectations we have constructed a
+                      platform where the customer will get a complete
+                      Live-Product shopping experience from sellers across the
+                      country. We have created a marketplace, which is indeed
+                      not just a marketplace, rather than a compilation of
+                      E-commerce & social media, with features like live
+                      shopping, E-shop monetization, Direct interaction.
                     </Typography>
                     <Stack direction={"row"} alignItems={"center"}>
                       <SquareIcon sx={{ color: white, fontSize: 16 }} />
@@ -366,18 +369,21 @@ export default function HeaderDesc() {
                           sx={{ color: white, fontSize: 26 }}
                         />
                       </div>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          marginLeft: 1.5,
-                          fontSize: 13,
-                          color: secondaryWhite,
-                          fontWeight: 600,
-                          fontStyle: "normal",
-                        }}
-                      >
-                        Read more about us
-                      </Typography>
+                      <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            marginLeft: 1.5,
+                            fontSize: 13,
+                            color: secondaryWhite,
+                            fontWeight: 600,
+                            fontStyle: "normal",
+                            textDecoration: "none",
+                          }}
+                        >
+                          Read more about us
+                        </Typography>
+                      </Link>
                     </Stack>
                   </Stack>
                 </div>

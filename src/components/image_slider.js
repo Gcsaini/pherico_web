@@ -182,8 +182,8 @@ export default function ImageSlider() {
                 Experience <span style={{ color: red }}>Live</span> Shopping
               </Typography>
               <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Experience the thrill of shopping from live sellers. performance
-                and comfort for every mode of use. The system utilises a
+                Get the experience of live shopping, Ensure the best product
+                quality from our side
               </Typography>
             </Stack>
           </div>
@@ -199,8 +199,8 @@ export default function ImageSlider() {
                 0% Commission
               </Typography>
               <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Experience the thrill of shopping from live sellers. performance
-                and comfort for every mode of use. The system utilises a
+                Your earning is yours, we are bringing a 0% Commission
+                policy,won’t have to pay any commission per sale
               </Typography>
             </Stack>
           </div>
@@ -250,8 +250,8 @@ export default function ImageSlider() {
                 Clikies - Shop with reels
               </Typography>
               <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Experience the thrill of shopping from live sellers. performance
-                and comfort for every mode of use. The system utilises a
+                Clickies,a shopping dedicated short video format where the
+                sellers can promote the products in a trendy way.
               </Typography>
             </Stack>
           </div>

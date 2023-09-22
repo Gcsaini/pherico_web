@@ -140,7 +140,20 @@ export default function BecomeSeller() {
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
                   <Typography variant="h6" style={checkPointStyle}>
-                    Lorem ipsum dolor sit amet
+                    Dashboard
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction={"row"}
+                  alignItems={"center"}
+                  style={{
+                    marginLeft: 20,
+                    marginTop: isTablet ? 2 : 10,
+                  }}
+                >
+                  <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
+                  <Typography variant="h6" style={checkPointStyle}>
+                    Zero delivery hustle
                   </Typography>
                 </Stack>
                 <Stack
@@ -150,9 +163,10 @@ export default function BecomeSeller() {
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
                   <Typography variant="h6" style={checkPointStyle}>
-                    Lorem ipsum dolor sit amet
+                    Insights
                   </Typography>
                 </Stack>
+
                 <Stack
                   direction={"row"}
                   alignItems={"center"}
@@ -160,7 +174,7 @@ export default function BecomeSeller() {
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
                   <Typography variant="h6" style={checkPointStyle}>
-                    Lorem ipsum dolor sit amet
+                    Monetize
                   </Typography>
                 </Stack>
                 <Chip

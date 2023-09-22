@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Grid, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import topImg from "../assets/images/home/dummy.png";
+import topImg from "../assets/images/home/happy_customer.jpg";
 import circleImg from "../assets/images/home/circle.png";
 import { secondaryWhite, black } from "../helpers/colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -62,7 +62,7 @@ export default function Counts() {
               <div
                 style={{
                   marginLeft: isMobile || isTablet ? 18 : 100,
-                  marginTop: isMobile ? 10 : 40,
+                  marginTop: isMobile ? 10 : 0,
                   marginRight: isMobile || isTablet ? 18 : 0,
                 }}
               >

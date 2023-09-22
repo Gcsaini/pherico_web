@@ -7,6 +7,7 @@ import {
   secondaryWhite,
   white,
 } from "../helpers/colors";
+import { Link } from "react-router-dom";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useInView } from "react-intersection-observer";
@@ -80,26 +81,30 @@ export default function WorkTogether() {
             ></div>
             {inView && (
               <SwingDiv>
-                <Stack alignItems={"end"}>
-                  <div
-                    style={{
-                      height: isTablet ? 100 : 130,
-                      width: isTablet ? 100 : 130,
-                      borderRadius: 65,
-                      background: white,
-                      color: black,
-                      zIndex: 1,
-                      marginRight: 40,
-                      justifyContent: "center",
-                      alignItems: "center",
-                      display: "flex",
-                    }}
-                  >
-                    <spann style={{ fontSize: 16, fontWeight: 600, zIndex: 1 }}>
-                      Contact us
-                    </spann>
-                  </div>
-                </Stack>
+                <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+                  <Stack alignItems={"end"}>
+                    <div
+                      style={{
+                        height: isTablet ? 100 : 130,
+                        width: isTablet ? 100 : 130,
+                        borderRadius: 65,
+                        background: white,
+                        color: black,
+                        zIndex: 99,
+                        marginRight: 40,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        display: "flex",
+                      }}
+                    >
+                      <spann
+                        style={{ fontSize: 16, fontWeight: 600, zIndex: 1 }}
+                      >
+                        Contact us
+                      </spann>
+                    </div>
+                  </Stack>
+                </Link>
               </SwingDiv>
             )}
           </Grid>
