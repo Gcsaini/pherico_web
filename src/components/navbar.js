@@ -5,7 +5,7 @@ import { blackBg, dark, dark2, primary, white } from "../helpers/colors";
 import Chip from "@mui/material/Chip";
 import logo from "../assets/images/logo/logo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
+import { Link } from "react-router-dom";
 export default function Navbar() {
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const pathname = window.location.pathname;
@@ -54,7 +54,7 @@ export default function Navbar() {
             style={styles.middleMenu}
             alignItems={"center"}
           >
-            <a style={styles.link} href="/about-us">
+            <Link style={styles.link} to={"/about-us"}>
               <span
                 style={{
                   color: pathname === "/about-us" ? primary : white,
@@ -65,8 +65,8 @@ export default function Navbar() {
               >
                 About us
               </span>
-            </a>
-            <a style={styles.link} href="/career">
+            </Link>
+            <Link style={styles.link} to={"/career"}>
               <span
                 style={{
                   color: pathname === "/career" ? primary : white,
@@ -76,8 +76,8 @@ export default function Navbar() {
               >
                 Career
               </span>
-            </a>
-            <a href="/blogs" style={styles.link}>
+            </Link>
+            <Link to={"/blogs"} style={styles.link}>
               <span
                 style={{
                   color:
@@ -90,7 +90,7 @@ export default function Navbar() {
               >
                 Blogs
               </span>
-            </a>
+            </Link>
           </Stack>
         </div>
         <Chip

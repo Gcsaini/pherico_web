@@ -159,7 +159,7 @@ export default function NavDrawer() {
         <Divider />
         <List>
           <ListItem key={"home"} disablePadding>
-            <Link to={"/"} style={{ textDecoration: "none", color: black }}>
+            <Link to={"/home"} style={{ textDecoration: "none", color: black }}>
               <ListItemButton>
                 <ListItemIcon>
                   <HomeIcon sx={{ color: blackText }} />
