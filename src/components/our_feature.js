@@ -67,9 +67,9 @@ export default function OurFeature() {
                   textTransform: "uppercase",
                 }}
               >
-                Let's check <b>Our</b>
+                Let's check
                 <br />
-                <b>Features</b>
+                <b> Our Features</b>
               </Typography>
 
               <Grid

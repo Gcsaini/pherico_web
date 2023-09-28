@@ -301,7 +301,7 @@ export default function HeaderDesc() {
                         fontSize: 13,
                         textAlign: isMobile ? "center" : "start",
                         color: secondaryWhite,
-                        fontWeight: 600,
+                        fontWeight: 500,
                         fontStyle: "normal",
                         lineHeight: isMobile
                           ? "1.45"

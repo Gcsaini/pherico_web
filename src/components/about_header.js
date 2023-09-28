@@ -94,8 +94,8 @@ export default function AboutHeader(props) {
         direction={"row"}
         style={{
           marginTop: 70,
-          marginLeft: isMobile ? 10 : 20,
-          marginRight: isMobile ? 10 : 20,
+          marginLeft: isMobile ? 30 : 20,
+          marginRight: isMobile ? 30 : 20,
         }}
         justifyContent={
           isMobile

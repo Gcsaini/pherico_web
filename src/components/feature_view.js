@@ -11,7 +11,7 @@ export default function FeatureView(props) {
         variant="h5"
         sx={{
           color: white,
-          fontWeight: 500,
+          fontWeight: 600,
           fontStyle: "normal",
           lineHeight: "2.7rem",
           textTransform: "uppercase",
@@ -23,9 +23,9 @@ export default function FeatureView(props) {
       <Typography
         variant="h6"
         sx={{
-          fontSize: 13,
+          fontSize: 14,
           color: secondaryWhite,
-          fontWeight: 600,
+          fontWeight: 500,
           fontStyle: "normal",
           lineHeight: "1.5rem",
         }}

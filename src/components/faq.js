@@ -75,7 +75,7 @@ export default function FaqSection() {
             variant="h4"
             sx={{
               color: white,
-              fontWeight: 800,
+              fontWeight: 600,
               fontFamily: "Poppins, sans-serif",
               textAlign: "center",
               margin: 8,
@@ -97,7 +97,7 @@ export default function FaqSection() {
               variant="h6"
               sx={{
                 color: secondaryWhite,
-                fontWeight: 800,
+                fontWeight: 600,
                 fontFamily: "Poppins, sans-serif",
                 marginBottom: 2,
               }}
@@ -129,7 +129,7 @@ export default function FaqSection() {
               variant="h6"
               sx={{
                 color: secondaryWhite,
-                fontWeight: 800,
+                fontWeight: 600,
                 fontFamily: "Poppins, sans-serif",
                 marginBottom: 2,
               }}

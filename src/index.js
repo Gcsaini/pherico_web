@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <AnimatedCursor
-      color=" 51, 255, 206"
+      color="249,136,31"
       innerSize={12}
       outerSize={24}
       outerScale={2}

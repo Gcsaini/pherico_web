@@ -125,7 +125,7 @@ export default function ContactSection() {
                 variant="h4"
                 sx={{
                   color: white,
-                  fontWeight: 800,
+                  fontWeight: 600,
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                 }}
@@ -141,7 +141,7 @@ export default function ContactSection() {
                   variant="h4"
                   sx={{
                     color: white,
-                    fontWeight: 800,
+                    fontWeight: 600,
                     fontFamily: "Poppins, sans-serif",
                     textAlign: "left",
                   }}

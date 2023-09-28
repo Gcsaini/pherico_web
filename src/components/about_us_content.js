@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Stack, Typography } from "@mui/material";
-import missionImg from "../assets/images/about/mission.png";
-import goalImg from "../assets/images/about/goal.png";
+import missionImg from "../assets/images/about/mission.jpeg";
+import visionImg from "../assets/images/about/vision.jpeg";
+import goalImg from "../assets/images/about/goal.jpeg";
 import Grid from "@mui/material/Grid";
 import { black, secondaryWhite, white } from "../helpers/colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -12,7 +13,7 @@ export default function AboutUsContent(props) {
   return (
     <Stack
       style={{
-        marginTop: 80,
+        marginTop: isMobile ? 50 : 80,
         alignItems: "center",
       }}
     >
@@ -20,7 +21,7 @@ export default function AboutUsContent(props) {
         <Typography
           variant="h6"
           sx={{
-            marginLeft: 1.5,
+            marginLeft: 0,
             fontSize: 13,
             color: secondaryWhite,
             fontWeight: 600,
@@ -28,7 +29,7 @@ export default function AboutUsContent(props) {
             lineHeight: "1rem",
           }}
         >
-          know us
+          Know us
         </Typography>
         <div
           style={{
@@ -80,7 +81,7 @@ export default function AboutUsContent(props) {
             }}
           >
             <img
-              src={goalImg}
+              src={missionImg}
               alt="mission"
               style={{
                 width: isMobile ? "90%" : isTablet ? "100%" : "100%",
@@ -104,7 +105,7 @@ export default function AboutUsContent(props) {
                 marginTop: isMobile ? 20 : 0,
               }}
             >
-              <Typography
+              {/* <Typography
                 variant={"h6"}
                 sx={{
                   color: secondaryWhite,
@@ -115,7 +116,7 @@ export default function AboutUsContent(props) {
                 }}
               >
                 Our Mission
-              </Typography>
+              </Typography> */}
               <Typography
                 variant={isTablet ? "h5" : "h4"}
                 sx={{
@@ -168,7 +169,7 @@ export default function AboutUsContent(props) {
                 marginTop: isMobile ? 20 : 0,
               }}
             >
-              <Typography
+              {/* <Typography
                 variant={"h6"}
                 sx={{
                   color: secondaryWhite,
@@ -179,7 +180,7 @@ export default function AboutUsContent(props) {
                 }}
               >
                 Our Vision
-              </Typography>
+              </Typography> */}
               <Typography
                 variant={isTablet ? "h5" : "h4"}
                 sx={{
@@ -221,7 +222,7 @@ export default function AboutUsContent(props) {
             }}
           >
             <img
-              src={goalImg}
+              src={visionImg}
               alt="mission"
               style={{
                 width: isMobile ? "90%" : "100%",
@@ -251,7 +252,7 @@ export default function AboutUsContent(props) {
             }}
           >
             <img
-              src={missionImg}
+              src={goalImg}
               alt="mission"
               style={{
                 width: isMobile ? "90%" : isTablet ? "100%" : "100%",
@@ -275,7 +276,7 @@ export default function AboutUsContent(props) {
                 marginTop: isMobile ? 20 : 0,
               }}
             >
-              <Typography
+              {/* <Typography
                 variant={"h6"}
                 sx={{
                   color: secondaryWhite,
@@ -286,7 +287,7 @@ export default function AboutUsContent(props) {
                 }}
               >
                 Our Mission
-              </Typography>
+              </Typography> */}
               <Typography
                 variant={isTablet ? "h5" : "h4"}
                 sx={{
