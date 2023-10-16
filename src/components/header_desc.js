@@ -4,8 +4,9 @@ import bgImg from "../assets/images/bg/header_bg.png";
 import Stack from "@mui/material/Stack";
 import SquareIcon from "@mui/icons-material/Square";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
-import topImg from "../assets/images/home/primary.jpg";
+import topImg from "../assets/images/home/primarylala.png";
 import { Link } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
 import {
   blackBg,
   primary,
@@ -20,7 +21,7 @@ import {
   dark2,
 } from "../helpers/colors";
 import Chip from "@mui/material/Chip";
-import mobileImg from "../assets/images/mobile.png";
+import mobileImg from "../assets/images/mobile-max.png";
 import PlayIcon from "./play_icon";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -36,6 +37,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import emailjs from "@emailjs/browser";
+import ujjal from "../assets/images/home/ujjal.jpg";
 import {
   EmailJsPublicId,
   EmailJsServiceId,
@@ -318,13 +320,17 @@ export default function HeaderDesc() {
                       E-commerce & social media, with features like live
                       shopping, E-shop monetization, Direct interaction.
                     </Typography>
-                    <Stack direction={"row"} alignItems={"center"}>
-                      <SquareIcon sx={{ color: white, fontSize: 16 }} />
+                    <Stack
+                      direction={"row"}
+                      alignItems={"center"}
+                      style={{ marginTop: 15 }}
+                    >
+                      <Avatar alt="Remy Sharp" src={ujjal} />
+                      {/* <SquareIcon sx={{ color: white, fontSize: 16 }} /> */}
                       <Stack>
                         <Typography
                           variant="h6"
                           sx={{
-                            marginTop: 2,
                             marginLeft: 1.5,
                             fontSize: 14,
                             color: white,

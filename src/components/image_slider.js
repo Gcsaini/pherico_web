@@ -219,23 +219,6 @@ export default function ImageSlider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={styles.slide2}>
-            <Stack
-              justifyContent={"end"}
-              alignItems={"start"}
-              style={styles.overlay}
-            >
-              <Typography variant="h5" style={styles.imgCaptioTitle}>
-                0% Commission
-              </Typography>
-              <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Your earning is yours, we are bringing a 0% Commission
-                policy,won’t have to pay any commission per sale
-              </Typography>
-            </Stack>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
           <div style={styles.slide5}>
             <Stack
               justifyContent={"end"}
@@ -246,25 +229,8 @@ export default function ImageSlider() {
                 Clikies - Shop with reels
               </Typography>
               <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Clickies,a shopping dedicated short video format where the
-                sellers can promote the products in a trendy way.
-              </Typography>
-            </Stack>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div style={styles.slide3}>
-            <Stack
-              justifyContent={"end"}
-              alignItems={"start"}
-              style={styles.overlay}
-            >
-              <Typography variant="h5" style={styles.imgCaptioTitle}>
-                Request want you want
-              </Typography>
-              <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Experience the thrill of shopping from live sellers. performance
-                and comfort for every mode of use. The system utilises a
+                Dedicated short video format where the sellers can promote the
+                products in a trendy way.
               </Typography>
             </Stack>
           </div>
@@ -282,6 +248,41 @@ export default function ImageSlider() {
               <Typography variant="h6" style={styles.imgCaptioDesc}>
                 Experience the thrill of shopping from live sellers. performance
                 and comfort for every mode of use. The system utilises a
+              </Typography>
+            </Stack>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div style={styles.slide2}>
+            <Stack
+              justifyContent={"end"}
+              alignItems={"start"}
+              style={styles.overlay}
+            >
+              <Typography variant="h5" style={styles.imgCaptioTitle}>
+                0% Commission
+              </Typography>
+              <Typography variant="h6" style={styles.imgCaptioDesc}>
+                Your earning is yours, we are bringing a 0% Commission
+                policy,won’t have to pay any commission per sale
+              </Typography>
+            </Stack>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div style={styles.slide3}>
+            <Stack
+              justifyContent={"end"}
+              alignItems={"start"}
+              style={styles.overlay}
+            >
+              <Typography variant="h5" style={styles.imgCaptioTitle}>
+                Request want you want
+              </Typography>
+              <Typography variant="h6" style={styles.imgCaptioDesc}>
+                Before every live, you can request choice-able products to be
+                demonstrated by sellers, who will showcase them for you.
               </Typography>
             </Stack>
           </div>

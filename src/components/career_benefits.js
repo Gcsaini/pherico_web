@@ -72,8 +72,8 @@ export default function CareerBenefit() {
                   lineHeight: "1.2rem",
                 }}
               >
-                Health, dental, vision, and life insurance plans. We also cover
-                some of the cost for your dependents as well.
+                We provide insurance plans and also cover some of the cost of
+                your dependents
               </Typography>
             </Stack>
           </Grid>
@@ -104,8 +104,8 @@ export default function CareerBenefit() {
                   lineHeight: "1.2rem",
                 }}
               >
-                Health, dental, vision, and life insurance plans. We also cover
-                some of the cost for your dependents as well.
+                Incentive based on your work, provides stipend when you are
+                working from home
               </Typography>
             </Stack>
           </Grid>
@@ -128,7 +128,6 @@ export default function CareerBenefit() {
                 variant="h6"
                 sx={{
                   color: secondaryWhite,
-
                   fontFamily: "Poppins, sans-serif",
                   textAlign: "left",
                   fontWeight: 500,
@@ -137,8 +136,8 @@ export default function CareerBenefit() {
                   lineHeight: "1.2rem",
                 }}
               >
-                Health, dental, vision, and life insurance plans. We also cover
-                some of the cost for your dependents as well.
+                Flexibie time of work, office trips and also provide paid
+                leaves,
               </Typography>
             </Stack>
           </Grid>
@@ -170,8 +169,8 @@ export default function CareerBenefit() {
                   lineHeight: "1.2rem",
                 }}
               >
-                Health, dental, vision, and life insurance plans. We also cover
-                some of the cost for your dependents as well.
+                Remote work culture and a working environment where you have the
+                liberty of your time and schedule.
               </Typography>
             </Stack>
           </Grid>

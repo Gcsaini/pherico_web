@@ -101,13 +101,13 @@ export default function Counts() {
                         textTransform: "uppercase",
                       }}
                     >
-                      Dummy Title
+                      Why pherico?
                     </Typography>
                   </div>
                   <Typography
                     variant="h6"
                     sx={{
-                      fontSize: 13,
+                      fontSize: 15,
                       textAlign: isMobile ? "center" : "start",
                       color: secondaryWhite,
                       fontWeight: 600,
@@ -119,11 +119,9 @@ export default function Counts() {
                         : "1.5rem",
                     }}
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare, eros dolor interdum nulla,
-                    ut commodo diam libero vitae erat. Aenean faucibus nibh et
-                    justo cursus id rutrum lorem imperdiet.
+                    We believe that technology will ignite the next industrial
+                    revolution.Our mission is to provide live and interactive
+                    shopping experience with the taste of social media.
                   </Typography>
                   <Stack
                     direction={"row"}
@@ -133,7 +131,7 @@ export default function Counts() {
                     <Stack alignItems={"center"}>
                       {inView && (
                         <RotateDiv>
-                          <div style={styles.circleStyle}>1000+</div>
+                          <div style={styles.circleStyle}>500+</div>
                         </RotateDiv>
                       )}
                       <Typography variant="h6" style={styles.circleLabel}>
@@ -143,7 +141,7 @@ export default function Counts() {
                     <Stack alignItems={"center"}>
                       {inView && (
                         <RotateDiv>
-                          <div style={styles.circleStyle}>200+</div>
+                          <div style={styles.circleStyle}>100+</div>
                         </RotateDiv>
                       )}
                       <Typography variant="h6" style={styles.circleLabel}>
@@ -153,7 +151,7 @@ export default function Counts() {
                     <Stack alignItems={"center"}>
                       {inView && (
                         <RotateDiv>
-                          <div style={styles.circleStyle}>2500+</div>
+                          <div style={styles.circleStyle}>1000+</div>
                         </RotateDiv>
                       )}
                       <Typography variant="h6" style={styles.circleLabel}>

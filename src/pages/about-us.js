@@ -7,6 +7,7 @@ import ContactSection from "../components/contact_section";
 import FaqSection from "../components/faq";
 import * as React from "react";
 import db from "../firebase";
+import VideoHeader from "../components/video_header";
 
 export default function AboutUs() {
   const [aboutData, setAboutData] = React.useState([]);
@@ -22,7 +23,9 @@ export default function AboutUs() {
   }, []);
   return (
     <>
-      <AboutHeader data={aboutData} />
+      <VideoHeader />
+      {/* <AboutHeader data={aboutData} /> */}
+      {/* <VideoHeader /> */}
       <AboutUsContent data={aboutData} />
       {/* <FoundersMessage data={aboutData} /> */}
       <OurTeam />

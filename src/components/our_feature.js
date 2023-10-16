@@ -15,6 +15,7 @@ import FeatureView from "./feature_view";
 import styled, { keyframes } from "styled-components";
 import { slideInLeft } from "react-animations";
 import InsightsIcon from "@mui/icons-material/Insights";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 const FadeInRightAnimation = keyframes`${slideInLeft}`;
 const FadeInRightDiv = styled.div`
   animation: 3s ${FadeInRightAnimation};
@@ -81,26 +82,25 @@ export default function OurFeature() {
               >
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
-                    name="Live Streaming"
-                    desc="Interact with your audience, answer questions, and address concerns instantly, 
-                    creating a personal connection, Showcase your products or services in action."
+                    name="Live shop & Clickies"
+                    desc="Interact with your audience, answer questions on live, 
+                    dedicated short video format where  sellers can promote the products in a trendy way."
                     icon={<LiveTvOutlinedIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
                     name="Insights"
-                    desc="In-depth business insight,
-                    manage your delivery and order tracking 
+                    desc="Our automated in depth business insigths will help you to manage ur business, You can monitor your orders,views and total sales 
                     "
                     icon={<InsightsIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
-                    name="Clickies"
-                    desc=" Bored just scrolling through reels? Now scroll clickies!  We are introducing ‘Clickies’,a shopping dedicated short video format where the sellers can promote the products in a trendy way."
-                    icon={<AppShortcutOutlinedIcon style={iconStyle} />}
+                    name="Delivery"
+                    desc="You can choose your delivery partnet as per your conveince,one store with multiple location can ship products from multiple warehouses across india"
+                    icon={<LocalShippingIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -113,7 +113,7 @@ export default function OurFeature() {
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
                     name="Easy Store-front"
-                    desc="Quick storefront in less than 5 min "
+                    desc="Get your storefront in less than 5 minutes and list all of your products without worrying about any limit. Show and sale all products without any restrictions."
                     icon={<StoreIcon style={iconStyle} />}
                   />
                 </Grid>

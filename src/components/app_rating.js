@@ -3,6 +3,7 @@ import mobileImg from "../assets/images/mobile_4.png";
 import ratingStarSvg from "../assets/images/rating_star.svg";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import {
   black,
   blackText,
@@ -16,6 +17,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useInView } from "react-intersection-observer";
 import styled, { keyframes } from "styled-components";
 import { fadeInRight } from "react-animations";
+import { blue } from "@mui/material/colors";
 const SwingAnimation = keyframes`${fadeInRight}`;
 const SwingDiv = styled.div`
   animation: 3s ${SwingAnimation};
@@ -54,8 +56,11 @@ export default function AppRating() {
                 />
 
                 <Stack alignItems={"center"} justifyContent={"center"}>
-                  <Stack direction={"row"} mt={isMobile ? 2 : 0}>
-                    <Typography
+                  <Stack
+                    // direction={"row"}
+                    mt={isMobile ? 2 : 0}
+                  >
+                    {/* <Typography
                       variant={"h1"}
                       sx={{
                         color: white,
@@ -67,7 +72,7 @@ export default function AppRating() {
                       }}
                     >
                       4.7
-                    </Typography>
+                    </Typography> */}
                     <Typography
                       variant="h3"
                       sx={{
@@ -77,24 +82,42 @@ export default function AppRating() {
                         fontStyle: "normal",
                         fontFamily: "Poppins,sans-serif",
                         lineHeight: "3rem",
-                        marginLeft: isMobile ? 1 : 3,
+
+                        marginLeft: isMobile ? 1 : 0,
                       }}
                     >
-                      play
-                      <br /> store
+                      {/* play
+                      <br /> store */}
+                      Comming Soon
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        color: white,
+                        fontWeight: 500,
+                        whiteSpace: "normal",
+                        fontStyle: "normal",
+                        fontFamily: "Poppins,sans-serif",
+                        lineHeight: "3rem",
+
+                        marginLeft: isMobile ? 1 : 5,
+                      }}
+                    >
+                      Let's check our updates
                     </Typography>
                   </Stack>
-                  <img
+                  {/* <img
                     src={ratingStarSvg}
                     alt="rating star"
                     height={50}
                     width={150}
                     style={{ marginTop: 12 }}
-                  />
+                  /> */}
                   {!isMobile && (
                     <Chip
-                      icon={<PlayIconBlack sx={{ color: black }} />}
-                      label="Download the app"
+                      icon={<FacebookRoundedIcon sx={{ color: black }} />}
+                      label="Facebook"
                       sx={{
                         height: "auto",
                         background: white,
@@ -103,7 +126,7 @@ export default function AppRating() {
                         marginTop: 3,
                         borderRadius: 30,
                         "& .MuiChip-label": {
-                          color: blackText,
+                          color: black,
                           display: "block",
                           fontWeight: 500,
                           whiteSpace: "normal",
@@ -121,7 +144,8 @@ export default function AppRating() {
               <Stack alignItems={"center"}>
                 {isMobile && (
                   <Chip
-                    icon={<PlayIconBlack sx={{ color: black }} />}
+                    // icon={<PlayIconBlack sx={{ color: black }} />}
+                    icon={<FacebookRoundedIcon sx={{ color: black }} />}
                     label="Download the app"
                     sx={{
                       height: "auto",

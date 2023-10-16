@@ -123,17 +123,27 @@ export default function BecomeSeller() {
                     lineHeight: "1.5rem",
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius enim in eros elementum tristique. Duis
-                  cursus, mi quis
+                  We are providing so many innovative features to enhance our
+                  sellers experience such as.
                 </Typography>
+
+                <Stack
+                  direction={"row"}
+                  alignItems={"center"}
+                  style={{ marginLeft: 20, marginTop: isTablet ? 2 : 10 }}
+                >
+                  <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
+                  <Typography variant="h6" style={checkPointStyle}>
+                    Virtual Storefront
+                  </Typography>
+                </Stack>
 
                 <Stack
                   direction={"row"}
                   alignItems={"center"}
                   style={{
                     marginLeft: 20,
-                    marginTop: isTablet ? 10 : 20,
+                    marginTop: isTablet ? 10 : 10,
                   }}
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
@@ -151,7 +161,7 @@ export default function BecomeSeller() {
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
                   <Typography variant="h6" style={checkPointStyle}>
-                    Zero delivery hustle
+                    Zero commission
                   </Typography>
                 </Stack>
                 <Stack
@@ -172,9 +182,10 @@ export default function BecomeSeller() {
                 >
                   <CheckOutlinedIcon sx={{ color: white, fontSize: 20 }} />
                   <Typography variant="h6" style={checkPointStyle}>
-                    Monetize
+                    Clickies
                   </Typography>
                 </Stack>
+
                 <Chip
                   label={"JOIN US AS SELLER"}
                   sx={{
@@ -185,13 +196,13 @@ export default function BecomeSeller() {
                     marginTop: 3,
                     cursor: "pointer",
                     borderRadius: 3,
-                    wordSpacing: 4,
+                    wordSpacing: 2,
                     boxShadow:
                       "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
                     background: "#E4DCD3",
                     "& .MuiChip-label": {
                       display: "block",
-                      fontWeight: "bold",
+                      fontWeight: 800,
                       fontStyle: "normal",
                       fontFamily: "Poppins,sans-serif",
                       lineHeight: "1.5rem",
