@@ -14,6 +14,7 @@ import { useInView } from "react-intersection-observer";
 import FeatureView from "./feature_view";
 import styled, { keyframes } from "styled-components";
 import { slideInLeft } from "react-animations";
+import InsightsIcon from "@mui/icons-material/Insights";
 const FadeInRightAnimation = keyframes`${slideInLeft}`;
 const FadeInRightDiv = styled.div`
   animation: 3s ${FadeInRightAnimation};
@@ -88,9 +89,11 @@ export default function OurFeature() {
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
-                    name="Product listing"
-                    desc="With us list each and all of your products without worrying about any limit. Show and sale all products without any restrictions."
-                    icon={<WidgetsOutlinedIcon style={iconStyle} />}
+                    name="Insights"
+                    desc="In-depth business insight,
+                    manage your delivery and order tracking 
+                    "
+                    icon={<InsightsIcon style={iconStyle} />}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -110,9 +113,7 @@ export default function OurFeature() {
                 <Grid item xs={12} sm={6} md={4}>
                   <FeatureView
                     name="Easy Store-front"
-                    desc="An access for all, opening a store in our platform is so easy 
-                    that any seller looking for a digital platform to promote their 
-                    product can connect with us."
+                    desc="Quick storefront in less than 5 min "
                     icon={<StoreIcon style={iconStyle} />}
                   />
                 </Grid>

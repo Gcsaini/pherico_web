@@ -133,7 +133,7 @@ export default function AboutUsContent(props) {
                 variant={"h6"}
                 sx={{
                   marginTop: isMobile ? 0.5 : 2,
-                  fontSize: isMobile || isTablet ? 15 : 20,
+                  fontSize: isMobile || isTablet ? 16 : 22,
                   color: secondaryWhite,
                   fontWeight: 500,
                   fontStyle: "normal",
@@ -197,7 +197,7 @@ export default function AboutUsContent(props) {
                 variant={"h6"}
                 sx={{
                   marginTop: isMobile || isTablet ? 0.5 : 2,
-                  fontSize: isMobile || isTablet ? 15 : 20,
+                  fontSize: isMobile || isTablet ? 16 : 22,
                   color: secondaryWhite,
                   fontWeight: 500,
                   fontStyle: "normal",
@@ -304,7 +304,7 @@ export default function AboutUsContent(props) {
                 variant={"h6"}
                 sx={{
                   marginTop: isMobile || isTablet ? 0.5 : 2,
-                  fontSize: isMobile || isTablet ? 15 : 20,
+                  fontSize: isMobile || isTablet ? 16 : 22,
                   color: secondaryWhite,
                   fontWeight: 500,
                   fontStyle: "normal",

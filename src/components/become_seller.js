@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
-import liveWatch from "../assets/images/home/live-watch.png";
+import liveWatch from "../assets/images/home/live 2.jpg";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import {
@@ -94,18 +94,16 @@ export default function BecomeSeller() {
             >
               <Stack direction={"column"}>
                 <Typography
-                  variant={isTablet ? "h5" : "h4"}
+                  variant={"h5"}
                   sx={{
                     color: white,
                     fontWeight: 500,
                     fontStyle: "normal",
-                    lineHeight: isTablet ? "1.3" : "2.7rem",
+                    lineHeight: isTablet ? "1.3" : "2.1rem",
                     textTransform: "uppercase",
                   }}
                 >
-                  200+ Sellers
-                  <br />
-                  Already joined us
+                  100+ sellers are already interested to join us
                   <br />
                 </Typography>
                 <div

@@ -1,9 +1,9 @@
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import { red } from "@mui/material/colors";
-import { blackBg, dark, dark2, primary, white } from "../helpers/colors";
+import { dark2, primary, white } from "../helpers/colors";
 import Chip from "@mui/material/Chip";
-import logo from "../assets/images/logo/logo.png";
+import logo from "../assets/images/logo/logoooooooooooooo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Link } from "react-router-dom";
 export default function Navbar() {
@@ -41,8 +41,8 @@ export default function Navbar() {
         <a href="/">
           <img
             src={logo}
-            height={30}
-            width={isTablet ? 120 : 130}
+            height={40}
+            width={isTablet ? 160 : 170}
             alt="logo"
             style={{ marginLeft: isTablet ? 10 : 0 }}
           />

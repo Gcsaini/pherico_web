@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import liveImg from "../assets/images/slider/live-shopping.png";
-import commsionImg from "../assets/images/slider/o-commision.png";
-import shoppingImg from "../assets/images/slider/shopping.png";
-import earnImg from "../assets/images/slider/earn.png";
-import clickiesImg from "../assets/images/slider/clickies.png";
+import liveImg from "../assets/images/slider/live_shopping_experience.jpg";
+import commsionImg from "../assets/images/slider/zero_comision.jpg";
+import shoppingImg from "../assets/images/slider/request.jpg";
+import earnImg from "../assets/images/slider/sell_earn.jpg";
+import clickiesImg from "../assets/images/slider/clikies.jpg";
 import { Stack, Typography } from "@mui/material";
-import { red, secondaryWhite, white } from "../helpers/colors";
+import { grey, red, secondaryWhite, white } from "../helpers/colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
 export default function ImageSlider() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -100,6 +100,21 @@ export default function ImageSlider() {
             WHY <br />
             PHERICO
           </Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              marginTop: 2,
+              fontSize: 22,
+              color: "#fff",
+              fontWeight: 500,
+              fontStyle: "normal",
+              textAlign: "center",
+              lineHeight: "2rem",
+            }}
+          >
+            We help shoppers find brands through
+            <br /> engaging live and creative videos.
+          </Typography>
         </Stack>
       )}
 
@@ -168,6 +183,21 @@ export default function ImageSlider() {
               >
                 WHY PHERICO
               </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  marginTop: 2,
+                  fontSize: 22,
+                  color: grey,
+                  fontWeight: 500,
+                  fontStyle: "normal",
+                  textAlign: "center",
+                  lineHeight: "2rem",
+                }}
+              >
+                We help shoppers find brands through
+                <br /> engaging live and creative videos.
+              </Typography>
             </Stack>
           </SwiperSlide>
         )}
@@ -206,6 +236,23 @@ export default function ImageSlider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
+          <div style={styles.slide5}>
+            <Stack
+              justifyContent={"end"}
+              alignItems={"start"}
+              style={styles.overlay}
+            >
+              <Typography variant="h5" style={styles.imgCaptioTitle}>
+                Clikies - Shop with reels
+              </Typography>
+              <Typography variant="h6" style={styles.imgCaptioDesc}>
+                Clickies,a shopping dedicated short video format where the
+                sellers can promote the products in a trendy way.
+              </Typography>
+            </Stack>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
           <div style={styles.slide3}>
             <Stack
               justifyContent={"end"}
@@ -235,23 +282,6 @@ export default function ImageSlider() {
               <Typography variant="h6" style={styles.imgCaptioDesc}>
                 Experience the thrill of shopping from live sellers. performance
                 and comfort for every mode of use. The system utilises a
-              </Typography>
-            </Stack>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div style={styles.slide5}>
-            <Stack
-              justifyContent={"end"}
-              alignItems={"start"}
-              style={styles.overlay}
-            >
-              <Typography variant="h5" style={styles.imgCaptioTitle}>
-                Clikies - Shop with reels
-              </Typography>
-              <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Clickies,a shopping dedicated short video format where the
-                sellers can promote the products in a trendy way.
               </Typography>
             </Stack>
           </div>

@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import logo from "../assets/images/logo/logo.svg";
+import logo from "../assets/images/logo/logoooooooooooooo.png";
 import playStore from "../assets/images/play-store.svg";
 import { dark, white } from "../helpers/colors";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -8,6 +8,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Link } from "react-router-dom";
 export default function Footer() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -16,19 +17,20 @@ export default function Footer() {
       style={{
         background: dark,
         paddingBottom: "50px",
+        paddingTop: 40,
       }}
     >
       <Stack justifyContent={"center"} alignItems={"center"}>
-        <img src={logo} alt="pherico logo" />
+        <img src={logo} alt="pherico logo" height={50} width={240} />
         <Stack
           style={{
             width: isMobile ? "100%" : isTablet ? "90%" : "40%",
-            marginTop: -70,
+            marginTop: 20,
           }}
         >
           <Stack direction={"row"} justifyContent={"space-evenly"}>
-            <a
-              href=""
+            <Link
+              to={"/terms-and-conditions"}
               style={{
                 fontFamily: "Poppins,sans-serif",
                 lineHeight: "30px",
@@ -40,9 +42,9 @@ export default function Footer() {
               }}
             >
               Terms
-            </a>
-            <a
-              href="/privacy"
+            </Link>
+            <Link
+              to={"/privacy"}
               style={{
                 fontFamily: "Poppins,sans-serif",
                 lineHeight: "30px",
@@ -54,9 +56,9 @@ export default function Footer() {
               }}
             >
               Privacy
-            </a>
-            <a
-              href="/about-us"
+            </Link>
+            <Link
+              to={"/about-us"}
               variant="h6"
               style={{
                 fontFamily: "Poppins,sans-serif",
@@ -69,9 +71,9 @@ export default function Footer() {
               }}
             >
               About
-            </a>
-            <a
-              href="/career"
+            </Link>
+            <Link
+              to={"/career"}
               style={{
                 fontFamily: "Poppins,sans-serif",
                 lineHeight: "30px",
@@ -83,10 +85,10 @@ export default function Footer() {
               }}
             >
               Careers
-            </a>
+            </Link>
 
-            <a
-              href="/blogs"
+            <Link
+              to={"/blogs"}
               style={{
                 fontFamily: "Poppins,sans-serif",
                 lineHeight: "30px",
@@ -98,7 +100,7 @@ export default function Footer() {
               }}
             >
               Blogs
-            </a>
+            </Link>
           </Stack>
         </Stack>
         <img
@@ -151,8 +153,8 @@ export default function Footer() {
                   Twitter
                 </Typography>
               </Stack>
-              <a
-                href="https://www.linkedin.com/company/pherico/"
+              <Link
+                to={"https://www.linkedin.com/company/pherico/"}
                 style={{ textDecoration: "none" }}
                 target="_blank"
               >
@@ -175,9 +177,11 @@ export default function Footer() {
                     LinkedIn
                   </Typography>
                 </Stack>
-              </a>
-              <a
-                href="https://www.facebook.com/people/Phericolive/100088986303289/?mibextid=ZbWKwL"
+              </Link>
+              <Link
+                to={
+                  "https://www.facebook.com/people/Phericolive/100088986303289/?mibextid=ZbWKwL"
+                }
                 style={{ textDecoration: "none" }}
                 target="_blank"
               >
@@ -200,9 +204,9 @@ export default function Footer() {
                     Facebook
                   </Typography>
                 </Stack>
-              </a>
-              <a
-                href="https://www.instagram.com/pherico.live/"
+              </Link>
+              <Link
+                to={"https://www.instagram.com/pherico.live/"}
                 style={{ textDecoration: "none" }}
                 target="_blank"
               >
@@ -226,7 +230,7 @@ export default function Footer() {
                     Instagram
                   </Typography>
                 </Stack>
-              </a>
+              </Link>
             </Stack>
           </Stack>
         )}
@@ -238,8 +242,10 @@ export default function Footer() {
                 justifyContent={"space-evenly"}
                 alignItems={"center"}
               >
-                <a
-                  href="https://www.facebook.com/people/Phericolive/100088986303289/?mibextid=ZbWKwL"
+                <Link
+                  to={
+                    "https://www.facebook.com/people/Phericolive/100088986303289/?mibextid=ZbWKwL"
+                  }
                   style={{ textDecoration: "none" }}
                   target="_blank"
                 >
@@ -262,9 +268,9 @@ export default function Footer() {
                       Facebook
                     </Typography>
                   </Stack>
-                </a>
-                <a
-                  href="https://www.instagram.com/pherico.live/"
+                </Link>
+                <Link
+                  to={"https://www.instagram.com/pherico.live/"}
                   style={{ textDecoration: "none" }}
                   target="_blank"
                 >
@@ -288,7 +294,7 @@ export default function Footer() {
                       Instagram
                     </Typography>
                   </Stack>
-                </a>
+                </Link>
               </Stack>
               <Stack
                 direction={"row"}
@@ -315,8 +321,8 @@ export default function Footer() {
                     Twitter
                   </Typography>
                 </Stack>
-                <a
-                  href="https://www.linkedin.com/company/pherico/"
+                <Link
+                  to={"https://www.linkedin.com/company/pherico/"}
                   style={{ textDecoration: "none" }}
                   target="_blank"
                 >
@@ -339,7 +345,7 @@ export default function Footer() {
                       LinkedIn
                     </Typography>
                   </Stack>
-                </a>
+                </Link>
               </Stack>
             </Stack>
           </Stack>

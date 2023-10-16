@@ -19,7 +19,7 @@ import Diversity1Icon from "@mui/icons-material/Diversity1";
 import WorkIcon from "@mui/icons-material/Work";
 import BookIcon from "@mui/icons-material/Book";
 import { black, blackText } from "../helpers/colors";
-import logo from "../assets/images/logo/logo.png";
+import logo from "../assets/images/logo/logowhitetext.png";
 import { Chip, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 const drawerWidth = 240;

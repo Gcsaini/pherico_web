@@ -4,7 +4,7 @@ import bgImg from "../assets/images/bg/header_bg.png";
 import Stack from "@mui/material/Stack";
 import SquareIcon from "@mui/icons-material/Square";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
-import topImg from "../assets/images/home/home-top.png";
+import topImg from "../assets/images/home/primary.jpg";
 import { Link } from "react-router-dom";
 import {
   blackBg,
