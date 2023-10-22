@@ -1,7 +1,14 @@
 import { Avatar, Stack, Typography } from "@mui/material";
 import { dark, hrLine, secondaryWhite, white } from "../helpers/colors";
-import img from "../assets/images/teams/gopi.jpg";
-export default function TestimonialView() {
+import pooja from "../assets/images/testimonials/pooja.jpg";
+import bro from "../assets/images/testimonials/bro.jpg";
+import madam from "../assets/images/testimonials/madam.jpg";
+import kapil from "../assets/images/testimonials/kapil.jpg";
+export default function TestimonialView(props) {
+  const name = props.name;
+  const message = props.msg;
+  const index = props.imageIndex;
+  const images = [pooja, bro, madam, kapil];
   return (
     <Stack
       style={{
@@ -22,10 +29,7 @@ export default function TestimonialView() {
           lineHeight: "1.5rem",
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-        elementum tristique. Duis
+        {message}
       </Typography>
       <div
         style={{
@@ -37,7 +41,11 @@ export default function TestimonialView() {
         }}
       ></div>
       <Stack direction={"row"} alignItems={"center"}>
-        <Avatar alt="author name" src={img} sx={{ height: 50, width: 50 }} />
+        <Avatar
+          alt="author name"
+          src={images[index]}
+          sx={{ height: 50, width: 50 }}
+        />
         <Stack alignItems={"start"}>
           <Typography
             variant="h6"
@@ -50,7 +58,7 @@ export default function TestimonialView() {
               lineHeight: "1.7rem",
             }}
           >
-            Ujjal Sarkar
+            {name}
           </Typography>
           <Typography
             variant="h6"

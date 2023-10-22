@@ -31,7 +31,7 @@ export default function BlogContent(props) {
         <img
           src={data.image1}
           alt={data.title}
-          height={"80%"}
+          width={"100%"}
           style={{ marginTop: 50 }}
         />
         <Typography
@@ -51,7 +51,7 @@ export default function BlogContent(props) {
           <img
             src={data.image2}
             alt={data.title}
-            height={"80%"}
+            width={"100%"}
             style={{ marginTop: 50 }}
           />
         )}

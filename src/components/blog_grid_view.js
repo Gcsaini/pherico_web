@@ -3,6 +3,7 @@ import { hrLine, secondaryWhite, white } from "../helpers/colors";
 import HighlightOutlinedIcon from "@mui/icons-material/HighlightOutlined";
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Link } from "react-router-dom";
 export default function BlogGridView(props) {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -57,7 +58,7 @@ export default function BlogGridView(props) {
                 color: white,
                 fontWeight: 500,
                 fontStyle: "normal",
-                lineHeight: "1rem",
+                lineHeight: "1.6rem",
               }}
             >
               {data.title.length > 55
@@ -79,8 +80,8 @@ export default function BlogGridView(props) {
             </Typography>
             <Stack direction={"row"} mt={3}>
               <HighlightOutlinedIcon sx={{ color: white, height: 18 }} />
-              <a
-                href={`/blog-details/${data.id.trim()}`}
+              <Link
+                to={`/blog-details/${data.id.trim()}`}
                 style={{
                   color: secondaryWhite,
                   textTransform: "uppercase",
@@ -90,7 +91,7 @@ export default function BlogGridView(props) {
                 }}
               >
                 Read Article
-              </a>
+              </Link>
             </Stack>
           </Stack>
         </Grid>

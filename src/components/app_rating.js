@@ -4,6 +4,7 @@ import ratingStarSvg from "../assets/images/rating_star.svg";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import {
   black,
   blackText,
@@ -115,9 +116,79 @@ export default function AppRating() {
                     style={{ marginTop: 12 }}
                   /> */}
                   {!isMobile && (
+                    <Stack direction={"row"}>
+                      <Chip
+                        icon={
+                          <FacebookRoundedIcon style={{ color: "#3b5998" }} />
+                        }
+                        label="Facebook"
+                        href="https://www.facebook.com/people/Phericolive/100088986303289/?mibextid=ZbWKwL"
+                        component={"a"}
+                        target="_blank"
+                        clickable
+                        sx={{
+                          height: "auto",
+                          background: white,
+                          padding: "6px 20px",
+                          cursor: "pointer",
+                          marginTop: 3,
+                          borderRadius: 30,
+                          "& .MuiChip-label": {
+                            color: black,
+                            display: "block",
+                            fontWeight: 500,
+                            whiteSpace: "normal",
+                            fontStyle: "normal",
+                            fontFamily: "Poppins, sans-serif",
+                            lineHeight: "1.5rem",
+                            fontSize: "0.9rem",
+                          },
+                        }}
+                      />
+                      <Chip
+                        icon={<InstagramIcon style={{ color: "#E1306C" }} />}
+                        label="Instagram"
+                        component="a"
+                        target="_blank"
+                        clickable
+                        href="https://www.instagram.com/pherico.live/"
+                        sx={{
+                          height: "auto",
+                          background: white,
+                          padding: "6px 20px",
+                          cursor: "pointer",
+                          marginTop: 3,
+                          marginLeft: 3,
+                          borderRadius: 30,
+                          "& .MuiChip-label": {
+                            color: black,
+                            display: "block",
+                            fontWeight: 500,
+                            whiteSpace: "normal",
+                            fontStyle: "normal",
+                            fontFamily: "Poppins, sans-serif",
+                            lineHeight: "1.5rem",
+                            fontSize: "0.9rem",
+                          },
+                        }}
+                      />
+                    </Stack>
+                  )}
+                </Stack>
+              </Stack>
+
+              <Stack alignItems={"center"}>
+                {isMobile && (
+                  <Stack direction={"row"}>
                     <Chip
-                      icon={<FacebookRoundedIcon sx={{ color: black }} />}
+                      icon={
+                        <FacebookRoundedIcon style={{ color: "#3b5998" }} />
+                      }
                       label="Facebook"
+                      href="https://www.facebook.com/people/Phericolive/100088986303289/?mibextid=ZbWKwL"
+                      component={"a"}
+                      target="_blank"
+                      clickable
                       sx={{
                         height: "auto",
                         background: white,
@@ -137,35 +208,34 @@ export default function AppRating() {
                         },
                       }}
                     />
-                  )}
-                </Stack>
-              </Stack>
-
-              <Stack alignItems={"center"}>
-                {isMobile && (
-                  <Chip
-                    // icon={<PlayIconBlack sx={{ color: black }} />}
-                    icon={<FacebookRoundedIcon sx={{ color: black }} />}
-                    label="Download the app"
-                    sx={{
-                      height: "auto",
-                      background: white,
-                      padding: "6px 20px",
-                      cursor: "pointer",
-                      marginTop: 5,
-                      borderRadius: 30,
-                      "& .MuiChip-label": {
-                        color: blackText,
-                        display: "block",
-                        fontWeight: 500,
-                        whiteSpace: "normal",
-                        fontStyle: "normal",
-                        fontFamily: "Poppins, sans-serif",
-                        lineHeight: "1.5rem",
-                        fontSize: "0.9rem",
-                      },
-                    }}
-                  />
+                    <Chip
+                      icon={<InstagramIcon style={{ color: "#E1306C" }} />}
+                      label="Instagram"
+                      component="a"
+                      target="_blank"
+                      clickable
+                      href="https://www.instagram.com/pherico.live/"
+                      sx={{
+                        height: "auto",
+                        background: white,
+                        padding: "6px 20px",
+                        cursor: "pointer",
+                        marginTop: 3,
+                        marginLeft: 3,
+                        borderRadius: 30,
+                        "& .MuiChip-label": {
+                          color: black,
+                          display: "block",
+                          fontWeight: 500,
+                          whiteSpace: "normal",
+                          fontStyle: "normal",
+                          fontFamily: "Poppins, sans-serif",
+                          lineHeight: "1.5rem",
+                          fontSize: "0.9rem",
+                        },
+                      }}
+                    />
+                  </Stack>
                 )}
                 <Typography
                   variant="h6"

@@ -2,11 +2,12 @@ import { Grid, Typography, Stack } from "@mui/material";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import BlogGridView from "../components/blog_grid_view";
-import blogHeaderImg from "../assets/images/blogs/blogs.png";
+import blogHeaderImg from "../assets/images/blogs/BLOGS.jpg";
 import * as React from "react";
 import db from "../firebase";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import NavDrawer from "../components/nav_drawer";
+import { grey, white } from "../helpers/colors";
 export default function Blogs() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -57,7 +58,7 @@ export default function Blogs() {
                   fontFamily: "Poppins, sans-serif",
                   textAlign: isMobile || isTablet ? "center" : "left",
                   fontWeight: 600,
-                  marginTop: 10,
+                  marginTop: isMobile ? 10 : 0,
                   lineHeight: isMobile || isTablet ? "2.5rem" : "3.5rem",
                 }}
               >
@@ -92,6 +93,7 @@ export default function Blogs() {
             <Typography
               variant="h4"
               sx={{
+                color: white,
                 fontWeight: 800,
                 fontFamily: "Poppins, sans-serif",
                 textAlign: "center",
@@ -102,7 +104,7 @@ export default function Blogs() {
             <Typography
               variant="h6"
               sx={{
-                color: "#817B7B",
+                color: grey,
                 fontWeight: 500,
                 whiteSpace: "normal",
                 fontStyle: "normal",
@@ -111,6 +113,7 @@ export default function Blogs() {
                 textAlign: "center",
                 fontFamily: "Roboto,sans-serif",
                 marginBottom: 5,
+                marginTop: 2,
               }}
             >
               Explore insightful articles and engaging content on various
@@ -123,12 +126,7 @@ export default function Blogs() {
             columns={{ sm: 12, md: 12 }}
             justifyContent={"space-evenly"}
           >
-            {blogs &&
-              blogs.map((blog) => (
-                <Grid item xs={12} sm={6} md={4}>
-                  <BlogGridView data={blog} />
-                </Grid>
-              ))}
+            {blogs && blogs.map((blog) => <BlogGridView data={blog} />)}
           </Grid>
         </Stack>
       </div>

@@ -7,6 +7,16 @@ import sideImg from "../assets/images/about/aboutus.jpg.png";
 export default function VideoHeader() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const gradientBg = {
+    height: "80px",
+    width: "100%",
+    background: "rgba(0,0,0,1)",
+    position: "absolute",
+    filter: "blur(24px)",
+    top: 5,
+    webkitFilter: "blur(8px)",
+  };
+
   return (
     <Stack>
       <video
@@ -116,6 +126,7 @@ export default function VideoHeader() {
             </Grid>
           </Grid>
         </div>
+        <div style={gradientBg}></div>
       </Stack>
     </Stack>
   );

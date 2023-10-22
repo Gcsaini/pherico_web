@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import logo from "../assets/images/logo/logoooooooooooooo.png";
+import logo from "../assets/images/logo/logowhitetext.png";
 import playStore from "../assets/images/play-store.svg";
 import { dark, white } from "../helpers/colors";
 import TwitterIcon from "@mui/icons-material/Twitter";

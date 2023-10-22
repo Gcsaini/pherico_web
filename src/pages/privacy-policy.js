@@ -35,113 +35,95 @@ export default function PrivacyPolicy() {
             Privacy and Policy
           </h2>
 
-          <p style={{ color: "#fff", marginTop: 20 }}>
-            These Terms and Conditions ("Agreement") govern your use of the
-            website (the "Website") operated by [Your Company Name] ("we,"
-            "our," or "us"). By accessing or using this Website, you agree to
-            comply with and be bound by these Terms and Conditions. If you do
-            not agree with these Terms and Conditions, please do not use this
-            Website.
-          </p>
-          <h3 style={colorWhite}>1. Acceptance of Terms</h3>
+          <h3 style={colorWhite}>1. Introduction</h3>
           <p style={colorWhite}>
-            By using this Website, you acknowledge that you have read,
-            understood, and agree to be bound by these Terms and Conditions.
+            Welcome to Pherico ("we," "us," or "our"). We respect your privacy
+            and are committed to protecting your personal information. This
+            Privacy Policy explains how we collect, use, disclose, and safeguard
+            your personal data when you visit or make use of our e-commerce
+            website. By using our services, you consent to the practices
+            described in this policy.
           </p>
-          <h3 style={colorWhite}>2. Use of the Website</h3>
+          <h3 style={colorWhite}>2. Information We Collect</h3>
           <p style={colorWhite}>
-            2.1. You agree to use this Website for lawful purposes only and in
-            accordance with these Terms and Conditions.
+            <b>2.1 Personal Information:</b> Name, Contact Information (email
+            address, phone number, shipping address) Billing Information (credit
+            card details, payment information).
             <br />
-            2.2. You must be at least 12 years old to use this Website.
+            <b>2.2 Non-Personal Information:</b> Browsing and usage data Cookies
+            and tracking information.
           </p>
-          <h3 style={colorWhite}>3.User Registration</h3>
+          <h3 style={colorWhite}>3. How We Use Your Information</h3>
           <p style={colorWhite}>
-            3.1. Some features of this Website may require you to register an
-            account. You are responsible for maintaining the confidentiality of
-            your account information and for all activities that occur under
-            your account.
+            We use your personal information for the following purposes:
+          </p>
+          <p style={colorWhite}>
+            <b>3.1 Order Processing:</b> <br />
+            To process and fulfill orders To provide order and shipping updates
             <br />
-            3.2. We reserve the right to suspend or terminate your account at
-            our discretion if we believe you have violated these Terms and
-            Conditions.
-          </p>
-          <h3 style={colorWhite}>4. Intellectual Property</h3>
-          <p style={colorWhite}>
-            4.1. All content on this Website, including but not limited to text,
-            images, graphics, logos, and software, is our intellectual property
-            and is protected by copyright and other applicable laws.
+            <b>3.2 Customer Support:</b>
             <br />
-            4.2. You may not reproduce, distribute, modify, or create derivative
-            works from any content on this Website without our prior written
-            consent.
-          </p>
-          <h3 style={colorWhite}>5. Product Information</h3>
-          <p style={colorWhite}>
-            5.1. We make every effort to ensure that the product information on
-            our Website is accurate and up to date. However, we do not guarantee
-            the accuracy, completeness, or reliability of this information.
+            -To respond to your inquiries and requests
             <br />
-            5.2. Prices and availability of products are subject to change
-            without notice.
-          </p>
-          <h3 style={colorWhite}>6. Orders and Payments</h3>
-          <p style={colorWhite}>
-            6.1. When you place an order on our Website, you agree to pay the
-            specified price, including any applicable taxes and shipping fees.
+            -To provide customer assistance and support
             <br />
-            6.2. We reserve the right to cancel any order for any reason, and in
-            such cases, we will refund any payment made.
+            <b>3.3 Marketing:</b>
+            <br />
+            -To send promotional emails (you can opt-out at any time)
+            <br />
+            -To personalize your shopping experience <br />
+            -To conduct market research and analysis
+            <br />
+            <b>3.4 Legal Compliance:</b>
+            <br />
+            To comply with legal requirements and regulations
           </p>
-          <h3 style={colorWhite}>7. Shipping and Delivery</h3>
+          <h3 style={colorWhite}>4. Information Sharing</h3>
+
+          <p style={colorWhite}>We may share your personal information with:</p>
           <p style={colorWhite}>
-            Shipping and delivery times are estimates and may vary based on
-            various factors. We are not responsible for any delays or issues
-            with shipping.
+            <b>4.1 Service Providers:</b> Third-party companies and individuals
+            who help us with website maintenance, payment processing, and other
+            services.
+            <br />
+            <b>4.2 Legal Requirements:</b> In compliance with legal obligations,
+            we may disclose your information to law enforcement agencies or
+            government authorities.
           </p>
-          <h3 style={colorWhite}>8. Returns and Refunds</h3>
+          <h3 style={colorWhite}>5. Cookies and Tracking Technologies</h3>
           <p style={colorWhite}>
-            Our return and refund policy is available on our Website and governs
-            the process for returning products and requesting refunds.
+            We use cookies and similar technologies to enhance your browsing
+            experience and collect information about your interactions with our
+            website. You can manage your cookie preferences through your browser
+            settings.
           </p>
-          <h3 style={colorWhite}>9. Privacy</h3>
+          <h3 style={colorWhite}>6. Data Security</h3>
           <p style={colorWhite}>
-            Our Privacy Policy, available on our Website, explains how we
-            collect, use, and protect your personal information. By using this
-            Website, you agree to our Privacy Policy.
+            We employ industry-standard security measures to protect your
+            personal data from unauthorized access, disclosure, alteration, or
+            destruction.
           </p>
-          <h3 style={colorWhite}>10. Security</h3>
+          <h3 style={colorWhite}>7. Your Rights</h3>
           <p style={colorWhite}>
-            . We take reasonable measures to protect your data, but we do not
-            guarantee the security of your personal information.
+            You have the following rights concerning your personal information:
           </p>
-          <h3 style={colorWhite}>11. Limitation of Liability</h3>
           <p style={colorWhite}>
-            . We are not liable for any direct, indirect, incidental, special,
-            or consequential damages arising out of or in connection with your
-            use of this Website or the products and services offered on this
-            Website.
+            <b>7.1 Access and Correction: </b> You can access and update your
+            personal information. <br /> <b>7.2 Data Deletion: </b> You can
+            request the deletion of your personal data.
+            <br />
+            <b>7.3 Withdraw Consent: </b> You can withdraw your consent for data
+            processing at any time.
+            <br />
           </p>
-          <h3 style={colorWhite}>12. Indemnification</h3>
+          <h3 style={colorWhite}>8. Changes to this Privacy Policy</h3>
           <p style={colorWhite}>
-            You agree to indemnify and hold us harmless from any claims, losses,
-            or damages arising out of your use of this Website or your violation
-            of these Terms and Conditions.
+            We reserve the right to make changes to this Privacy Policy. The
+            date of the latest revision will be displayed at the top of this
+            policy.
           </p>
-          <h3 style={colorWhite}>13. Governing Law</h3>
-          <p style={colorWhite}>
-            This Agreement is governed by the laws of India, and any disputes
-            shall be subject to the exclusive jurisdiction of the courts located
-            in [City/State], India.
-          </p>
-          <h3 style={colorWhite}>14. Changes to Terms and Conditions</h3>
-          <p style={colorWhite}>
-            . We reserve the right to modify or update these Terms and
-            Conditions at any time. Changes will be effective immediately upon
-            posting on the Website. It is your responsibility to review these
-            Terms and Conditions periodically.
-          </p>
-          <h3 style={colorWhite}>15. Contact Information</h3>
+
+          <h3 style={colorWhite}>9. Contact Us</h3>
           <p style={colorWhite}>
             If you have any questions or concerns about these Terms and
             Conditions, please contact us at pherico.live@gmail.com.

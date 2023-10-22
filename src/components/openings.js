@@ -113,7 +113,7 @@ export default function Openings() {
     top: "50%",
     left: "50%",
     overflow: "auto",
-    height: "100%",
+    height: "80%",
     scrollbarWidth: "thin" /* "auto" or "thin" */,
     scrollbarColor: `${primary} grey`,
     transform: "translate(-50%, -50%)",
@@ -122,6 +122,7 @@ export default function Openings() {
     borderRadius: 2,
     boxShadow: 24,
     p: 4,
+    zIndex: 9,
   };
   return (
     <div

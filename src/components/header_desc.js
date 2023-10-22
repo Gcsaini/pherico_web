@@ -2,11 +2,9 @@ import * as React from "react";
 import { Grid, Typography } from "@mui/material";
 import bgImg from "../assets/images/bg/header_bg.png";
 import Stack from "@mui/material/Stack";
-import SquareIcon from "@mui/icons-material/Square";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import topImg from "../assets/images/home/primarylala.png";
 import { Link } from "react-router-dom";
-import Avatar from "@mui/material/Avatar";
 import {
   blackBg,
   primary,
@@ -26,6 +24,8 @@ import PlayIcon from "./play_icon";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -37,7 +37,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import emailjs from "@emailjs/browser";
-import ujjal from "../assets/images/home/ujjal.jpg";
+
 import {
   EmailJsPublicId,
   EmailJsServiceId,
@@ -46,6 +46,8 @@ import {
 } from "../helpers/config";
 import styled, { keyframes } from "styled-components";
 import { slideInUp } from "react-animations";
+import CEOMessage from "./ceo_msg";
+import CTOMessage from "./cto_,message";
 const SlideInUpAnimation = keyframes`${slideInUp}`;
 const SlideInUpDiv = styled.div`
   animation: 2s ${SlideInUpAnimation};
@@ -53,6 +55,7 @@ const SlideInUpDiv = styled.div`
 export default function HeaderDesc() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const isDesktop = useMediaQuery((theme) => theme.breakpoints.down("lg"));
   const [name, setName] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [mail, setMail] = React.useState("");
@@ -60,9 +63,7 @@ export default function HeaderDesc() {
   const [success, setSuccess] = React.useState("");
   const [error, setError] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
+
   const inputStyle = {
     color: black,
     borderRadius: 2.5,
@@ -216,17 +217,133 @@ export default function HeaderDesc() {
       >
         <Stack
           style={{
-            paddingTop: isMobile ? 280 : 400,
+            paddingTop: isMobile ? 280 : isTablet ? 350 : 400,
             paddingBottom: 80,
             alignItems: "center",
             background: darkBg,
           }}
         >
+          {isMobile && (
+            <Typography
+              variant="h4"
+              sx={{
+                marginBottom: 1,
+                textAlign: "center",
+                color: white,
+                fontWeight: 500,
+                fontStyle: "normal",
+                lineHeight: "2.7rem",
+                textTransform: "uppercase",
+              }}
+            >
+              India’s First
+              <br />
+              Shopping{isMobile ? <br /> : ""} social meadia
+            </Typography>
+          )}
+
+          {isMobile && (
+            <Typography
+              variant="h6"
+              sx={{
+                marginTop: isMobile ? 0 : 1,
+                marginLeft: isTablet ? 2 : 0,
+                fontSize: 13,
+                color: secondaryWhite,
+                fontWeight: 600,
+                fontStyle: "normal",
+                lineHeight: isMobile || isTablet ? "1.3" : "1.5rem",
+                textTransform: "uppercase",
+                letterSpacing: 1,
+              }}
+            >
+              a marketplace for both sellers &amp; buyers
+            </Typography>
+          )}
+          {isMobile && (
+            <Swiper
+              style={{
+                width: "100%",
+                height: "auto",
+                marginTop: isMobile || isTablet ? 20 : 10,
+              }}
+              loop={true}
+              loopPreventsSliding={true}
+              direction={"horizontal"}
+              pagination={false}
+              autoplay={true}
+              slidesPerView={1}
+              spaceBetween={10}
+              modules={[Autoplay]}
+            >
+              <SwiperSlide style={{ width: "90%" }}>
+                <CEOMessage />
+              </SwiperSlide>
+              <SwiperSlide style={{ width: "90%" }}>
+                <CTOMessage />
+              </SwiperSlide>
+            </Swiper>
+          )}
+          {isMobile && (
+            <Stack
+              direction={"row"}
+              alignItems={"center"}
+              mt={isMobile || isTablet ? 3 : 5}
+              ml={isTablet ? 2 : 0}
+            >
+              <div
+                style={{
+                  background: dark2,
+                  height: 50,
+                  width: 50,
+                  borderRadius: 25,
+                  padding: 11,
+                }}
+              >
+                <NavigateNextOutlinedIcon sx={{ color: white, fontSize: 26 }} />
+              </div>
+
+              <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    marginLeft: 1.5,
+                    fontSize: 13,
+                    color: secondaryWhite,
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    textDecoration: "none",
+                  }}
+                >
+                  Read more about us
+                </Typography>
+              </Link>
+            </Stack>
+          )}
           <Stack
             direction={"column"}
             justifyContent={"center"}
             alignItems={"center"}
           >
+            {isTablet && !isMobile && (
+              <Typography
+                variant="h4"
+                sx={{
+                  marginBottom: 1,
+                  textAlign: "center",
+                  color: white,
+                  fontWeight: 500,
+                  fontStyle: "normal",
+                  lineHeight: "2.7rem",
+                  textTransform: "uppercase",
+                }}
+              >
+                India’s First
+                <br />
+                Shopping{isMobile ? <br /> : ""} social meadia
+              </Typography>
+            )}
+
             <Grid
               container
               spacing={{ xs: 4, sm: 4, md: 12 }}
@@ -246,23 +363,7 @@ export default function HeaderDesc() {
                     direction={"column"}
                     alignItems={isMobile ? "center" : "start"}
                   >
-                    {isMobile || isTablet ? (
-                      <Typography
-                        variant="h4"
-                        sx={{
-                          textAlign: "center",
-                          color: white,
-                          fontWeight: 500,
-                          fontStyle: "normal",
-                          lineHeight: "2.7rem",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        India’s First
-                        <br />
-                        Shopping social meadia
-                      </Typography>
-                    ) : (
+                    {!isTablet && !isMobile && (
                       <Typography
                         variant="h4"
                         sx={{
@@ -280,87 +381,60 @@ export default function HeaderDesc() {
                         social meadia
                       </Typography>
                     )}
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        marginTop: 2,
-                        fontSize: 13,
-                        color: secondaryWhite,
-                        fontWeight: 600,
-                        fontStyle: "normal",
-                        lineHeight: isMobile || isTablet ? "1.3" : "1.5rem",
-                        textTransform: "uppercase",
-                        letterSpacing: 1,
-                      }}
-                    >
-                      a marketplace for both
-                      {isMobile ? "" : <br />} sellers &amp; buyers
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        marginTop: 2,
-                        fontSize: 13,
-                        textAlign: isMobile ? "center" : "start",
-                        color: secondaryWhite,
-                        fontWeight: 500,
-                        fontStyle: "normal",
-                        lineHeight: isMobile
-                          ? "1.45"
-                          : isTablet
-                          ? "1.4"
-                          : "1.5rem",
-                      }}
-                    >
-                      Beyond everyone’s expectations we have constructed a
-                      platform where the customer will get a complete
-                      Live-Product shopping experience from sellers across the
-                      country. We have created a marketplace, which is indeed
-                      not just a marketplace, rather than a compilation of
-                      E-commerce & social media, with features like live
-                      shopping, E-shop monetization, Direct interaction.
-                    </Typography>
-                    <Stack
-                      direction={"row"}
-                      alignItems={"center"}
-                      style={{ marginTop: 15 }}
-                    >
-                      <Avatar alt="Remy Sharp" src={ujjal} />
-                      {/* <SquareIcon sx={{ color: white, fontSize: 16 }} /> */}
-                      <Stack>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            marginLeft: 1.5,
-                            fontSize: 14,
-                            color: white,
-                            fontWeight: 600,
-                            fontStyle: "normal",
-                            lineHeight: "1.7rem",
-                          }}
-                        >
-                          Ujjal Sarkar
-                        </Typography>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            marginLeft: 1.5,
-                            fontSize: 13,
-                            color: secondaryWhite,
-                            fontWeight: 600,
-                            fontStyle: "normal",
-                            lineHeight: "1rem",
-                          }}
-                        >
-                          CEO
-                        </Typography>
-                      </Stack>
-                    </Stack>
+                    {!isMobile && (
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          marginTop: isMobile ? 0 : 1,
+                          marginLeft: isTablet ? 2 : 0,
+                          fontSize: 13,
+                          color: secondaryWhite,
+                          fontWeight: 600,
+                          fontStyle: "normal",
+                          lineHeight: isMobile || isTablet ? "1.3" : "1.5rem",
+                          textTransform: "uppercase",
+                          letterSpacing: 1,
+                        }}
+                      >
+                        a marketplace for both
+                        <br /> sellers &amp; buyers
+                      </Typography>
+                    )}
+                    {/* Message slider */}
+
+                    {!isMobile && (
+                      <Swiper
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          marginTop: isMobile || isTablet ? 20 : 10,
+                        }}
+                        loop={true}
+                        loopPreventsSliding={true}
+                        direction={"horizontal"}
+                        pagination={false}
+                        autoplay={true}
+                        slidesPerView={1}
+                        spaceBetween={10}
+                        modules={[Autoplay]}
+                      >
+                        <SwiperSlide style={{ width: "90%" }}>
+                          <CEOMessage />
+                        </SwiperSlide>
+                        <SwiperSlide style={{ width: "90%" }}>
+                          <CTOMessage />
+                        </SwiperSlide>
+                      </Swiper>
+                    )}
+
+                    {/*End of Message slider */}
+                  </Stack>
+                  {!isMobile && (
                     <Stack
                       direction={"row"}
                       alignItems={"center"}
                       mt={isMobile || isTablet ? 3 : 5}
-                      ml={-1}
+                      ml={isTablet ? 2 : 0}
                     >
                       <div
                         style={{
@@ -375,6 +449,7 @@ export default function HeaderDesc() {
                           sx={{ color: white, fontSize: 26 }}
                         />
                       </div>
+
                       <Link to={"/about-us"} style={{ textDecoration: "none" }}>
                         <Typography
                           variant="h6"
@@ -391,14 +466,14 @@ export default function HeaderDesc() {
                         </Typography>
                       </Link>
                     </Stack>
-                  </Stack>
+                  )}
                 </div>
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
                 <div
                   style={{
                     marginTop: isMobile ? 30 : isTablet ? 30 : 0,
-                    marginLeft: isMobile ? 30 : 0,
+                    marginLeft: isMobile ? 10 : 0,
                     marginRight: isMobile ? 20 : isTablet ? 13 : 0,
                   }}
                 >
@@ -406,7 +481,7 @@ export default function HeaderDesc() {
                     src={topImg}
                     alt="shopping"
                     style={{
-                      width: isMobile ? "90%" : isTablet ? "100%" : "85%",
+                      width: isMobile || isTablet ? "100%" : "85%",
                     }}
                   />
                 </div>

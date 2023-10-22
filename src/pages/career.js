@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import Navbar from "../components/navbar";
-import teamsImg from "../assets/images/career/teams.svg";
+import teamsImg from "../assets/images/career/CAREER.jpg";
 import CareerBenefit from "../components/career_benefits";
 import Openings from "../components/openings";
 import Footer from "../components/footer";

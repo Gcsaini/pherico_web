@@ -67,6 +67,9 @@ export default function HomeBlogs() {
         </Typography>
         <Chip
           label={"BROWSE ALL"}
+          component={"a"}
+          href="/blogs"
+          clickable
           sx={{
             color: secondaryWhite,
             height: 45,

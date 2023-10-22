@@ -1,13 +1,5 @@
 import { Stack, Typography, Grid } from "@mui/material";
-import {
-  black,
-  dark,
-  dark2,
-  darkBg,
-  hrLine,
-  secondaryWhite,
-  white,
-} from "../helpers/colors";
+import { dark, darkBg, hrLine, secondaryWhite, white } from "../helpers/colors";
 import amit from "../assets/images/teams/amit_new.png";
 import arijit from "../assets/images/teams/arijit_new.png";
 import ujjal from "../assets/images/teams/ujjal_new.png";
@@ -83,11 +75,16 @@ export default function OurTeam() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height={isMobile ? (isMobile ? 340 : 280) : 280}
+                  height={isMobile ? 340 : 280}
                   width={"100%"}
                   image={ujjal}
                   alt="ujjal"
-                  sx={{ objectFit: "fill" }}
+                  sx={{
+                    objectFit: "fill",
+                    transformOrigin: " 65% 75%",
+                    transition: " transform 1s filter 0.5s ease-out",
+                    filter: "brightness(100%)",
+                  }}
                 />
                 <CardContent
                   sx={{

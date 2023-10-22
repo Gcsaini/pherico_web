@@ -105,22 +105,41 @@ export default function Testimonials() {
           modules={[Pagination, Navigation, Autoplay, Mousewheel]}
         >
           <SwiperSlide style={{ borderRadius: 0 }}>
-            <TestimonialView />
+            <TestimonialView
+              name={"Pooja"}
+              msg={
+                "After going through all the features, I am very pleased because all the features are incredibly innovative. So I am genuinely excited and eagerly awaiting for the launch."
+              }
+              imageIndex={0}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <TestimonialView />
+            <TestimonialView
+              name={"Kapil Kumar"}
+              msg={
+                "I've had an exceptional experience with this platform. Its user-friendly interface, powerful and innovative features, and top notch customer support make it a top choice for my online business."
+              }
+              imageIndex={3}
+            />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <TestimonialView
+              name={"Uditava"}
+              msg={
+                "This platform can be game changer for upcoming and existing businesses. Really love the tagline 'E-commerce ka social media"
+              }
+              imageIndex={1}
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <TestimonialView />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialView />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialView />
-          </SwiperSlide>
-          <SwiperSlide>
-            <TestimonialView />
+            <TestimonialView
+              name={"Sangeeta Roy"}
+              msg={
+                "I don't know how Pherico will attach E-commerce with social media and digital storefront. But I am excited to experience."
+              }
+              imageIndex={2}
+            />
           </SwiperSlide>
         </Swiper>
       </Stack>

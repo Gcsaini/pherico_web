@@ -17,35 +17,35 @@ export default function ImageSlider() {
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const styles = {
     slide1: {
-      height: isMobile ? 440 : isTablet ? 405 : 640,
+      height: isMobile ? 540 : isTablet ? 405 : 640,
       width: "100%",
       backgroundSize: "100%",
 
       backgroundImage: `linear-gradient(rgba(244, 244, 244, 0), rgba(179, 179, 179, 0.1), rgba(98, 98, 98, 0.2), rgb(43,39,39)), url(${liveImg})`,
     },
     slide2: {
-      height: isMobile ? 440 : isTablet ? 405 : 640,
+      height: isMobile ? 540 : isTablet ? 405 : 640,
       width: "100%",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
       backgroundImage: `linear-gradient(rgba(244, 244, 244, 0), rgba(179, 179, 179, 0.1), rgba(98, 98, 98, 0.2), rgb(43,39,39)), url(${commsionImg})`,
     },
     slide3: {
-      height: isMobile ? 440 : isTablet ? 405 : 640,
+      height: isMobile ? 540 : isTablet ? 405 : 640,
       width: "100%",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
       backgroundImage: `linear-gradient(rgba(244, 244, 244, 0), rgba(179, 179, 179, 0.1), rgba(98, 98, 98, 0.2), rgb(43,39,39)), url(${shoppingImg})`,
     },
     slide4: {
-      height: isMobile ? 440 : isTablet ? 405 : 640,
+      height: isMobile ? 540 : isTablet ? 405 : 640,
       width: "100%",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
       backgroundImage: `linear-gradient(rgba(244, 244, 244, 0), rgba(179, 179, 179, 0.1), rgba(98, 98, 98, 0.2), rgb(43,39,39)), url(${earnImg})`,
     },
     slide5: {
-      height: isMobile ? 440 : isTablet ? 405 : 640,
+      height: isMobile ? 540 : isTablet ? 405 : 640,
       width: "100%",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
@@ -243,11 +243,12 @@ export default function ImageSlider() {
               style={styles.overlay}
             >
               <Typography variant="h5" style={styles.imgCaptioTitle}>
-                Sell, Earn, Grow
+                Shop,Sell,Earn &amp; Grow
               </Typography>
               <Typography variant="h6" style={styles.imgCaptioDesc}>
-                Experience the thrill of shopping from live sellers. performance
-                and comfort for every mode of use. The system utilises a
+                Empower your ambitions with a platform where you can shop for
+                success, sell your passion, earn your worth, and grow your
+                future.
               </Typography>
             </Stack>
           </div>
@@ -278,7 +279,7 @@ export default function ImageSlider() {
               style={styles.overlay}
             >
               <Typography variant="h5" style={styles.imgCaptioTitle}>
-                Request want you want
+                Request what you want
               </Typography>
               <Typography variant="h6" style={styles.imgCaptioDesc}>
                 Before every live, you can request choice-able products to be
