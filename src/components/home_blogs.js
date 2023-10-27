@@ -6,6 +6,7 @@ import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import db from "../firebase";
 import BlogGridView from "./blog_grid_view";
+import { Link } from "react-router-dom";
 export default function HomeBlogs() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -65,33 +66,35 @@ export default function HomeBlogs() {
         >
           Let's check <b>Our Post</b>
         </Typography>
-        <Chip
-          label={"BROWSE ALL"}
-          component={"a"}
-          href="/blogs"
-          clickable
-          sx={{
-            color: secondaryWhite,
-            height: 45,
-            width: 180,
-            marginLeft: 3,
-            marginBottom: isMobile ? 2 : 4,
-            cursor: "pointer",
-            borderRadius: 23,
-            wordSpacing: 4,
-            boxShadow:
-              "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
-            background: dark2,
-            "& .MuiChip-label": {
-              display: "block",
-              fontWeight: "bold",
-              fontStyle: "normal",
-              fontFamily: "Poppins,sans-serif",
-              lineHeight: "1.5rem",
-              fontSize: "0.8rem",
-            },
-          }}
-        />
+        <Link to={"/blogs"}>
+          <Chip
+            label={"BROWSE ALL"}
+            component={"a"}
+            clickable
+            sx={{
+              color: secondaryWhite,
+              height: 45,
+              width: 180,
+              marginLeft: 3,
+              marginBottom: isMobile ? 2 : 4,
+              cursor: "pointer",
+              borderRadius: 23,
+              wordSpacing: 4,
+              boxShadow:
+                "0px 8px 10px -6px rgba(0, 0, 0, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)",
+              background: dark2,
+              "& .MuiChip-label": {
+                display: "block",
+                fontWeight: "bold",
+                fontStyle: "normal",
+                fontFamily: "Poppins,sans-serif",
+                lineHeight: "1.5rem",
+                fontSize: "0.8rem",
+              },
+            }}
+          />
+        </Link>
+
         {blogs &&
           blogs.map((item) => <BlogGridView data={item} key={item.id} />)}
       </Stack>

@@ -71,7 +71,7 @@ export default function TestimonialView(props) {
               lineHeight: "1rem",
             }}
           >
-            Seller
+            Viewers
           </Typography>
         </Stack>
       </Stack>

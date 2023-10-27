@@ -26,12 +26,11 @@ export default function CTOMessage() {
           lineHeight: isMobile ? "1.45" : isTablet ? "1.4" : "1.5rem",
         }}
       >
-        Technology Beyond everyone’s expectations we have constructed a platform
-        where the customer will get a complete Live-Product shopping experience
-        from sellers across the country. We have created a marketplace, which is
-        indeed not just a marketplace, rather than a compilation of E-commerce &
-        social media, with features like live shopping, E-shop monetization,
-        Direct interaction.
+        Welcome to the future of live shopping! With live shopping, you get to
+        interact with your favorite brands and products in real-time from the
+        comfort of your own home.Say goodbye to generic online shopping. Our
+        platform offers personalized recommendations,Ask questions,get product
+        demos, and engage with sellers during live broadcasts.
       </Typography>
       <Stack
         direction={"row"}
